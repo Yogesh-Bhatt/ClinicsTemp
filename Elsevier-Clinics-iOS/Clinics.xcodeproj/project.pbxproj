@@ -714,6 +714,7 @@
 		D65277981761DDB500BA41FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D65277971761DDB500BA41FE /* MBProgressHUD.m */; };
 		D67F1BE916199E8300A49837 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D67F1BE816199E8300A49837 /* libxml2.dylib */; };
 		D680FE8213E68546004CA0B1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D680FE8113E68546004CA0B1 /* CFNetwork.framework */; };
+		D681A8FE1782B6F300AB35F0 /* iPhone_Abstract_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D681A8FD1782B6F300AB35F0 /* iPhone_Abstract_btn.png */; };
 		D681C4EA13DEECD5002E2989 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D681C4E913DEECD5002E2989 /* MessageUI.framework */; };
 		D684CE32177AEFB40054C473 /* btn_cancel_download.png in Resources */ = {isa = PBXBuildFile; fileRef = D684CE27177AEFB40054C473 /* btn_cancel_download.png */; };
 		D684CE33177AEFB40054C473 /* btn_clear_all.png in Resources */ = {isa = PBXBuildFile; fileRef = D684CE28177AEFB40054C473 /* btn_clear_all.png */; };
@@ -1621,6 +1622,7 @@
 		D65277971761DDB500BA41FE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = CommanClasses/DwonLoad/MBProgressHUD.m; sourceTree = "<group>"; };
 		D67F1BE816199E8300A49837 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D680FE8113E68546004CA0B1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D681A8FD1782B6F300AB35F0 /* iPhone_Abstract_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone_Abstract_btn.png; sourceTree = "<group>"; };
 		D681C4E913DEECD5002E2989 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D684CE27177AEFB40054C473 /* btn_cancel_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cancel_download.png; sourceTree = "<group>"; };
 		D684CE28177AEFB40054C473 /* btn_clear_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_clear_all.png; sourceTree = "<group>"; };
@@ -2131,6 +2133,7 @@
 		BC7AA94F16F713850066670C /* CommanImage */ = {
 			isa = PBXGroup;
 			children = (
+				D681A8FD1782B6F300AB35F0 /* iPhone_Abstract_btn.png */,
 				BC7AA95116F713850066670C /* iPhone_ArticlesPressSelected_btn.png */,
 				BC7AA95216F713850066670C /* iPhone_ArticlesPressUnselected_btn.png */,
 				BC7AA95316F713850066670C /* iPhone_Bg.png */,
@@ -5530,6 +5533,7 @@
 				D6096CE6178196E3003C5241 /* bar@2x.png in Resources */,
 				D6096CE7178196E3003C5241 /* blank_image@2x.png in Resources */,
 				D6096CE8178196E3003C5241 /* pop-box@2x.png in Resources */,
+				D681A8FE1782B6F300AB35F0 /* iPhone_Abstract_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
