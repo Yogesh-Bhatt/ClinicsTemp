@@ -1259,7 +1259,7 @@
         
         ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_downloadQueueArr objectAtIndex:0];
         
-        BOOL check = TRUE;//[appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
+        BOOL check = [appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
         
         if(check){
             
@@ -1304,112 +1304,6 @@
         
     }
     [self addArticlesInDownloadQueue:m_arrArticles];
-    
-    
-   //    if(m_numberOfDownload > 0){
-//        
-//        [CGlobal showMessage:@"" msg:@"Downloading is in process."];
-//        
-//        return;
-//        
-//    }
-    /*
-    if(m_downloadQueueArr){
-        
-        [m_downloadQueueArr release];
-        m_downloadQueueArr = nil;
-    }
-    
-    m_downloadQueueArr = [[NSMutableArray alloc] init];
-    
-    
-    for(int i = 0 ;i<[m_arrArticles count];i++){
-        
-        ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:i];
-        
-        BOOL success;
-        
-        NSFileManager *fileManager=[NSFileManager defaultManager];
-        NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/main.html",articleDataHolder.sArticleInfoId,articleDataHolder.sArticleInfoId]];
-        success=[fileManager fileExistsAtPath:writableDBPath];
-        
-        
-        
-        /////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        ClinicsAppDelegate *appDel = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        NSString *strUrl = [NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
-        BOOL checkMatch = FALSE;
-        
-        for(int i =0 ;i<[appDel.m_downloadedConnectionArr count] ;i++){
-            
-            NSURLConnection *conn = (NSURLConnection *)[appDel.m_downloadedConnectionArr objectAtIndex:i];
-            if([[conn currentRequest].URL.absoluteString isEqualToString:strUrl]){
-                checkMatch = TRUE;
-                NSLog(@"Match Found");
-                break;
-            }
-        }
-        if(!success && checkMatch == FALSE){
-            
-            [m_downloadQueueArr addObject:articleDataHolder];
-            
-        }
-        
-    }
-    
-    
-    if([m_downloadQueueArr count] ==0){
-        
-        [CGlobal showMessage:@"" msg:@"All articles of this issue have been downloaded or in process."];
-        return;
-    }
-    
-    
-    ///////////////////////////////Checking Clinic is purchased or not//////////////////////////////
-    ClinicsAppDelegate   *appDelegate = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    NSLog(@"m_numberOfDownload %d == appDelegate.seletedClinicID %d",m_numberOfDownload,appDelegate.seletedClinicID);
-    
-    
-    if([m_downloadQueueArr count] >0){
-        
-        
-        ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_downloadQueueArr objectAtIndex:0];
-        
-        BOOL check = TRUE;//[appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
-        
-        if(check){
-            
-            [self multipleArticleDownload];
-            
-            [CGlobal showMessage:@"" msg:@"Downloading start."];
-            
-            
-        }else{
-            
-            // start listening for download completion
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(clinicPurchased)
-                                                         name:@"ClinicPurchased"
-                                                       object:nil];
-            
-            
-            
-            appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
-            
-            [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
-            
-        }
-        
-    }
-    
-    
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-    */
     
     
     

@@ -60,12 +60,7 @@ ClinicsAppDelegate *appDel;
     
     m_articleArr = [[NSArray arrayWithArray:a_articleArr] retain];
     
-//    if(arr){
-//        
-//        [arr removeAllObjects];
-//        
-//    }
-//    arr = [[NSMutableArray alloc] init];
+
     ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
     for(int i =0;i<[m_articleArr count];i ++){
         
@@ -129,10 +124,19 @@ ClinicsAppDelegate *appDel;
 
 -(IBAction)clearAllDownloads:(id)sender{
     
-// ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-//
-//    [appDelT.m_downloadArticlesArr removeAllObjects];
+ ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
     
+    for(int i =0;i<[appDel.m_downloadedConnectionArr count];i++){
+        
+        NSURLConnection *conn = [appDel.m_downloadedConnectionArr objectAtIndex:i];
+        [conn cancel];
+        conn = nil;
+
+    }
+
+    [appDel.m_downloadedConnectionArr removeAllObjects];
+    [appDelT.m_downloadArticlesArr removeAllObjects];
+    [m_tableView reloadData];
 }
 /*
 // Override to support conditional editing of the table view.

@@ -563,6 +563,12 @@
 
 -(void)restoreCompletedWithTransactions:(NSArray*)transactions{
     
+    if([transactions count] == 0){
+        
+        [self showMessage:@"Restore failed.You have not purchased any clinic."];
+        return;
+        
+    }
     [self showMessage:@"Restore completed"];
     [MBProgressHUD hideHUDForView:self.window animated:YES];
     

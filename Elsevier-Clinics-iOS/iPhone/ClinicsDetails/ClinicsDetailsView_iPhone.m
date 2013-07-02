@@ -945,14 +945,6 @@
 
 -(void)downloadIssue{
     
-//       
-//    if(m_numberOfDownload > 0){
-//        
-//        [CGlobal showMessage:@"" msg:@"Downloading is in process."];
-//        
-//        return;
-//        
-//    }
     
     if(m_downloadQueueArr){
         
@@ -975,7 +967,11 @@
         NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/main.html",articleDataHolder.sArticleInfoId,articleDataHolder.sArticleInfoId]];
         success=[fileManager fileExistsAtPath:writableDBPath];
         
-        if(!success){
+        NSString *strUrl = [NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
+        BOOL checkMatch = FALSE;
+        checkMatch = [self currentUrlIsLoading:strUrl];
+        
+        if(!success && checkMatch == FALSE){
             
             [m_downloadQueueArr addObject:articleDataHolder];
             
@@ -1038,6 +1034,31 @@
     
     
 }
+
+-(BOOL)currentUrlIsLoading:(NSString *)a_url{
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ClinicsAppDelegate *appDel = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    BOOL checkMatch = FALSE;
+    
+    for(int i =0 ;i<[appDel.m_downloadedConnectionArr count] ;i++){
+        
+        NSURLConnection *conn = (NSURLConnection *)[appDel.m_downloadedConnectionArr objectAtIndex:i];
+        if([[conn currentRequest].URL.absoluteString isEqualToString:a_url]){
+            checkMatch = TRUE;
+            NSLog(@"Match Found");
+            break;
+        }
+    }
+    
+    return checkMatch;
+    
+    
+}
+
+
 
 -(void)clinicPurchased{
     

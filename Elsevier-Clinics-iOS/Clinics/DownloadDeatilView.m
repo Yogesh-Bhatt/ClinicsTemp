@@ -43,7 +43,7 @@
         yCord = yCord + 2*m_lblTitle.frame.size.height;
         
         
-        progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(20.0f, rect.size.height - 40, self.bounds.size.width-80.0f, 0.0f)] ;
+        progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(20.0f, rect.size.height - 40, self.bounds.size.width-80.0f, 20.0f)] ;
         [progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [progressView setInnerColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [self addSubview: progressView] ;

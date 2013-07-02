@@ -127,24 +127,20 @@ ClinicsAppDelegate *appDel;
 
 -(IBAction)clearAllDownloads:(id)sender{
     
-    //    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
-    //    NSString *documentsDirectory = [(NSString *)[paths objectAtIndex:0] stringByAppendingPathComponent:zipFileName];
-    //    NSString *fileDocPath = [NSString stringWithFormat:@"%@/",documentsDirectory];
-    //
-    //
-    //    NSFileManager *filemanager=[NSFileManager defaultManager];
-    //    NSError *error;
-    //
-    //    NSString  *file=  [fileDocPath substringToIndex:[fileDocPath length] - 1];
-    //    //NSLog(@" file %@",file);
-    //    if([filemanager fileExistsAtPath:file]){
-    //        //NSLog(@"rohit removeItemAtPath4");
-    //        [filemanager removeItemAtPath:file error:&error];
-    //
-    //    }
-    //}
+        ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        for(int i =0;i<[appDel.m_downloadedConnectionArr count];i++){
+            
+            NSURLConnection *conn = [appDel.m_downloadedConnectionArr objectAtIndex:i];
+            [conn cancel];
+            conn = nil;
+
+        }
+        [appDel.m_downloadedConnectionArr removeAllObjects];
+        [appDelT.m_downloadArticlesArr removeAllObjects];
+        [m_tableView reloadData];
     
-    
+       
 }
 /*
  // Override to support conditional editing of the table view.
