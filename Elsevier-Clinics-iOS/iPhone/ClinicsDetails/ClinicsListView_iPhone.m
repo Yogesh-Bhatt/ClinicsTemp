@@ -323,6 +323,8 @@
 
     SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
 	
+    ClinicsSingletonManager *singletonObj=[ClinicsSingletonManager sharedManager];
+    
     if (!sectionInfo.headerView) 
     {
         ClnicsTableSectionView *sectionView = (ClnicsTableSectionView *)[CGlobal getViewFromXib:@"ClnicsTableSectionView" classname:[ClnicsTableSectionView class] owner:self];
@@ -334,7 +336,41 @@
         ClinicsDataHolder *clinicDataHolder = (ClinicsDataHolder *)[m_arrClinics objectAtIndex:section];
 		sectionView.m_lblTitle.text = clinicDataHolder.sClinicTitle;
 		
-				
+		//Checking for new issues related to Clinic
+        
+        NSInteger newIssuesCount= 0;
+        
+        for (NSDictionary *dict in singletonObj.m_arrLatestIssues)
+        {
+            if ([[dict valueForKey:KClinicsID] integerValue]==clinicDataHolder.nClinicID)
+            {
+                newIssuesCount++;
+            }
+        }
+        
+        //Create Button If new Issues exists
+        if (newIssuesCount>0)
+        {
+            UIImage *img=[UIImage imageNamed:@"noti.png"];
+            
+            UIButton *issuesCountBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [issuesCountBtn setTitle:[NSString stringWithFormat:@"%d",newIssuesCount]
+                            forState:UIControlStateNormal];
+            
+            [issuesCountBtn setBackgroundImage:img
+                                      forState:UIControlStateNormal];
+            
+            issuesCountBtn.userInteractionEnabled= NO;
+            
+            issuesCountBtn.frame=CGRectMake(sectionView.m_lblTitle.frame.origin.x+sectionView.m_lblTitle.frame.size.width+20,
+                                            sectionView.frame.size.height/2-img.size.height/2-5,
+                                            img.size.width,
+                                            img.size.height);
+            
+            [sectionView addSubview:issuesCountBtn];
+            
+        }
 		
         sectionInfo.headerView = sectionView;
     }
@@ -498,6 +534,38 @@
     
     [indexPathsToInsert release];
     [indexPathsToDelete release];
+    
+    
+    //Reset Badge if Clinics new Issues Visited
+    
+    ClinicsSingletonManager *singletonObj=[ClinicsSingletonManager sharedManager];
+    
+    NSMutableIndexSet *discardedClinicsIndexs = [NSMutableIndexSet indexSet];
+    
+    NSUInteger index = 0;
+    
+    for (NSDictionary *dict in singletonObj.m_arrLatestIssues)
+    {
+        if ([[dict valueForKey:KClinicsID] integerValue]==clinicDataHolder.nClinicID)
+            [discardedClinicsIndexs addIndex:index];
+        
+        index++;
+    }
+    
+    [singletonObj.m_arrLatestIssues removeObjectsAtIndexes:discardedClinicsIndexs];
+    
+    //Set App Icon Badge Number
+    [singletonObj setAppBadgeNumberTo:singletonObj.m_arrLatestIssues.count];
+    
+    
+    //Remove Notification button from Clinic Header Cell View
+    for (id view in sectionInfo.headerView.subviews)
+    {
+        if ([view isKindOfClass:[UIButton class]])
+        {
+            [view removeFromSuperview];
+        }
+    }
  
 }
 

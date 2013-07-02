@@ -201,7 +201,13 @@ RestoreBuyCheck    restoreBuyCheck;
 NSInteger m_numberOfDownload;
 
 
+// New Issues Badge Constants
 
+#define    KNewIssuesInserted        @"NewIssuesInserted"
+#define    KNewIssue                 @"NewIssue"
+
+#define    KClinicsID                @"clinics_id"
+#define    KIssueID                  @"issue_id"
 
 
 

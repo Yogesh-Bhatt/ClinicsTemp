@@ -378,6 +378,8 @@
     
     NSArray *arrIssue = [Dict objectForKey:@"ISSUE"];
   
+    ClinicsSingletonManager *singletonManager = [ClinicsSingletonManager sharedManager];
+
     
     if ([arrIssue count] > 0)
     {
@@ -394,10 +396,15 @@
             if (!ishaveIssue)
             {
                 [database saveIssueData:[arrIssue objectAtIndex:i]];
+                
+                [singletonManager.m_arrLatestIssues addObject:[arrIssue objectAtIndex:i]];
             }    
     
             [CGlobal updateLast12MonthIssue:clinicId  nextDate:backDateStr currentDate:currentDateStr];
         }
+        
+        // Setting Application Badge Number as per Issues
+        [singletonManager setAppBadgeNumberTo:singletonManager.m_arrLatestIssues.count];
     }
     
     
