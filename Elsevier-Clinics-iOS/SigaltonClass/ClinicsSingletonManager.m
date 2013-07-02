@@ -15,6 +15,7 @@
 @implementation ClinicsSingletonManager
 
 @synthesize delegate;
+@synthesize m_arrLatestIssues;
 
 static ClinicsSingletonManager* _sharedManager; // self
 
@@ -45,7 +46,7 @@ static ClinicsSingletonManager* _sharedManager; // self
        
         //_parseDataController = [[Controller alloc] init];
         //m_signedInFromMSO = NO;
-       
+        self.m_arrLatestIssues=[[NSMutableArray alloc]init];
        
     }
     
@@ -808,4 +809,14 @@ return YES;
     
     return wrapper;
 }
+
+#pragma mark-
+#pragma mark setAppBadgeNumber
+
+-(void)setAppBadgeNumberTo:(NSInteger)number
+{
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:number];
+    
+}
+
 @end

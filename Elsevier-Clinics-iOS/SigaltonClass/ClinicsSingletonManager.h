@@ -25,6 +25,7 @@
    }
 
 @property(nonatomic,assign) id delegate;
+@property(nonatomic,assign) NSMutableArray    *m_arrLatestIssues;
 
 //@property(nonatomic,retain)Controller    *_parseDataController;
 
@@ -119,5 +120,6 @@
 
 -(UIView*) wrapSiblingViews:(NSArray*)theSiblings ofSuperview:(UIView*)theSuperview;
 
+-(void)setAppBadgeNumberTo:(NSInteger)number;
 
 @end
