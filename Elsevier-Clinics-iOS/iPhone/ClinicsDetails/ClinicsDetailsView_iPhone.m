@@ -216,10 +216,10 @@
     
     downloadPopOverview = [[UIView alloc] initWithFrame:CGRectMake(113,
                                                                    35,
-                                                                   200,
-                                                                   350)];
+                                                                   210,
+                                                                   390)];
     
-    downloadPopOverview.backgroundColor = [UIColor greenColor];
+    downloadPopOverview.backgroundColor = [UIColor blackColor];
         
     [downloadPopOverview addSubview:downloadDetailviewController.view];
     
@@ -238,20 +238,6 @@
         
     }
     
-//    if(downloadPopOverview != nil)
-//    {
-//        if (downloadPopOverview.hidden)
-//        {
-//            downloadPopOverview.hidden=NO;
-//        }else
-//        {
-//            downloadPopOverview.hidden=YES;
-//        }
-//        
-//    }else{
-//        
-//        [CGlobal showMessage:@"" msg:@"No articles are downloading right now."];
-//    }
     
 }
 
@@ -959,14 +945,14 @@
 
 -(void)downloadIssue{
     
-       
-    if(m_numberOfDownload > 0){
-        
-        [CGlobal showMessage:@"" msg:@"Downloading is in process."];
-        
-        return;
-        
-    }
+//       
+//    if(m_numberOfDownload > 0){
+//        
+//        [CGlobal showMessage:@"" msg:@"Downloading is in process."];
+//        
+//        return;
+//        
+//    }
     
     if(m_downloadQueueArr){
         

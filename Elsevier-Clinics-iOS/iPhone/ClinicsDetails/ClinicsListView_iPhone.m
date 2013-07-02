@@ -7,7 +7,6 @@
 //
 
 #import "ClinicsListView_iPhone.h"
-#import "ClinicsListView_iPhone.h"
 #import "ClnicsTableCellView.h"
 #import "ListBackIssueController_iPhone.h"
 #import "SectionInfo.h"
@@ -272,17 +271,14 @@
     
     [CGlobal setFrameWith:self.view];
     
-//    if(IS_WIDESCREEN){
-//        
-//        CGRect rect =  m_scrollView.frame;
-//        rect.origin.y = 0;
-//        m_scrollView.frame = rect;
-//        
-//        CGRect rect1 =  m_imgView.frame;
-//        rect1.size.height = 500;
-//        m_imgView.frame = rect1;
-//        
-//    }
+    if(IS_WIDESCREEN){
+        
+        m_scrollView.backgroundColor = [UIColor clearColor];
+        CGRect rect =  m_scrollView.frame;
+        rect.origin.y = 60;
+        m_scrollView.frame = rect;
+        
+    }
     
 }
 

@@ -196,12 +196,19 @@
     if (appDelegate.m_nCurrentTabTag == kTAB_CLINICS)
     {
         //******************* Add clinicList View **********************//
-        if (self.clinicListView == nil)
-         self.clinicListView = [[ClinicsListView_iPhone alloc] initWithNibName:@"ClinicsListView_iPhone" bundle:nil];
-		[self.view addSubview:self.clinicListView.view];	
-		[self.clinicListView initClinicListView];
-        		
-		
+        if(IS_WIDESCREEN){
+            
+            if (self.clinicListView == nil)
+                self.clinicListView = [[ClinicsListView_iPhone alloc] initWithNibName:@"ClinicsListView_iPhone" bundle:nil];
+            [self.view addSubview:self.clinicListView.view];
+             [self.clinicListView initClinicListView];
+        }else{
+            if (self.clinicListView == nil)
+                self.clinicListView = [[ClinicsListView_iPhone alloc] initWithNibName:@"ClinicsListView_iPhone" bundle:nil];
+            [self.view addSubview:self.clinicListView.view];
+            [self.clinicListView initClinicListView];
+            
+		}
     }
 	
 	else if (appDelegate.m_nCurrentTabTag == kTAB_BOOKMARKS)

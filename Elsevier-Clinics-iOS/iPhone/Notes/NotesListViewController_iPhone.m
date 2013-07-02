@@ -242,6 +242,16 @@
 	[m_lblTitle release];
     
     [CGlobal setFrameWith:self.view];
+    
+    
+    if(IS_WIDESCREEN){
+        
+        m_scrollView.backgroundColor = [UIColor clearColor];
+        CGRect rect =  m_scrollView.frame;
+        rect.origin.y = 60;
+        m_scrollView.frame = rect;
+        
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
