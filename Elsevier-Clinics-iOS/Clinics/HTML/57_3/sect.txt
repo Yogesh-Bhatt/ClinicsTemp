@@ -1,0 +1,270 @@
+refernce_id	article id	section_id	section_title	is_this_sub_section
+1	pcl722	lv_0004	Epidemiology	1
+2	pcl722	lv_0005	Prevention of injuries and illnesses	1
+3	pcl722	lv_0006	Preparticipation Evaluation and Anticipatory Guidance	0
+4	pcl722	lv_0007	Basic Survival Skills	0
+5	pcl722	lv_0008	Prevention of specific conditions	1
+6	pcl722	lv_0009	Hypothermia, Trench Foot, and Frostbite	0
+7	pcl722	lv_0010	Lightning Safety	0
+8	pcl722	lv_0011	Sunburn	0
+9	pcl722	lv_0012	Dehydration, Heat Exhaustion, and Heat Stroke	0
+10	pcl722	lv_0013	Traveler's Diarrhea	0
+11	pcl722	lv_0014	Blisters	0
+12	pcl722	lv_0015	Sprains, Strains, and Fractures	0
+13	pcl722	lv_0016	Bites and Stings	0
+14	pcl722	lv_0017	Wilderness Stress	0
+15	pcl722	lv_0018	Altitude Illness	0
+16	pcl722	lv_0019	Summary	1
+17	pcl722	lv_0020	References	1
+18	pcl723	lv_0004	Use and complications with manual medicine	1
+19	pcl723	lv_0005	Methods and barriers to sound research	1
+20	pcl723	lv_0006	Barrier concepts in the evaluation of pediatric patients	1
+21	pcl723	lv_0007	Pediatric considerations and specific osteopathic techniques	1
+22	pcl723	lv_0008	High- and Low-Velocity, Low-Amplitude Techniques	0
+23	pcl723	lv_0009	Muscle Energy	0
+24	pcl723	lv_0010	Strain-Counterstrain Techniques	0
+25	pcl723	lv_0011	Myofascial Approaches	0
+26	pcl723	lv_0012	Specific conditions	1
+27	pcl723	lv_0013	Cervical Spine	0
+28	pcl723	lv_0014	Chest Wall Syndromes	0
+29	pcl723	lv_0015	Thoracic outlet syndrome	0
+30	pcl723	lv_0016	Chest wall pain	0
+31	pcl723	lv_0017	Scoliosis	1
+32	pcl723	lv_0018	Low back pain	1
+33	pcl723	lv_0019	Upper extremity	1
+34	pcl723	lv_0020	Lower extremity	1
+35	pcl723	lv_0021	Cuboid syndrome	1
+36	pcl723	lv_0022	Summary	1
+37	pcl723	lv_0023	Acknowledgments	1
+38	pcl723	lv_0024	References	1
+39	pcl724	lv_0004	Preparticipation considerations	1
+40	pcl724	lv_0005	The athlete	1
+41	pcl724	lv_0006	The family and the athletic staff	1
+42	pcl724	lv_0007	The sport	1
+43	pcl724	lv_0008	Teammates and coach	1
+44	pcl724	lv_0009	Exercise physiology	1
+45	pcl724	lv_0010	Implications of diabetes complications	1
+46	pcl724	lv_0011	Hypoglycemia and Ketoacidosis	0
+47	pcl724	lv_0012	Ocular Changes	0
+48	pcl724	lv_0013	Neuropathy	0
+49	pcl724	lv_0014	Other	0
+50	pcl724	lv_0015	Diabetes management for the athlete	1
+51	pcl724	lv_0016	Insulin and Insulin Regimens	0
+52	pcl724	lv_0017	Carbohydrates for Hypoglycemia	0
+53	pcl724	lv_0018	Modulation of Insulin Delivery for Exercise	0
+54	pcl724	lv_0019	Glucagon	0
+55	pcl724	lv_0020	Resources	1
+56	pcl724	lv_0021	Summary	1
+57	pcl724	lv_0022	References	1
+58	pcl725	lv_0004	Mechanism of action	1
+59	pcl725	lv_0005	Salicylated NSAIDs	1
+60	pcl725	lv_0006	Nonsalicylated NSAIDs	1
+61	pcl725	lv_0007	Side effects of nonsalicylated NSAIDs	1
+62	pcl725	lv_0008	Gastrointestinal	0
+63	pcl725	lv_0009	Hepatotoxicity	0
+64	pcl725	lv_0010	Renal Toxicity	0
+65	pcl725	lv_0011	Cardiovascular Toxicity	0
+66	pcl725	lv_0012	Drug Interactions	0
+67	pcl725	lv_0013	Efficacy of NSAIDs in musculoskeletal injuries	1
+68	pcl725	lv_0014	Topical NSAIDs	1
+69	pcl725	lv_0015	Acetaminophen	0
+70	pcl725	lv_0016	Topical nonprescription analgesics	1
+71	pcl725	lv_0017	Methyl Salicylate	0
+72	pcl725	lv_0018	Camphor	0
+73	pcl725	lv_0019	Menthol	0
+74	pcl725	lv_0020	Capsaicin	0
+75	pcl725	lv_0021	Others	0
+76	pcl725	lv_0023	Use and abuse of analgesics	1
+77	pcl725	lv_0024	Summary	1
+78	pcl725	lv_0025	Acknowledgments	1
+79	pcl725	lv_0026	References	1
+80	pcl726	lv_0004	Physiology	1
+81	pcl726	lv_0005	The Role of Gender	0
+82	pcl726	lv_0006	Effect of Puberty	0
+83	pcl726	lv_0007	IDA	1
+84	pcl726	lv_0008	SUI	1
+85	pcl726	lv_0009	Breast issues	1
+86	pcl726	lv_0010	Effect of Exercise	0
+87	pcl726	lv_0011	Pain	0
+88	pcl726	lv_0012	Asymmetry	0
+89	pcl726	lv_0013	Galactorrhea	0
+90	pcl726	lv_0014	Menstruation and sports	1
+91	pcl726	lv_0015	Menstrual Physiology	0
+92	pcl726	lv_0016	Menstrual Cycles and Athletic Performance	0
+93	pcl726	lv_0017	Amenorrhea	0
+94	pcl726	lv_0018	Oral Contraceptives and Athletic Performance	0
+95	pcl726	lv_0019	Exercise and pregnancy	1
+96	pcl726	lv_0020	Female athlete triad	1
+97	pcl726	lv_0021	Disordered Eating	0
+98	pcl726	lv_0022	Anorexia Nervosa	0
+99	pcl726	lv_0023	Osteoporosis and Adolescence	0
+100	pcl726	lv_0024	Injuries	1
+101	pcl726	lv_0025	Breast injuries	1
+102	pcl726	lv_0026	Nipple Injury	0
+103	pcl726	lv_0027	Other Breast Injury	0
+104	pcl726	lv_0028	Summary	1
+105	pcl726	lv_0029	References	1
+106	pcl727	lv_0004	Methods of gene therapy or doping	1
+107	pcl727	lv_0005	Candidates for gene doping	1
+108	pcl727	lv_0006	Genes for Endurance	0
+109	pcl727	lv_0007	Genes for Strength	0
+110	pcl727	lv_0008	Genes for Tissue Repair/Other	0
+111	pcl727	lv_0009	Gene doping in practice—animal models	1
+112	pcl727	lv_0010	Gene doping in theory—human models	1
+113	pcl727	lv_0011	Performance Mutations and Polymorphisms	0
+114	pcl727	lv_0012	Risks of gene doping	1
+115	pcl727	lv_0013	Detection strategies	1
+116	pcl727	lv_0014	Direct Approach	0
+117	pcl727	lv_0015	Indirect Approach	0
+118	pcl727	lv_0016	Summary	1
+119	pcl727	lv_0017	References	1
+120	pcl729	lv_0004	Protection for consumers	1
+121	pcl729	lv_0005	Definitions	1
+122	pcl729	lv_0006	Anabolic steroids	1
+123	pcl729	lv_0007	Epidemiology	0
+124	pcl729	lv_0008	Effects	0
+125	pcl729	lv_0009	Adverse Effects	0
+126	pcl729	lv_0010	Use of Additional or Concomitant Doping Agents	0
+127	pcl729	lv_0011	Prevention	0
+128	pcl729	lv_0012	Other Anabolic-like Agents	0
+129	pcl729	lv_0013	DHEA	0
+130	pcl729	lv_0014	Androstenedione	0
+131	pcl729	lv_0015	Human growth hormone (hGH)	0
+132	pcl729	lv_0016	γ-Hydroxybutyrate	0
+133	pcl729	lv_0017	Clenbuterol	0
+134	pcl729	lv_0018	Others	0
+135	pcl729	lv_0019	Creatine	1
+136	pcl729	lv_0020	Stimulants	1
+137	pcl729	lv_0021	Ephedrine	0
+138	pcl729	lv_0022	Caffeine	0
+139	pcl729	lv_0023	Blood doping and EPO	1
+140	pcl729	lv_0024	Miscellaneous sports doping agents	1
+141	pcl729	lv_0025	Summary	1
+142	pcl729	lv_0026	References	1
+143	pcl730	lv_0004	Safety of resistance training	1
+144	pcl730	lv_0005	Evaluation before starting RT	1
+145	pcl730	lv_0006	Components of an RT program	1
+146	pcl730	lv_0007	Warm-up	0
+147	pcl730	lv_0008	Cool-down	0
+148	pcl730	lv_0009	Order of Exercises	0
+149	pcl730	lv_0010	Load or Intensity	0
+150	pcl730	lv_0011	Sets and Repetitions	0
+151	pcl730	lv_0012	Frequency	0
+152	pcl730	lv_0013	Rest Periods	0
+153	pcl730	lv_0014	Volume of Exercise	0
+154	pcl730	lv_0015	Types of exercises and muscle actions	1
+155	pcl730	lv_0016	Principles of training progression	1
+156	pcl730	lv_0017	Progressive Overload	0
+157	pcl730	lv_0018	Specificity	0
+158	pcl730	lv_0019	Periodization	0
+159	pcl730	lv_0020	Summary	1
+160	pcl730	lv_0022	References	1
+161	pcl731	lv_0004	SCD	1
+162	pcl731	lv_0005	Epidemiology	0
+163	pcl731	lv_0006	Causes	0
+164	pcl731	lv_0008	Cardiovascular screening	1
+165	pcl731	lv_0009	History and Physical Examination	0
+166	pcl731	lv_0012	Electrocardiogram	0
+167	pcl731	lv_0013	Physiology and cardiac remodeling	0
+168	pcl731	lv_0014	2-D ECHO	0
+169	pcl731	lv_0015	Genetic Testing	0
+170	pcl731	lv_0016	Other Tests	0
+171	pcl731	lv_0017	Summary	1
+172	pcl731	lv_0018	Acknowledgments	1
+173	pcl731	lv_0019	References	1
+174	pcl732	lv_0008	Classification of disability sports athletes	1
+175	pcl732	lv_0009	Sport preparticipation evaluation	1
+176	pcl732	lv_0010	Participation Guidelines	0
+177	pcl732	lv_0011	Psychosocial Considerations	0
+178	pcl732	lv_0012	Therapeutic Medication Use	0
+179	pcl732	lv_0013	Use of Ergogenic Aids	0
+180	pcl732	lv_0014	Musculoskeletal injuries	1
+181	pcl732	lv_0015	SCI	1
+182	pcl732	lv_0016	Thermoregulation	0
+183	pcl732	lv_0017	Autonomic Dysreflexia	0
+184	pcl732	lv_0018	Boosting	0
+185	pcl732	lv_0019	Myelomeningocele	1
+186	pcl732	lv_0020	Bowel and Bladder Control	0
+187	pcl732	lv_0021	Latex Allergy	0
+188	pcl732	lv_0022	Hydrocephalus and Shunt	0
+189	pcl732	lv_0023	Associated Conditions	0
+190	pcl732	lv_0024	Cerebral palsy	1
+191	pcl732	lv_0025	Wheelchair athletes	1
+192	pcl732	lv_0026	Pressure Sores	0
+193	pcl732	lv_0027	Amputee athletes	1
+194	pcl732	lv_0028	Visual impairment	1
+195	pcl732	lv_0029	Deaf athletes	1
+196	pcl732	lv_0030	Intellectual disability	1
+197	pcl732	lv_0031	Down syndrome	1
+198	pcl732	lv_0034	Summary	1
+199	pcl732	lv_0035	Acknowledgments	1
+200	pcl732	lv_0036	References	1
+201	pcl734	lv_0004	Epidemiology	1
+202	pcl734	lv_0005	Diagnosis	1
+203	pcl734	lv_0006	Management	1
+204	pcl734	lv_0008	Summary	1
+205	pcl734	lv_0009	References	1
+206	pcl735	lv_0004	Arthritis	1
+207	pcl735	lv_0005	Eye injuries	1
+208	pcl735	lv_0006	Solitary kidney	1
+209	pcl735	lv_0007	Skin conditions	1
+210	pcl735	lv_0008	Scoliosis	1
+211	pcl735	lv_0009	Kyphosis	1
+212	pcl735	lv_0010	Spondylolysis	1
+213	pcl735	lv_0011	Spondylolisthesis	1
+214	pcl735	lv_0012	Degenerative disc disease	1
+215	pcl735	lv_0013	Adolescent disc herniation	1
+216	pcl735	lv_0014	Slipped vertebral apophysis	1
+217	pcl735	lv_0015	Congenital abnormalities of the cervical spine	1
+218	pcl735	lv_0016	Stingers and burners	1
+219	pcl735	lv_0017	References	1
+220	pcl736	lv_0004	Definition	1
+221	pcl736	lv_0006	Epidemiology	1
+222	pcl736	lv_0007	Mechanism and pathophysiology	1
+223	pcl736	lv_0008	History	1
+224	pcl736	lv_0009	Review of systems	1
+225	pcl736	lv_0010	Neurologic examination	1
+226	pcl736	lv_0011	Cognitive function	1
+227	pcl736	lv_0012	NP testing	1
+228	pcl736	lv_0015	ANAM	0
+229	pcl736	lv_0016	CogSport	0
+230	pcl736	lv_0017	CRI	0
+231	pcl736	lv_0018	Immediate Postconcussion Assessment and Cognitive Testing (ImPACT)	0
+232	pcl736	lv_0019	SAC, eSAC	0
+233	pcl736	lv_0020	Validity of Computer-based NP Testing	0
+234	pcl736	lv_0021	Applications of Computer-based NP Testing	0
+235	pcl736	lv_0022	Neuroimaging	1
+236	pcl736	lv_0023	Differential diagnosis	1
+237	pcl736	lv_0024	Management	1
+238	pcl736	lv_0025	Adolescent Development	0
+239	pcl736	lv_0026	Severity Grading	0
+240	pcl736	lv_0027	Return to Play	0
+241	pcl736	lv_0028	Cognitive Rest	0
+242	pcl736	lv_0030	Athletes with Multiple Concussions	0
+243	pcl736	lv_0031	Recovery and outcome	1
+244	pcl736	lv_0032	Prevention	1
+245	pcl736	lv_0033	Acknowledgments	1
+246	pcl736	lv_0034	Appendix 1	0
+247	pcl736	lv_0035	Sport Concussion Assessment Tool 2 [SCAT2]	0
+248	pcl736	lv_0036	References	1
+249	pcl738	lv_0004	Search strategy	1
+250	pcl738	lv_0005	The basics about vitamin D	1
+251	pcl738	lv_0006	Sources	0
+252	pcl738	lv_0007	Vitamin D Requirements and Normal Levels	0
+253	pcl738	lv_0008	Mechanism of Vitamin D Action	0
+254	pcl738	lv_0009	Functions of Vitamin D	0
+255	pcl738	lv_0010	Role of vitamin D in muscle	1
+256	pcl738	lv_0011	Vitamin D–deficiency Myopathy	0
+257	pcl738	lv_0012	Molecular Mechanisms of Vitamin D Actions in Muscles	0
+258	pcl738	lv_0013	VDR Knockout Mice Model	0
+259	pcl738	lv_0014	VDR Polymorphisms in Muscle	0
+260	pcl738	lv_0015	Vitamin D and Histologic Changes in Muscle	0
+261	pcl738	lv_0016	Vitamin D and Cardiovascular Smooth Muscle Effects	0
+262	pcl738	lv_0017	Vitamin D deficiency (insufficiency) in athletes	1
+263	pcl738	lv_0018	Vitamin D and athletic performance	1
+264	pcl738	lv_0019	UV Radiation and Increased Physical Performance	0
+265	pcl738	lv_0020	Seasonality of Physical Performance	0
+266	pcl738	lv_0021	Vitamin D Deficiency and Obesity	0
+267	pcl738	lv_0022	Summary	1
+268	pcl738	lv_0023	Acknowledgments	1
+269	pcl738	lv_0024	References	1

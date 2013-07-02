@@ -1,0 +1,278 @@
+
+//make note java script
+
+function highlightsText()
+{
+   return highlightSelection("yellow");
+}
+
+function getXYpos(elem)
+{
+if (!elem)
+{
+return {"x":0,"y":0};
+}
+var xy={"x":elem.offsetLeft,"y":elem.offsetTop}
+var par=getXYpos(elem.offsetParent);
+for (var key in par)
+{       
+xy[key]+=par[key];
+}
+return xy;
+}
+function getNodePosition(node) {
+var top = left = 0;
+while (node) {        
+if (node.tagName) {
+top = top + node.offsetTop;
+left = left + node.offsetLeft;      
+node = node.offsetParent;
+} else {
+node = node.parentNode;
+}
+} 
+return [top, left];
+}
+
+function highlightSelection(colour) 
+{
+var range, sel;
+if (window.getSelection) 
+{
+sel = window.getSelection();
+if (sel.getRangeAt) {
+range = sel.getRangeAt(0);
+}
+document.designMode = "on";
+if (range) {
+sel.removeAllRanges();
+sel.addRange(range);
+}
+if ( !document.execCommand("CreateLink", false, colour) ) {
+
+document.execCommand("CreateLink", false, colour);
+}
+document.designMode = "off";
+} 
+else if (document.selection && document.selection.createRange) {
+range = document.selection.createRange();
+range.execCommand("BackColor", false, colour);
+}	
+var newDate = new Date;
+var randomnumber= newDate.getTime();    
+ReplaceContentInContainer2("a",randomnumber);
+var div = document.getElementById(randomnumber);
+var div1=div;
+var imageTag = document.createElement("img");
+imageTag.id=randomnumber;
+imageTag.setAttribute("src","notes.png");	
+var linkTxt = document.createElement("a");
+linkTxt.id=randomnumber;
+linkTxt.className="myhilightednotes";
+linkTxt.setAttribute("href","highlight:"+randomnumber); 
+linkTxt.appendChild(imageTag);       
+div.appendChild(linkTxt);
+div1.replaceChild(div, div1);	
+var big_coordinates=getXYpos(div1);
+var bp_x = big_coordinates['x'];
+var bp_y = big_coordinates['y']; 
+linkTxt.style.position = 'absolute'; 
+linkTxt.style.left =  0;
+linkTxt.style.top = bp_y;
+
+var range = window.getSelection().getRangeAt(0);
+return document.body.innerHTML+"<noteseparator>"+randomnumber+"<noteseparator>"+range.toString();
+    }
+    
+    
+    
+    
+    function ReplaceContentInContainer(selector, content) {
+    var nodeList = document.querySelectorAll(selector);
+    for (var i = 0, length = nodeList.length; i < length; i++) {
+        if(!nodeList[i].id)
+        nodeList[i].id = content;
+        }  
+        }
+        function ReplaceContentInContainer2(selector, content) 
+        {
+        var nodeList = document.querySelectorAll(selector);
+        for (var i = 0, length = nodeList.length; i < length; i++) 
+        {
+        //alert(nodeList[i].getAttribute("href"));
+        if(!nodeList[i].id&&nodeList[i].getAttribute("href")=="yellow")
+        {
+        nodeList[i].id = content;
+	    nodeList[i].setAttribute("href","highlight:"+content);
+        nodeList[i].style.color = "black";
+        nodeList[i].style.backgroundColor = "yellow";
+        nodeList[i].className="Applestylespan"
+        }
+        }
+        }    
+        function deletetagValue(nodeId)
+        {     
+        var elementbtn = document.getElementById(nodeId);
+        while(elementbtn)
+        {
+        if(elementbtn.className=="Applestylespan")
+        {		   
+		var text = elementbtn.textContent || elementbtn.innerText;
+		var node = document.createTextNode(text);
+		elementbtn.parentNode.replaceChild(node, elementbtn); 
+        }
+        else
+		elementbtn.parentNode.removeChild(elementbtn);
+        elementbtn = document.getElementById(nodeId); 
+        }   
+        }
+
+        
+        function ResetNoteImage()
+        {   
+       // alert("ResetNoteImage1");
+        var nodeList = document.querySelectorAll(".myhilightednotes");
+        for (var i = 0, length = nodeList.length; i < length; i++)
+        {
+        //alert("ResetNoteImage2");
+        if(nodeList[i].id)
+        {   
+       // alert("ResetNoteImage3");        
+        var big_coordinates=getNodePosition(nodeList[i].parentNode);
+        var bp_y = big_coordinates[0];                         
+        nodeList[i].style.top = bp_y;
+       // alert("ResetNoteImage4");
+        }
+        }       
+        }        
+        
+//        function deletetagValue(nodeId)
+//        {     
+//            var elementbtn = document.getElementById(nodeId);
+//            while(elementbtn)
+//            {
+//                if(elementbtn.className=="Apple-style-span")
+//                {		   
+//                    var text = elementbtn.textContent || elementbtn.innerText;
+//                    var node = document.createTextNode(text);
+//                    elementbtn.parentNode.replaceChild(node, elementbtn); 
+//                }
+//                else
+//                    elementbtn.parentNode.removeChild(elementbtn);
+//                elementbtn = document.getElementById(nodeId); 
+//            }   
+//        }
+
+
+
+
+function getInnerHtml() {
+ 
+	var innerText=document.body.innerHTML;
+    return innerText;
+}
+
+
+function checkPtaginrang(rangeDiv)
+{
+	var arrayC=rangeDiv.childNodes;
+	for(var i=0;i<arrayC.length;i++)
+	{
+		//alert(arrayC[i].nodeType);
+	}
+}
+
+
+
+
+function selectElementContents(el) {
+    var range;
+    if (window.getSelection && document.createRange) {
+        range = document.createRange();
+        var sel = window.getSelection();
+        range.selectNodeContents(el);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    } else if (document.body && document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(el);
+        range.select();
+    }
+}
+
+function highlightParagraph(){
+    selectElementContents(document.body);
+};
+
+function highlightsTextFromValue(range)
+{
+	
+	var selectionContents = range.extractContents();
+	var div = document.createElement("span");
+	div.style.backgroundColor = "yellow";
+	div.appendChild(selectionContents);
+	range.insertNode(div);
+
+}	
+
+
+
+function setSelectionRange(input, selectionStart, selectionEnd) {
+  if (input.setSelectionRange) {
+    input.focus();
+    input.setSelectionRange(selectionStart, selectionEnd);
+  }
+  else if (input.createTextRange) {
+    var range = input.createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', selectionEnd);
+    range.moveStart('character', selectionStart);
+    range.select();
+  }
+}
+ 
+function selectText(currentIndex, searchString) {
+//alert(currentIndex+" : "+searchString);
+	var input=document.body.nodeValue;
+    input.focus();
+    // make case insensitive
+    searchString = searchString.toLowerCase();
+    var text = input.value.toLowerCase();
+ 
+    // If selection at end - start from start
+    if(currentIndex == input.value.length)
+        currentIndex = 0;
+    // find string
+    var startIndex = text.indexOf(searchString);
+    var stringToSearch = input.value;
+    if (startIndex > 0) {
+        // string found
+        stringToSearch = stringToSearch.substr(currentIndex, stringToSearch.length);
+        // try and find one after selection
+        startIndex = stringToSearch.indexOf(searchString);
+        if (startIndex == 0) {
+            // String not found after selection - use first found index
+            startIndex = text.indexOf(searchString);
+        }
+        else {
+            // Move start index to next found occurence
+            startIndex = currentIndex + startIndex;
+        }
+    }
+    else {
+        alert("'"+searchString+"' was not found.");
+    }
+        
+    if (document.selection) {
+        // IE
+        input.selection = document.selection.createRange();
+        input.selection.findText(searchString, text.length);
+        input.selection.select();
+    }
+    else if(input.setSelectionRange) {
+        // FF
+        if (startIndex > 0) {
+           setSelectionRange(input, startIndex, startIndex + searchString.length);
+        }
+    }
+}

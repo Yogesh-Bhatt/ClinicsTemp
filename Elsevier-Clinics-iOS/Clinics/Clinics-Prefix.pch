@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'Clinics' target in the 'Clinics' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Constant.h"
+#import "BaseViewController.h"
+#import "CGlobal.h"
+#import "DatabaseConnection.h"
+#import "GANTracker.h"
+#import  "PersistenceDataStore.h"
+#import  "ClinicsSingletonManager.h"
+#import "MBProgressHUD.h"
+
+#endif

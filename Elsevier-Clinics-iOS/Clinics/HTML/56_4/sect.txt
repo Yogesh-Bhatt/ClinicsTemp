@@ -1,0 +1,295 @@
+refernce_id	article id	section_id	section_title	is_this_sub_section
+1	pcl633	lv_0004	Origins of small area analysis	1
+2	pcl633	lv_0005	Tonsillectomies in England and Wales from 1908 to 1938	0
+3	pcl633	lv_0006	John Wennberg and Medical Care in Vermont, Circa 1970	0
+4	pcl633	lv_0007	Pioneer studies in unwarranted variation in pediatric medical care	1
+5	pcl633	lv_0008	Methodological considerations	1
+6	pcl633	lv_0009	Interpreting variation in pediatric medical care	1
+7	pcl633	lv_0010	Variation in Effective Care	0
+8	pcl633	lv_0011	Variation in Preference-based Care	0
+9	pcl633	lv_0012	Variation in Supply-sensitive Care	0
+10	pcl633	lv_0013	Variation in Health Care Capacity	0
+11	pcl633	lv_0014	Future directions	1
+12	pcl633	lv_0015	Acknowledgments	1
+13	pcl633	lv_0016	References	1
+14	pcl634	lv_0004	Evolution of physician payment models	1
+15	pcl634	lv_0005	Controversies about pay for performance	1
+16	pcl634	lv_0006	The stakeholders in pay for performance	1
+17	pcl634	lv_0007	Physicians	0
+18	pcl634	lv_0008	Patients	0
+19	pcl634	lv_0009	Purchasers	0
+20	pcl634	lv_0010	Payers	0
+21	pcl634	lv_0011	Measurement for pay for performance	1
+22	pcl634	lv_0012	Use of Guidelines for Pay for Performance	0
+23	pcl634	lv_0013	Types of incentives for pay for performance	1
+24	pcl634	lv_0014	Financial Incentives	0
+25	pcl634	lv_0015	Nonfinancial Incentives	0
+26	pcl634	lv_0016	Unintended consequences of pay for performance	1
+27	pcl634	lv_0017	Examples of current pay for performance programs	1
+28	pcl634	lv_0018	Centers for Medicare and Medicaid Services	0
+29	pcl634	lv_0019	National Committee on Quality Assurance	0
+30	pcl634	lv_0020	Integrated Health Care Association	0
+31	pcl634	lv_0021	Approach to future pay for performance models	1
+32	pcl634	lv_0022	International pay for performance efforts	1
+33	pcl634	lv_0023	Summary	1
+34	pcl634	lv_0024	References	1
+35	pcl635	lv_0004	The role of hospitalists in creating, implementing, and sustaining clinical pathways	1
+36	pcl635	lv_0005	Creation of Pathways	0
+37	pcl635	lv_0006	Implementation of Pathways	0
+38	pcl635	lv_0007	Maintenance of Pathways	0
+39	pcl635	lv_0008	Future Directions	0
+40	pcl635	lv_0009	Pathways and standard order sets as teaching tools: the role of house staff	1
+41	pcl635	lv_0010	Future Directions	0
+42	pcl635	lv_0011	Summary	1
+43	pcl635	lv_0012	References	1
+44	pcl636	lv_0004	Registered nurses and patient outcomes	1
+45	pcl636	lv_0005	Nursing preparation and patient outcomes	1
+46	pcl636	lv_0006	Nursing skill mix and patient outcomes	1
+47	pcl636	lv_0007	Two key studies	1
+48	pcl636	lv_0008	Magnet hospital designation and patient outcomes	1
+49	pcl636	lv_0009	Interdisciplinary teams	1
+50	pcl636	lv_0010	Critical Communication Between Providers	0
+51	pcl636	lv_0011	Pediatric-specific efforts	1
+52	pcl636	lv_0012	Nursing initiatives	1
+53	pcl636	lv_0013	National Quality Forum	0
+54	pcl636	lv_0014	National Quality Forum–endorsed National Voluntary Consensus Standards for Nursing-sensitive Care	0
+55	pcl636	lv_0016	National Database for Nursing Quality Indicators	0
+56	pcl636	lv_0017	Translating Care at the Bedside	0
+57	pcl636	lv_0018	Planning for the pediatric health care workforce	1
+58	pcl636	lv_0019	Summary	1
+59	pcl636	lv_0020	Acknowledgments	1
+60	pcl636	lv_0021	References	1
+61	pcl638	lv_0004	Strategic approach to quality and safety	1
+62	pcl638	lv_0005	Leadership	1
+63	pcl638	lv_0006	Building will	1
+64	pcl638	lv_0007	Transparency	1
+65	pcl638	lv_0008	Business case for quality	1
+66	pcl638	lv_0009	Engaging patients and families	1
+67	pcl638	lv_0010	Infrastructure	1
+68	pcl638	lv_0011	Improvement capability	1
+69	pcl638	lv_0012	Reliability and standardization	1
+70	pcl638	lv_0013	Reliability examples from cincinnati children's hospital medical center	1
+71	pcl638	lv_0014	Application of Evidence for Common Conditions	0
+72	pcl638	lv_0015	Reducing Ventilator-associated Pneumonias	0
+73	pcl638	lv_0016	Transforming care at the national level	1
+74	pcl638	lv_0017	Creating urgency: the need to go public	1
+75	pcl638	lv_0018	Supportive public policy environment	1
+76	pcl638	lv_0019	Summary	1
+77	pcl638	lv_0020	References	1
+78	pcl639	lv_0004	What is quality improvement?	1
+79	pcl639	lv_0006	What is the science of quality improvement?	1
+80	pcl639	lv_0007	What is quality improvement research?	1
+81	pcl639	lv_0008	Integrating quality improvement and research	1
+82	pcl639	lv_0010	What resources and infrastructure are needed to combine quality improvement and research?	1
+83	pcl639	lv_0012	Acknowledgments	1
+84	pcl639	lv_0013	References	1
+85	pcl640	lv_0004	The current measurement landscape and pediatrics	1
+86	pcl640	lv_0006	Case study: development of the agency for healthcare research and quality pediatric quality indicators	1
+87	pcl640	lv_0007	Application of the agency for healthcare research and quality pediatric quality indicators	1
+88	pcl640	lv_0008	Challenges in indicator selection and use	1
+89	pcl640	lv_0009	Summary	1
+90	pcl640	lv_0010	Acknowledgements	1
+91	pcl640	lv_0011	References	1
+92	pcl641	lv_0004	References	1
+93	pcl642	lv_0004	Quality in the ambulatory environment: what is known?	1
+94	pcl642	lv_0006	Patient safety in the ambulatory environment: what is known?	1
+95	pcl642	lv_0007	Residency competencies relevant to quality improvement and safety	1
+96	pcl642	lv_0008	Graduate medical education requirements in pediatrics	1
+97	pcl642	lv_0009	Academic pediatric association educational guidelines	1
+98	pcl642	lv_0010	Value of the ambulatory setting for learning about quality and safety	1
+99	pcl642	lv_0011	Experience with resident training in quality improvement	1
+100	pcl642	lv_0012	Experience with resident training in patient safety	1
+101	pcl642	lv_0013	Experience with quality improvement training in pediatric ambulatory settings	1
+102	pcl642	lv_0014	Challenges to teaching QI and patient safety in ambulatory pediatrics	1
+103	pcl642	lv_0015	Future directions	1
+104	pcl642	lv_0016	References	1
+105	pcl643	lv_0004	Why this topic and why now?	1
+106	pcl643	lv_0005	Background and history	1
+107	pcl643	lv_0006	The fundamentals of quality improvement projects	1
+108	pcl643	lv_0007	Purposes of measurement and feedback	1
+109	pcl643	lv_0008	Optimal attributes of quality improvement measures	1
+110	pcl643	lv_0009	Tailoring to the Target Audience	0
+111	pcl643	lv_0010	Including Comprehensive Measures	0
+112	pcl643	lv_0011	Carefully Defining Measures	0
+113	pcl643	lv_0012	Minimizing Measurement Burden	0
+114	pcl643	lv_0013	Putting it All Together: A Balancing Act	0
+115	pcl643	lv_0014	The measurement development process	1
+116	pcl643	lv_0015	Establishing Operational Definitions	0
+117	pcl643	lv_0016	Collecting Data	0
+118	pcl643	lv_0017	Pilot Testing	0
+119	pcl643	lv_0018	Establishing Baselines and Setting Goals	0
+120	pcl643	lv_0019	Planning for Sustainability	0
+121	pcl643	lv_0020	Principles of quality improvement feedback	1
+122	pcl643	lv_0022	The Message: Is it Believable?	0
+123	pcl643	lv_0023	The Message: Is it in the Proper Context and can it be Sustained?	0
+124	pcl643	lv_0024	The Message: Does it Effectively Convey the Underlying Information?	0
+125	pcl643	lv_0025	The Messenger	0
+126	pcl643	lv_0026	Assuring sustainability of ongoing measurement	1
+127	pcl643	lv_0027	Measurement for supporting organizational performance	1
+128	pcl643	lv_0028	Summary	1
+129	pcl643	lv_0029	Acknowledgments	1
+130	pcl643	lv_0030	References	1
+131	pcl643	lv_0031	Glossary	1
+132	pcl644	lv_0004	What is quality?	1
+133	pcl644	lv_0005	The changing approach to quality	1
+134	pcl644	lv_0007	The case for reducing health care costs	1
+135	pcl644	lv_0008	Drivers of health care costs	1
+136	pcl644	lv_0011	The link between quality and cost	1
+137	pcl644	lv_0012	National drivers for quality improvement	1
+138	pcl644	lv_0014	Future directions in quality improvement	1
+139	pcl644	lv_0015	Comparing Quality—The Need for Risk Adjustment	0
+140	pcl644	lv_0016	The Value Proposition	0
+141	pcl644	lv_0017	Whose Responsibility is Quality?	0
+142	pcl644	lv_0018	Expanding Quality Measurement from a Systems Level to the Level of Individual Physicians	0
+143	pcl644	lv_0019	The Unintended Legal Implications of the Quality Movement	0
+144	pcl644	lv_0020	Shared Savings Model	0
+145	pcl644	lv_0021	Summary	1
+146	pcl644	lv_0022	Acknowledgments	1
+147	pcl644	lv_0023	References	1
+148	pcl645	lv_0004	Why worry about quality of care in pediatrics?	1
+149	pcl645	lv_0005	The scope of health policy in child health	1
+150	pcl645	lv_0006	The scope of health policy and the quality of children's health care	1
+151	pcl645	lv_0007	Health Insurance Coverage (Voltage Drops One and Two)	0
+152	pcl645	lv_0008	Appropriate Covered Benefits and Providers (Voltage Drop Three)	0
+153	pcl645	lv_0009	Realized Access to Comprehensive, Coordinated Services (Voltage Drops Four, Five and Six)	0
+154	pcl645	lv_0010	Evidence Base Available (Voltage Drop Seven)	0
+155	pcl645	lv_0011	Capacity to Improve (Voltage Drop Eight)	0
+156	pcl645	lv_0012	The future impact of policy on quality	1
+157	pcl645	lv_0013	Quality Measurement	0
+158	pcl645	lv_0014	Demonstrations	0
+159	pcl645	lv_0015	Health Information Technology	0
+160	pcl645	lv_0016	Accountability	0
+161	pcl645	lv_0017	Summary	1
+162	pcl645	lv_0018	References	1
+163	pcl646	lv_0004	Principles of continuous performance improvement	1
+164	pcl646	lv_0005	The Value Stream	0
+165	pcl646	lv_0006	Waste	0
+166	pcl646	lv_0007	Standard Work	0
+167	pcl646	lv_0008	Just-in-time	0
+168	pcl646	lv_0009	Built-in Quality	0
+169	pcl646	lv_0010	Rapid Process Improvement Workshop	0
+170	pcl646	lv_0011	Continuous performance improvement principles adapted to clinical practice	1
+171	pcl646	lv_0012	Central Line Process Improvements	0
+172	pcl646	lv_0013	Surgical Site Infections	0
+173	pcl646	lv_0014	Emergency Department Throughput	0
+174	pcl646	lv_0015	Continuous performance improvement in the academic teaching setting	1
+175	pcl646	lv_0016	A Unique Rapid Process Improvement Workshop: Improving the Experience of the Senior Inpatient Resident	0
+176	pcl646	lv_0017	Research applications	1
+177	pcl646	lv_0018	Institutional Review Board	0
+178	pcl646	lv_0019	Animal Care Services	0
+179	pcl646	lv_0020	Summary	1
+180	pcl646	lv_0021	References	1
+181	pcl647	lv_0004	Patient-reported outcomes	1
+182	pcl647	lv_0005	The role for parent proxy-report	1
+183	pcl647	lv_0006	Generic and disease-specific health-related quality of life instruments	1
+184	pcl647	lv_0007	Pediatric Quality of Life Inventory measurement model	1
+185	pcl647	lv_0008	Pediatric Quality of Life Inventory 4.0 generic core scales	1
+186	pcl647	lv_0009	International translations	1
+187	pcl647	lv_0010	Pediatric Quality of Life Inventory disease- and condition-specific modules	1
+188	pcl647	lv_0011	Pediatric Quality of Life Inventory asthma module	1
+189	pcl647	lv_0012	Pediatric Quality of Life Inventory arthritis/rheumatology module	1
+190	pcl647	lv_0013	Pediatric Quality of Life Inventory brain tumor module	1
+191	pcl647	lv_0014	Pediatric Quality of Life Inventory cancer module	1
+192	pcl647	lv_0015	Pediatric Quality of Life Inventory diabetes module	1
+193	pcl647	lv_0016	Pediatric Quality of Life Inventory cardiac module	1
+194	pcl647	lv_0017	Pediatric Quality of Life Inventory cerebral palsy module	1
+195	pcl647	lv_0018	Pediatric Quality of Life Inventory multidimensional fatigue scale	1
+196	pcl647	lv_0019	Responsiveness of the Pediatric Quality of Life Inventory	1
+197	pcl647	lv_0020	Minimal clinically important difference	1
+198	pcl647	lv_0021	Cut-point for at-risk status	1
+199	pcl647	lv_0022	Sensitivity of the Pediatric Quality of Life Inventory	1
+200	pcl647	lv_0023	Pediatric Quality of Life Inventory in pediatric clinical practice	1
+201	pcl647	lv_0024	Summary	1
+202	pcl647	lv_0025	References	1
+203	pcl648	lv_0004	Medical error and adverse events	1
+204	pcl648	lv_0005	Outcomes for cardiac arrest	1
+205	pcl648	lv_0006	Warning signs and symptoms	1
+206	pcl648	lv_0007	Outcome measures of pediatric rapid response systems	1
+207	pcl648	lv_0008	Implementation of a successful rapid response system	1
+208	pcl648	lv_0009	Case example: University of North Carolina-Chapel Hill	1
+209	pcl648	lv_0010	Case example: Levine Children's Hospital	1
+210	pcl648	lv_0013	Implementation of family activation	1
+211	pcl648	lv_0014	Use of rapid response system for quality improvement	1
+212	pcl648	lv_0015	Summary	1
+213	pcl648	lv_0016	References	1
+214	pcl649	lv_0004	Challenges for the United States health care delivery systems and primary care	1
+215	pcl649	lv_0005	Attributes of care provided in a medical home	1
+216	pcl649	lv_0006	Implementation of the high-quality medical home	1
+217	pcl649	lv_0007	Accessible Care	0
+218	pcl649	lv_0008	Family-centered Care	0
+219	pcl649	lv_0009	Continuous Care	0
+220	pcl649	lv_0010	Comprehensive Care	0
+221	pcl649	lv_0011	Coordinated Care	0
+222	pcl649	lv_0012	Compassionate Care	0
+223	pcl649	lv_0013	Culturally Effective Care	0
+224	pcl649	lv_0014	Measuring quality of the medical home	1
+225	pcl649	lv_0015	Medical Home Index	0
+226	pcl649	lv_0016	Medical Home Index—Short Version	0
+227	pcl649	lv_0017	Medical Home Family Index and Survey	0
+228	pcl649	lv_0018	National Committee for Quality Assurance's Physician Practice Connections—Patient-centered Medical Home standards	0
+229	pcl649	lv_0019	Medical Home Implementation Toolkit	0
+230	pcl649	lv_0020	Recent expansion of medical home initiatives to nonpediatric settings	1
+231	pcl649	lv_0021	Medicare Medical Home Demonstration Project	0
+232	pcl649	lv_0022	Patient-Centered Primary Care Collaborative	0
+233	pcl649	lv_0023	Barriers to achieving the medical home model	1
+234	pcl649	lv_0024	Acknowledgments	1
+235	pcl649	lv_0025	References	1
+236	pcl650	lv_0004	Identifying roles for health information technology within the Institute of Medicine definition of quality	1
+237	pcl650	lv_0005	Functional strategies for quality improvement	1
+238	pcl650	lv_0006	Types of health information technology tools for quality improvement	1
+239	pcl650	lv_0007	Federal strategies for using health information technology for quality improvement	1
+240	pcl650	lv_0008	State strategies for using health information technology for pediatric quality improvement	1
+241	pcl650	lv_0009	Private sector strategies for using health information technology for pediatric quality improvement	1
+242	pcl650	lv_0010	Disaster preparedness and using health information technology for pediatric quality improvement	1
+243	pcl650	lv_0011	On the horizon	1
+244	pcl650	lv_0012	Summary	1
+245	pcl650	lv_0013	References	1
+246	pcl651	lv_0003	Reference	1
+247	pcl652	lv_0003	References	1
+248	pcl653	lv_0004	The model for improvement	1
+249	pcl653	lv_0005	The Model Asks Three Fundamental Questions	0
+250	pcl653	lv_0006	What are we trying to accomplish?	0
+251	pcl653	lv_0008	How will we know if a change is an improvement?	0
+252	pcl653	lv_0009	What changes can we make that will result in an improvement?	0
+253	pcl653	lv_0010	Using Plan-Do-Study-Act Cycles to Test an Idea or Change	0
+254	pcl653	lv_0011	The P phase	0
+255	pcl653	lv_0012	The D phase	0
+256	pcl653	lv_0013	The S phase	0
+257	pcl653	lv_0014	The A phase	0
+258	pcl653	lv_0015	Case study	1
+259	pcl653	lv_0016	Identifying the Problem	0
+260	pcl653	lv_0017	Development of a Team	0
+261	pcl653	lv_0018	Case study (continued)	0
+262	pcl653	lv_0019	Using Quality Improvement Tools to Start a Project	0
+263	pcl653	lv_0020	Case study (continued)	0
+264	pcl653	lv_0022	Case study (continued)	0
+265	pcl653	lv_0023	Sustaining change	1
+266	pcl653	lv_0024	Case Study (Continued)	0
+267	pcl653	lv_0025	Super Smart Pediatrics sustainability plan	0
+268	pcl653	lv_0026	Spreading change	1
+269	pcl653	lv_0027	Advanced Improvement Methods	0
+270	pcl653	lv_0028	Case study (continued)	0
+271	pcl653	lv_0029	Summary	1
+272	pcl653	lv_0030	References	1
+273	pcl654	lv_0004	Part 1: comparing institutional performance	1
+274	pcl654	lv_0005	Comparative Neonatal ICU Hospital-Acquired Bloodstream Infection Performance Reports: How are We Doing? Do We Have a Problem?	0
+275	pcl654	lv_0006	Are the comparisons fair?	0
+276	pcl654	lv_0007	Evaluating a risk adjustment model	0
+277	pcl654	lv_0008	“Shrunken” estimates: multilevel risk adjustment models	0
+278	pcl654	lv_0009	So, how are we doing?	0
+279	pcl654	lv_0010	Neonatal ICU Hospital-Acquired Bloodstream Infection Improvement Networks	0
+280	pcl654	lv_0011	Part 2: collaborating to improve many institutions' performance	1
+281	pcl654	lv_0012	Neonatal ICU Hospital-Acquired Bloodstream Infection Improvement Networks	0
+282	pcl654	lv_0013	New York	0
+283	pcl654	lv_0014	Background, methods	0
+284	pcl654	lv_0015	Results	0
+285	pcl654	lv_0017	Discussion	0
+286	pcl654	lv_0018	California	0
+287	pcl654	lv_0019	Network overview	0
+288	pcl654	lv_0020	Performance reports	0
+289	pcl654	lv_0021	Identifying the right ways to do the right things	0
+290	pcl654	lv_0022	Connecting upstream process steps with downstream outcomes	0
+291	pcl654	lv_0023	The overarching challenge: promoting high reliability characteristics	0
+292	pcl654	lv_0024	Accounting for the cultural dimension of neonatal ICU care	0
+293	pcl654	lv_0025	Summary, Part 2	0
+294	pcl654	lv_0026	References	1

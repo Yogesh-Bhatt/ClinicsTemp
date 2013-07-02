@@ -1,0 +1,237 @@
+body {
+
+padding:10px;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px;
+}
+
+.normal{
+font-family: Arial, sans-serif;
+font-size: 10pt;
+margin-top: 0.0em;
+margin-bottom: 0.0em;
+margin-left: 0.00em;
+text-align: justify;
+}
+.normal1 span{
+font-family:Verdana;
+font-size:12px;
+text-align: left;color:#233d69; font-weight:600;
+}
+.normal1{
+font-family:Verdana;
+font-size:12px;
+text-align: left;color:#777777;
+}
+
+p.indent{
+font-family: GulliverRM;
+font-size: 14pt;
+margin-top: 0.0em;
+margin-bottom: 0.25em;
+text-indent: 1.00em;
+}
+p.indent1{
+font-family: GulliverRM;
+font-size: 14pt;
+margin-top: 0.10em;
+margin-bottom: 0.25em;
+text-indent: 0.00em;
+}
+
+p.bio{
+font-family: GulliverRM;
+font-size: 14pt;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+text-indent: 1.00em;
+}
+
+.abstract{
+font-family: Arial, sans-serif;
+font-size: 10pt;
+text-align: justify;
+}
+
+.info{
+font-family: GulliverRM;
+font-size: 13pt;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+text-align: justify;
+}
+
+.info1{
+font-family: Arial,sans-serif;
+font-size: 9pt;
+margin-top:0;
+}
+
+.au{
+font-family: GulliverRM;
+font-size: 12pt;
+margin-top: 0em;
+text-align: left;
+}
+
+.aff{
+font-family: GulliverRM;
+font-size: 12pt;
+text-align: left;
+margin-top: 0pt;
+margin-bottom: 0pt;
+}
+
+.tit{
+font-family: GulliverRM;
+font-weight: bold;
+font-size: 24pt;
+margin-top: .5em;
+text-align: left;
+color: #2A5170;
+}
+
+.htit{
+font-family: GulliverRM;
+font-size: 19pt;
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+text-align: center;
+}
+
+.level1{
+font-family:Verdana;
+font-weight: bold;
+font-size:14px;
+text-align:left;
+color:#333333;
+}
+
+.level11{
+font-family: Lucida Sans Unicode,Lucida Grande,sans-serif;
+font-weight: bold;
+font-size: 15pt;
+text-align: right;
+color: #fff;
+background-color:#1586AB;
+padding:5px;
+}
+
+.level2{
+font-family: Lucida Sans Unicode,Lucida Grande,sans-serif;
+font-weight: bold;
+font-size: 18pt;
+font-style: normal;
+margin-top: 1em;
+margin-bottom: 0.0em;
+margin-left: 0.0em;
+text-align: left;
+color: #fff;
+background-color:#ff9900;
+}
+
+.level3{
+font-family: GulliverRM;
+font-style: italic;
+font-size: 16pt;
+margin-top: 1em;
+margin-bottom: 0.5em;
+margin-left: 0.0em;
+text-align: left;
+}
+
+.box-head{
+font-family: GulliverRM;
+font-weight: bold;
+font-size: 18pt;
+font-style: normal;
+margin-top: 0;
+text-align: left;
+color: #000;
+}
+
+.level4{
+font-family: GulliverRM;
+font-style: italic;
+font-size: 14pt;
+margin-top: 0.5em;
+margin-bottom: 0.0em;
+margin-left: 0.0em;
+text-align: left;
+}
+
+.extract{
+font-family: GulliverRM;
+font-size: 12pt;
+margin-top: 1.00em;
+margin-bottom: 1.00em;
+margin-left: 2.00em;
+}
+
+.caption{
+font-family: GulliverRM;
+font-size: 14pt;
+margin-top: 1.00em;
+margin-bottom: 1.00em;
+text-align: left;
+color: #2A5170;
+}
+
+.ref{
+font-family: Arial, sans-serif;
+font-size: 10pt;
+text-align: left;
+margin-left: 1.5em;
+text-indent: -1.5em;
+}
+
+.lalpha{
+list-style-type: lower-alpha;
+}
+
+.lroman{
+list-style-type: lower-roman;
+}
+
+.art_info {
+	text-align: left;color:#000000; font-family:Verdana; font-size:12px; background:#FFFFFF; padding:5px;;
+	}
+.art_info ul li {margin-left:-25px}
+.art_info span{
+	text-align: left;color:#233d69; font-weight:600;
+	}
+	.art_info1 {
+	text-align: left;color:#000000; font-family:Verdana; font-size:12px; line-height:22px
+	}
+.art_info1 ul li {margin-left:-25px}
+.art_info1 span{
+	text-align: left;color:#233d69; font-weight:600;
+	}
+	hr{color:#dddddd; height:1px}
+.img{
+	text-align: center;
+}
+
+
+span.a{
+	color: #fff;
+}
+
+li {
+font-family: Arial, sans-serif;
+font-size: 10pt;
+}
+
+
+table tr th{
+font-family: GulliverRM;
+font-size: 14pt;
+}
+
+table tr td{
+font-family: GulliverRM;
+font-size: 14pt;
+}
+
+td{ border-bottom: solid black 1px; border-right: solid black 1px; border-top: solid black 1px;  vertical-align: top }
+th{ border-bottom: solid black 1px; border-right: solid black 1px; border-top: solid black 1px;  vertical-align: top }
+.main{border:1px solid #cccccc; padding:1px}
+.center{background:url(images/tbl-bg.jpg) repeat-y;padding:15px; }
