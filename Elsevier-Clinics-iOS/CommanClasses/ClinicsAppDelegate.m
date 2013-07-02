@@ -192,43 +192,15 @@
     if ([CGlobal checkNetworkReachabilityWithAlert])
     {
         
-        NSString  *isItLogin = [[NSUserDefaults standardUserDefaults] objectForKey:KisItLoginKey];
+
         
-        if ([isItLogin isEqualToString:@"YES"]) {
-            
-            nowLoginIsTrue = LoginYes;
-            UIAlertView   *subcriptionAlerView=[[UIAlertView  alloc] initWithTitle:@"" message:KOnlyInAppAlertMsgKey delegate:self cancelButtonTitle:nil otherButtonTitles:@"Buy Now…",@"Restore",@"Cancel",nil];
-            subcriptionAlerView.tag = kBuyAlertTag;
-            [subcriptionAlerView show];
-            [subcriptionAlerView release];
-            
-            
-        }else{
-            
             nowLoginIsTrue = LoginNo;
             UIAlertView   *subcriptionAlerView=[[UIAlertView  alloc] initWithTitle:@"" message:KInAppAndLoginAlertMsgKey  delegate:self cancelButtonTitle:nil otherButtonTitles:@"Buy Now…",@"Restore",@"Login",@"Cancel",nil];
             subcriptionAlerView.tag = kBuyAlertTag;
             [subcriptionAlerView show];
             [subcriptionAlerView release];
             
-        }
-        
-        
-        //        DatabaseConnection *dbConnection=[DatabaseConnection sharedController];
-        //        NSString   *featureID  = [dbConnection retriveFromClinicsTableFeatureID:[NSString stringWithFormat:@"select FeatureId from tblclinic where ClinicID=%d",a_clinicid]];
-        //
-        //        [MBProgressHUD showHUDAddedTo:self.window animated:YES];
-        //
-        //        NSLog(@"Rohit ActualBuy SelectedClinicID:%d featureID:%@",a_clinicid,featureID);
-        //        // ******************* here Call to purchage Clinics ********************
-        //        restoreBuyCheck = clickBuy;
-        //
-        //        [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
-        //            [self productPurchased:featureID Reciept:purchasedReceipt];
-        //        } onCancelled:^{
-        //            [self transactionCanceled];
-        //        }];
-        
+              
     }
     
 }
@@ -257,7 +229,7 @@
             
             //************* Here check user all ready purchage this Clinics in iPad ***********************************
             
-            [self showMessage:[NSString stringWithFormat:@"FeatureID:%@",featureID]];
+           // [self showMessage:[NSString stringWithFormat:@"FeatureID:%@",featureID]];
             
             
             

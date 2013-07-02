@@ -1064,7 +1064,7 @@
 
 -(void)changeImageLoginButton{
 	
-	ClinicsAppDelegate   *appDelegate=[UIApplication sharedApplication].delegate;
+	ClinicsAppDelegate   *appDelegate= (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
 	DatabaseConnection *database = [DatabaseConnection sharedController];
 	[loginButton setImage:[UIImage imageNamed:@"iPhone_Logout_btn.png"] forState:UIControlStateNormal];
 	appDelegate.authentication = [database retriveAuthenticationfromServer:[NSString stringWithFormat:@"SELECT authencation FROM tblClinic WHERE ClinicId = %d",appDelegate.seletedClinicID]];

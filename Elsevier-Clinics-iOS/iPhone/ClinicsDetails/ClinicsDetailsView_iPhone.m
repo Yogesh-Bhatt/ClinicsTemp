@@ -202,28 +202,28 @@
     //downloadDetailviewController.view.hidden = FALSE;
     
     if(check == FALSE){
-    downloadDetailviewController = [[DownloadDetailViewController_iPhone alloc]                                                         initWithNibName:@"DownloadDetailViewController_iPhone" bundle:nil];
-                                                                                                                                                 
-    [downloadDetailviewController refreshTblWith:nil];
-    
-    
-    if (downloadPopOverview)
-    {
-        [downloadPopOverview removeFromSuperview];
-        [downloadPopOverview release];
-        downloadPopOverview=nil;
-    }
-    
-    downloadPopOverview = [[UIView alloc] initWithFrame:CGRectMake(113,
-                                                                   35,
-                                                                   210,
-                                                                   390)];
-    
-    downloadPopOverview.backgroundColor = [UIColor blackColor];
+        downloadDetailviewController = [[DownloadDetailViewController_iPhone alloc]                                                         initWithNibName:@"DownloadDetailViewController_iPhone" bundle:nil];
         
-    [downloadPopOverview addSubview:downloadDetailviewController.view];
-    
-    [self.view addSubview:downloadPopOverview];
+        [downloadDetailviewController refreshTblWith:nil];
+        
+        
+        if (downloadPopOverview)
+        {
+            [downloadPopOverview removeFromSuperview];
+            [downloadPopOverview release];
+            downloadPopOverview=nil;
+        }
+        
+        downloadPopOverview = [[UIView alloc] initWithFrame:CGRectMake(113,
+                                                                       35,
+                                                                       210,
+                                                                       390)];
+        
+        downloadPopOverview.backgroundColor = [UIColor blackColor];
+        
+        [downloadPopOverview addSubview:downloadDetailviewController.view];
+        
+        [self.view addSubview:downloadPopOverview];
         check = TRUE;
         
     }
@@ -645,7 +645,7 @@
 
 -(void)ClickOnAbstractButton:(id)sender{
     
-	ClinicsAppDelegate   *appDelegate=[UIApplication sharedApplication].delegate;
+	ClinicsAppDelegate   *appDelegate= (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
 	UIButton  *btn=(UIButton *)sender;
 	buttnTag=btn.tag;
 	ClickInAbstractButton=TRUE;
@@ -945,6 +945,11 @@
 
 -(void)downloadIssue{
     
+    if ([CGlobal checkNetworkReachabilityWithAlert] == FALSE || [CGlobal checkNetworkReachabilityWithAlert] == NO) {
+        
+        return;
+        
+    }
     
     if(m_downloadQueueArr){
         
@@ -998,9 +1003,16 @@
         
         ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_downloadQueueArr objectAtIndex:0];
         
-        BOOL checkPurchase = TRUE;//[appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
+        BOOL checkPurchase = [appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
         
-        if(checkPurchase){
+        
+        NSString  *isItLogin = [[NSUserDefaults standardUserDefaults] objectForKey:KisItLoginKey];
+        
+        UIImage *Image = loginButton.currentImage;
+        
+
+        
+        if(checkPurchase || Image == [UIImage imageNamed:@"BtnLogout.png"] || [isItLogin isEqualToString:@"YES"]){
             
             downloadDetailviewController = [[DownloadDetailViewController_iPhone alloc]                                                         initWithNibName:@"DownloadDetailViewController_iPhone"
                                                                                                                                                          bundle:nil];
@@ -1014,15 +1026,15 @@
             
         }else{
             
-            // start listening for download completion
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(clinicPurchased)
-                                                         name:@"ClinicPurchased"
-                                                       object:nil];
-            
-            appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
-            
-            [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
+                // start listening for download completion
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(clinicPurchased)
+                                                             name:@"ClinicPurchased"
+                                                           object:nil];
+                
+                appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
+                
+                [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
             
         }
         

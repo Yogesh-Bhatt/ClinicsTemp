@@ -127,7 +127,6 @@
 - (IBAction)twitterButtonPressed:(id)sender
 { 
     ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-	RootViewController_iPhone  *rooview = (RootViewController_iPhone *)appDelegate.rootView_iPhone; 
 	HomeEditorView  *homeEditor=(HomeEditorView *)appDelegate.m_rootViewController.homeEditor;
 	BookMarksDetailsViewController_iPad  *bookmarks=(BookMarksDetailsViewController_iPad *)appDelegate.m_rootViewController.bookMarkDetailsView;
 	NotesDetailsViewController_iPad   *noteDeatils=(NotesDetailsViewController_iPad *)appDelegate.m_rootViewController.m_NotesDetailsView;

@@ -1216,20 +1216,10 @@
         
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         
-       // ClinicsAppDelegate *appDel = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
+      
         
         NSString *strUrl = [NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
         BOOL checkMatch = FALSE;
-//        
-//        for(int i =0 ;i<[appDel.m_downloadedConnectionArr count] ;i++){
-//            
-//            NSURLConnection *conn = (NSURLConnection *)[appDel.m_downloadedConnectionArr objectAtIndex:i];
-//            if([[conn currentRequest].URL.absoluteString isEqualToString:strUrl]){
-//                checkMatch = TRUE;
-//                NSLog(@"Match Found");
-//                break;
-//            }
-//        }
         checkMatch = [self currentUrlIsLoading:strUrl];
         
         if(!success && checkMatch == FALSE){
@@ -1261,7 +1251,11 @@
         
         BOOL check = [appDelegate isSubscriptionActive:appDelegate.seletedClinicID];
         
-        if(check){
+        NSString  *isItLogin = [[NSUserDefaults standardUserDefaults] objectForKey:KisItLoginKey];
+        
+        UIImage *Image = m_btnLogin.currentImage;
+        
+        if(check || Image == [UIImage imageNamed:@"BtnLogout.png"] || [isItLogin isEqualToString:@"YES"]){
             
             [self multipleArticleDownload];
             
@@ -1269,18 +1263,18 @@
             
             
         }else{
-            
-            // start listening for download completion
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(clinicPurchased)
-                                                         name:@"ClinicPurchased"
-                                                       object:nil];
-            
-            
-            
-            appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
-            
-            [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
+           
+               // start listening for download completion
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(clinicPurchased)
+                                                             name:@"ClinicPurchased"
+                                                           object:nil];
+                
+                
+                
+                appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
+                
+                [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
             
         }
         
@@ -1296,16 +1290,18 @@
 
 -(void)downloadIssue{
     
-    if([m_arrArticles count] == 0){
+    if ([CGlobal checkNetworkReachabilityWithAlert]) {
         
-        [CGlobal showMessage:@"" msg:@"There is no article to download."];
-        
-        return;
+        if([m_arrArticles count] == 0){
+            
+            [CGlobal showMessage:@"" msg:@"There is no article to download."];
+            
+            return;
+            
+        }
+        [self addArticlesInDownloadQueue:m_arrArticles];
         
     }
-    [self addArticlesInDownloadQueue:m_arrArticles];
-    
-    
     
 }
 
