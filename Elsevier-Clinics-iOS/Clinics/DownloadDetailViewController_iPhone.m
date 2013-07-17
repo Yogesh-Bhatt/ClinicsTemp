@@ -60,7 +60,7 @@ ClinicsAppDelegate *appDel;
     
     m_articleArr = [[NSArray arrayWithArray:a_articleArr] retain];
     
-
+    
     ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
     for(int i =0;i<[m_articleArr count];i ++){
         
@@ -69,8 +69,7 @@ ClinicsAppDelegate *appDel;
         ArticleDataHolder *obj = (ArticleDataHolder *)[m_articleArr objectAtIndex:i];
         
         cell = [[DownloadDeatilView_iPhoneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil downloadedCustomViewWithFrame:CGRectMake(0,0,200,40) withDownloadUrl:[NSString stringWithFormat:@"%@%@",dwonlodaUrl,obj.sArticleInfoId] withTitle:obj.sArticleTitle withSubTitle:obj.sArticleDescription];
-         //[arr addObject:cell];
-         [appDelT.m_downloadArticlesArr addObject:cell];
+        [appDelT.m_downloadArticlesArr addObject:cell];
         
     }
     NSLog(@"[arr count]== %d",[arr count]);
@@ -127,20 +126,23 @@ ClinicsAppDelegate *appDel;
 
 -(IBAction)clearAllDownloads:(id)sender{
     
-        ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-        
-        for(int i =0;i<[appDel.m_downloadedConnectionArr count];i++){
-            
-            NSURLConnection *conn = [appDel.m_downloadedConnectionArr objectAtIndex:i];
-            [conn cancel];
-            conn = nil;
-
-        }
-        [appDel.m_downloadedConnectionArr removeAllObjects];
-        [appDelT.m_downloadArticlesArr removeAllObjects];
-        [m_tableView reloadData];
+    ClinicsAppDelegate *appDelT = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
     
-       
+    for(int i =0;i<[appDel.m_downloadedConnectionArr count];i++){
+        
+        NSURLConnection *conn = [appDel.m_downloadedConnectionArr objectAtIndex:i];
+        [conn cancel];
+        conn = nil;
+        
+    }
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [appDel.m_downloadedConnectionArr removeAllObjects];
+    [appDelT.m_downloadArticlesArr removeAllObjects];
+    [m_tableView reloadData];
+    
+    
 }
 /*
  // Override to support conditional editing of the table view.

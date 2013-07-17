@@ -757,6 +757,24 @@
 	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/main.html",articleDataHolder.sArticleInfoId,articleDataHolder.sArticleInfoId]];
     
 	success=[fileManager fileExistsAtPath:writableDBPath];
+    
+    ////////////////////////////////////////if this article is in downloading process//////////////////////////////////////
+    
+    BOOL checkMatch = FALSE;
+    
+    NSString *strUrl = [NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
+    checkMatch = [self currentUrlIsLoading:strUrl];
+    
+    if(checkMatch){
+        
+        [CGlobal showMessage:@"" msg:@"This article is downloading."];
+        return;
+    }
+    
+    
+    ////////////////////////////////////////if this article is in downloading process//////////////////////////////////////
+    
+    
 	if(success){
         //********* Save Article is Read ***********//
         DatabaseConnection *database = [DatabaseConnection sharedController];
@@ -989,7 +1007,7 @@
     if([m_downloadQueueArr count] ==0)
     {
         
-        [CGlobal showMessage:@"" msg:@"All current issue's articles have already been downloaded."];
+        [CGlobal showMessage:@"" msg:@"All articles of current issue have been downloaded."];
         return;
     }
     

@@ -175,6 +175,7 @@
     
     NSString   *featureID  = [dbConnection retriveFromClinicsTableFeatureID:[NSString stringWithFormat:@"select FeatureId from tblclinic where ClinicID = %d",a_clinicId]];
     
+    //[self showMessage:[NSString stringWithFormat:@"FeatureID:%@",featureID]];
     NSLog(@"%@",featureID);
     
     BOOL   subcription = [[MKStoreManager sharedManager] isSubscriptionActive:featureID];
@@ -229,7 +230,7 @@
             
             //************* Here check user all ready purchage this Clinics in iPad ***********************************
             
-           // [self showMessage:[NSString stringWithFormat:@"FeatureID:%@",featureID]];
+           //[self showMessage:[NSString stringWithFormat:@"FeatureID:%@",featureID]];
             
             
             
@@ -537,7 +538,7 @@
     
     if([transactions count] == 0){
         
-        [self showMessage:@"Restore failed.You have not purchased any clinic."];
+        [self showMessage:@"Restore failed.You have not purchased any clinic yet."];
         return;
         
     }

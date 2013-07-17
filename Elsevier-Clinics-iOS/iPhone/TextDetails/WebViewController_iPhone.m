@@ -35,6 +35,10 @@
 {
     RELEASE(m_articleDataHolder);
 	RELEASE(aricleToCView);
+    if([m_webView isLoading]){
+        [m_webView stopLoading];
+        m_webView.delegate = nil;
+    }
     [m_webView release];
     RELEASE(m_pdfPath);
     [super dealloc];

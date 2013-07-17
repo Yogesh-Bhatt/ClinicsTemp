@@ -644,9 +644,11 @@
 	// ***************** chage login button if you have Auttencation  of this clinics*****************
     
 	ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-	
+
+    
 	if (authentication == 1 ) {
-		appDelegate.login = TRUE;
+		
+        appDelegate.login = TRUE;
 		[m_btnLogin setImage:[UIImage imageNamed:@"BtnLogout.png"] forState:UIControlStateNormal];
 		
 	}
@@ -1019,6 +1021,11 @@
 -(void)changeImageLoginButton{
 	
 	[m_btnLogin setImage:[UIImage imageNamed:@"BtnLogout.png"] forState:UIControlStateNormal];
+    DatabaseConnection *database = [DatabaseConnection sharedController];
+    ClinicsAppDelegate   *appDelegate = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
+
+    authentication = [database retriveAuthenticationfromServer:[NSString stringWithFormat:@"SELECT authencation FROM tblClinic WHERE ClinicId = %d", appDelegate.seletedClinicID]];
+    
 }
 
 
@@ -1329,6 +1336,7 @@
     
     [self multipleArticleDownload];
     
+    [CGlobal showMessage:@"" msg:@"Downloading start."];
     
 }
 

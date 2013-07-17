@@ -351,8 +351,8 @@
             
             UIButton *issuesCountBtn=[UIButton buttonWithType:UIButtonTypeCustom];
             
-            [issuesCountBtn setTitle:[NSString stringWithFormat:@"%d",newIssuesCount]
-                            forState:UIControlStateNormal];
+            //[issuesCountBtn setTitle:[NSString stringWithFormat:@"%d",newIssuesCount]
+             //               forState:UIControlStateNormal];
             
             [issuesCountBtn setBackgroundImage:img
                                       forState:UIControlStateNormal];

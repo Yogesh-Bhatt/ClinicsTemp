@@ -34,6 +34,10 @@
 - (void)dealloc
 {
     RELEASE(m_articleDataHolder);
+    if([m_webView isLoading]){
+        [m_webView stopLoading];
+        m_webView.delegate = nil;
+    }
     [m_webView release];
     RELEASE(sectionValueStr);
     [super dealloc];
@@ -154,11 +158,12 @@
 
 
 -(void)showWebViewSeletedOption {
+    
 	thisMenuController = [UIMenuController sharedMenuController];
-	
 	UIMenuItem *thirdMenu = [[[UIMenuItem alloc] initWithTitle:@"Add Note" action:@selector(highlightNotes)] autorelease];
 	[thisMenuController setMenuItems:[NSArray arrayWithObjects:thirdMenu, nil]];
 	[thisMenuController setMenuVisible:NO animated:YES];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

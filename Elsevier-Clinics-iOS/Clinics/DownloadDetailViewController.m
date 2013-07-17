@@ -134,6 +134,7 @@ ClinicsAppDelegate *appDel;
 
     }
 
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [appDel.m_downloadedConnectionArr removeAllObjects];
     [appDelT.m_downloadArticlesArr removeAllObjects];
     [m_tableView reloadData];
