@@ -19,7 +19,7 @@
 #import "DownloadController.h"
 #import "ListBackIssueController.h"
 #import "ZipArchive.h"
-
+#import "DownloadedArticleViewCell.h"
 
 @implementation ClinicDetailViewController
 @synthesize m_clinicDataHolder;
@@ -27,7 +27,7 @@
 @synthesize m_parentRootVC;
 @synthesize categoryName;
 @synthesize m_popoverController;
-@synthesize authentication;
+@synthesize authentication,m_tblClinicDetail;
 
 //*************** change view frame **********//
 - (void) didRotate:(id)sender
@@ -274,8 +274,10 @@
     reloadArticleType = reloadDownloadedArticles;
     DatabaseConnection *database = [DatabaseConnection sharedController];
     [m_arrArticles removeAllObjects];
+    m_arrArticles = nil;
+    m_lblTitle.text = @"Downloaded Articles";
     
-    m_arrArticles = [[database loadArticleDataWith:@"select * from tblArticle where downloadRank > 0 order by downloadRank desc limit 5"] retain];
+    m_arrArticles = [[database loadArticleDataWith:@"select ArticleId, IssueId, ArticleTitle, Abstract, ArticlehtmlFileName, LastModified, Author, ArticleType, IsArticleInPress, Bookmark, Read, PdfFileName, PageRange, keywords, ReleaseDate, ArticleInfoId, Doi_Link from tblArticle where downloadRank > 0 order by downloadRank desc limit 50"] retain];
     [m_tblClinicDetail reloadData];
     
     
@@ -477,7 +479,8 @@
     }
     
     //update or auto refresh
-    [appDelegate downLoadUpdateIssueInBackgound];
+    if(reloadArticleType == reloadClinics)
+        [appDelegate downLoadUpdateIssueInBackgound];
 }
 - (void)viewDidUnload
 {
@@ -612,16 +615,16 @@
             
              /// for downloaded Articles
             
-            ArticleCellView *cell1 = (ArticleCellView *)[CGlobal getViewFromXib:@"ArticleCellView" classname:[ArticleCellView class] owner:self];
+            DownloadedArticleViewCell *cell1 = (DownloadedArticleViewCell *)[CGlobal getViewFromXib:@"DownloadedArticleViewCell" classname:[DownloadedArticleViewCell class] owner:self];
             ArticleDataHolder *articleDataHolder = nil;
             if([m_arrArticles count]>0){
                 articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:indexPath.row];
             }
             
-            cell1.m_btnFreeArticle.tag=indexPath.row;
+            cell1.m_btnDeleteArticle.tag=indexPath.row;
             cell1.m_PDFBtn.tag=indexPath.row;
             cell1.m_HTMLBtn.tag=indexPath.row;
-            [cell1.m_btnFreeArticle addTarget:self action:@selector(ClickOnDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
+            [cell1.m_btnDeleteArticle addTarget:self action:@selector(ClickOnDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
             [cell1.m_HTMLBtn addTarget:self action:@selector(clickOnFullTextButton:) forControlEvents:UIControlEventTouchUpInside];
             [cell1.m_PDFBtn addTarget:self action:@selector(clickOnPDFButton:) forControlEvents:UIControlEventTouchUpInside];
             cell = cell1;
@@ -699,8 +702,8 @@
         if ([m_arrArticles count]>0) {
             
             articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row)];
-            [(ArticleCellView *)cell setData:articleDataHolder];
-            ((ArticleCellView *)cell).m_parent = self;
+            [(DownloadedArticleViewCell *)cell setData:articleDataHolder];
+            ((DownloadedArticleViewCell *)cell).m_parent = self;
             
         }
         
@@ -964,8 +967,12 @@
 	UIButton  *btn=(UIButton *)sender;
 	buttnTag=btn.tag;
 	
-	ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    ArticleDataHolder *articleDataHolder;
     
+    if(reloadArticleType == reloadClinics)
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    else
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
     
 	UIImage *Image=m_btnLogin.currentImage;
 	

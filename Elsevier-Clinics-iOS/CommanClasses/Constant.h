@@ -181,6 +181,15 @@ typedef enum {
     PdfText,
 }whichOptionYouwantToSee;
 
+typedef enum {
+    
+    reloadClinics = 1,
+    reloadDownloadedArticles
+    
+}ReloadArticleType;
+
+ReloadArticleType    reloadArticleType;
+
 
 typedef enum {
     LoginYes = 1,

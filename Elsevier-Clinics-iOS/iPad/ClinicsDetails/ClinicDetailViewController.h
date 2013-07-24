@@ -14,14 +14,7 @@
 #import "ClinicDetailHeaderCellView.h"
 #import "CAURLDownload.h"
 #import "DownloadDetailViewController.h"
-typedef enum {
-    
-    reloadClinics = 1,
-    reloadDownloadedArticles
-    
-}ReloadArticleType;
 
-ReloadArticleType    reloadArticleType;
 
 @class ListBackIssueController;
 @interface ClinicDetailViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate,ClinicDetailHeaderCellViewDelegate>
@@ -55,6 +48,8 @@ ReloadArticleType    reloadArticleType;
     DownloadDetailViewController *downloadDetailviewController;
     
 }
+
+@property (nonatomic, retain) UITableView *m_tblClinicDetail;
 @property (nonatomic,retain) UIPopoverController         *m_popoverController;
 @property (nonatomic,retain) NSString  *categoryName;
 @property (nonatomic, retain) ClinicsDataHolder   *m_clinicDataHolder;

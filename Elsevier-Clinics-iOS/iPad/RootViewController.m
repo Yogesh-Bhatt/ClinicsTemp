@@ -538,6 +538,7 @@ NSString  *isItLogin = [[NSUserDefaults standardUserDefaults] objectForKey:KisIt
 	
 	NSString *loginId = [[NSUserDefaults standardUserDefaults] objectForKey:@"Flag"];
 	if (appDelegate.clinicsDetails == kTAB_CLINICS) {
+        if(reloadArticleType == reloadClinics){
 	if ([loginId intValue] == 100) {
 		
 		[m_clinicDetailVC articleInpressClecnicDetails];
@@ -546,6 +547,10 @@ NSString  *isItLogin = [[NSUserDefaults standardUserDefaults] objectForKey:KisIt
 		
 		[m_clinicDetailVC setClinicDetailView];
 	}
+        }else{
+            
+            [m_clinicDetailVC loadLatestDownloadedArticles];
+        }
 	}
 	if (appDelegate.clinicsDetails == kTAB_BOOKMARKS) {
 		[bookMarkDetailsView  popToLastView];
