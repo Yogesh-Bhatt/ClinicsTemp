@@ -29,9 +29,9 @@
 	if (self)
 	{
 		self.backgroundColor = [UIColor clearColor] ;
-		self.innerColor = [UIColor lightGrayColor] ;
-		self.outerColor = [UIColor lightGrayColor] ;
-		self.emptyColor = [UIColor clearColor] ;
+		self.innerColor = [UIColor clearColor] ;
+		self.outerColor = [UIColor clearColor] ;
+		self.emptyColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"progressOuter.png"]] ;
 		if (frame.size.width == 0.0f){
 			frame.size.width = kProgressBarWidth ;
         }

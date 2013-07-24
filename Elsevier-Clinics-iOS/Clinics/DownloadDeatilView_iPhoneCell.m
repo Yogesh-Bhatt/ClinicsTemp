@@ -33,7 +33,7 @@
         m_lblTitle.frame=CGRectMake(xCord, yCord,180,15);
         m_lblTitle.backgroundColor=[UIColor clearColor];
         m_lblTitle.font = [UIFont boldSystemFontOfSize:10.0];
-        m_lblTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
+        m_lblTitle.textColor = [UIColor colorWithRed:38/255.0 green:166.0/255.0 blue:221.0/255.0 alpha:1.0];;
         m_lblTitle.textAlignment=UITextAlignmentLeft;
         m_lblTitle.text = a_title;
         [self addSubview:m_lblTitle];
@@ -59,7 +59,7 @@
         
         
         progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(5.0f, rect.size.height-18, self.bounds.size.width-155.0f, 15.0f)] ;
-        [progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
+       // [progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [progressView setInnerColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [self addSubview: progressView] ;
         [progressView release] ;
@@ -89,7 +89,7 @@
         m_lblPercetTitle.font = [UIFont boldSystemFontOfSize:10];
         m_lblPercetTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
         m_lblPercetTitle.textAlignment=UITextAlignmentCenter;
-        m_lblPercetTitle.text = [NSString stringWithFormat:@"Downloaded"];
+        m_lblPercetTitle.text = [NSString stringWithFormat:@"%@ Downloaded",@"0%"];
         [self addSubview:m_lblPercetTitle];
         [m_lblPercetTitle release];
         

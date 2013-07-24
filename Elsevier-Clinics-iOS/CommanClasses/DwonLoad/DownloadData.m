@@ -91,13 +91,17 @@
     // *************do something with the data*************
 	NSString *CancalRequest = [[NSUserDefaults standardUserDefaults] objectForKey:@"Cancel"];
     //NSLog(@"Succeeded! Received bytes of data");
+    BOOL ret = NO;
+    
 	if ([CancalRequest intValue]==100) {
 	ZipArchive *za = [[ZipArchive alloc] init];
         
         NSLog(@"%@",fileDocPath);
+       
+        
         
 	if ([za UnzipOpenFile: filePath]) {
-		BOOL ret = [za UnzipFileTo:fileDocPath overWrite: YES];
+		ret = [za UnzipFileTo:fileDocPath overWrite: YES];
 		if (NO == ret){
         
             NSLog(@"Error while unzip code rohit");
@@ -106,13 +110,32 @@
         [za UnzipCloseFile];
 	}
 	[za release];	
+      
+        DownloadController *downloadController=[DownloadController sharedController];
+        [downloadController stopLoadingFile];
         
+        if(ret == YES){
+            
+            NSArray *components =[fileDocPath componentsSeparatedByString:@"/"];
+            
+            NSString *zipFileNameTemp = nil;
+            
+            if([components count] > 2)
+                zipFileNameTemp = [components objectAtIndex:([components count]-2)];
+            
+            NSLog(@"999999999%@",zipFileNameTemp);
+            DatabaseConnection *database = [DatabaseConnection sharedController];
+            NSInteger count = [database GetArticlesCount:@"SELECT COUNT(*) FROM tblArticle where downloadRank > 0"];
+            [database   updateBookmarkInArticleData:[NSString stringWithFormat:@"UPDATE tblArticle SET downloadRank = %d where ArticleInfoId = '%@'",(count+1),zipFileNameTemp]];
+            
+        }
         
         ClinicsAppDelegate  *appDelegate = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
         
 		if (appDelegate.openHTMLADDNoteOpenView == FALSE) {
             //************* This Condition Only For Download Alert Come In Abstruct Please Add Note************
 		BOOL  articleListView=TRUE;
+            
 		if (appDelegate.aritcleListView == TRUE) {
 			if (appDelegate.diveceType  == isOne) {// here Ipad Code open
 				if (appDelegate.clinicsDetails==kTAB_CLINICS) {
@@ -192,7 +215,7 @@
 		NSError *error;
 
 		NSString  *file=  [fileDocPath substringToIndex:[fileDocPath length] - 1];
-		//NSLog(@" file %@",file);
+		NSLog(@" file %@",file);
             if([filemanager fileExistsAtPath:file]){
                 //NSLog(@"rohit removeItemAtPath4");
 			[filemanager removeItemAtPath:file error:&error];
@@ -217,9 +240,7 @@
     }
     
 
-	DownloadController *downloadController=[DownloadController sharedController];
-	[downloadController stopLoadingFile];
-
+	
 }
 
 - (void)didReceiveMemoryWarning {

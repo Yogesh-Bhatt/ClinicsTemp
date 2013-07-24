@@ -47,8 +47,10 @@
 -(void)initClinicListView;
 -(void)downlaodBackIssueFromServer;
 -(void)resheftCategoryBtnWithOffset:(int)increasedHeight:(BOOL)flag;
-- (IBAction) categoryButtonPressed:(id)sender;
 -(void)setFrameM_ScrollView;
 -(void)openlaststageIssuelevel;
+
+- (IBAction)categoryButtonPressed:(id)sender;
+- (IBAction)viewDownloadedArticles:(id)sender;
 
 @end

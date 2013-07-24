@@ -203,7 +203,7 @@
 
 -(void)setFrameM_ScrollView{
     
-	self.m_scrollView.frame=CGRectMake(0, 45, 320, 640);
+	self.m_scrollView.frame=CGRectMake(0, 45, 320, 580);
 	
 }
 
@@ -469,16 +469,25 @@
 	}
 }
 
+- (IBAction)viewDownloadedArticles:(id)sender{
+    
+     ClinicsAppDelegate *appDelegate = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+     [appDelegate.m_rootViewController.m_clinicDetailVC loadLatestDownloadedArticles];
+    
+    
+}
 
 -(void)ShowSelectedRowInTableView:(NSInteger)SelecedRow :(NSInteger)SeletedIndex{
     
-	 ClinicsAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	if (SelecedRow<1) {
+    ClinicsAppDelegate *appDelegate = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+    if (SelecedRow<1) {
 	if (SeletedIndex>=[m_arrClinics count]) {
 		SeletedIndex=[m_arrClinics count]-1;
 	}
-	ClinicsDataHolder *clinicDataHolder = (ClinicsDataHolder *)[m_arrClinics objectAtIndex:SeletedIndex];
-    
+	
+    ClinicsDataHolder *clinicDataHolder = (ClinicsDataHolder *)[m_arrClinics objectAtIndex:SeletedIndex];
    
     appDelegate.m_rootViewController.m_clinicDetailVC.m_clinicDataHolder = clinicDataHolder;
      

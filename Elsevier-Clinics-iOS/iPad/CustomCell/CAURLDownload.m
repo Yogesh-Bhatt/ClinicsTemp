@@ -17,7 +17,7 @@
 
 - (void)start {
     
-    NSURLRequest *req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:200];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:500];
     conn = [NSURLConnection connectionWithRequest:req delegate:self];
     data = [NSMutableData data];
     [data retain];

@@ -52,24 +52,24 @@
 #define IssueImageUrl    @"http://208.109.209.216/clinics/files/cover/"
 
 
-
-// temp urls
-// #define dwonlodaUrl                     @"http://208.109.209.216/clinics/files/"
-// #define selectedClinics                 @"http://208.109.209.216/clinics.test/fetchclinic.php?clinicid="
-// #define kdownloadIssue                  @"http://208.109.209.216/clinics.test/fetchissue.php?issueid="
-// #define kcheckupdateIssue               @"http://208.109.209.216/clinics.test/fetchissuecount.php?"
-// #define kdwonloadUpadteIssue            @"http://208.109.209.216/clinics.test/fetchissuelist.php?clinicid="
-// #define kdwonloadAricleInPress          @"http://208.109.209.216/clinics.test/fetchaiplist.php?clinicid="
-// #define  kdwonloadAllUpdateIssue        @"http://208.109.209.216/clinics.test/fetchissuelistv2.php?"
-// #define  KcurrentDataURL                @"http://208.109.209.216/clinics.test/fetchdbdate.php"
-// 
-// #define  KSubcriptionUpdateUrl               @"http://208.109.209.216/clinics/subscribe.php?deviceId="
-// #define  KIsItHaveSubcriptionUrl             @"http://208.109.209.216/clinics/verify_subscription.php?deviceId="
-// 
-// // login info
-// #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
-// #define IssueImageUrl    @"http://208.109.209.216/clinics/files/cover/"
-
+/*
+ //temp urls
+ #define dwonlodaUrl                     @"http://208.109.209.216/clinics/files/"
+ #define selectedClinics                 @"http://208.109.209.216/clinics.test/fetchclinic.php?clinicid="
+ #define kdownloadIssue                  @"http://208.109.209.216/clinics.test/fetchissue.php?issueid="
+ #define kcheckupdateIssue               @"http://208.109.209.216/clinics.test/fetchissuecount.php?"
+ #define kdwonloadUpadteIssue            @"http://208.109.209.216/clinics.test/fetchissuelist.php?clinicid="
+ #define kdwonloadAricleInPress          @"http://208.109.209.216/clinics.test/fetchaiplist.php?clinicid="
+ #define  kdwonloadAllUpdateIssue        @"http://208.109.209.216/clinics.test/fetchissuelistv2.php?"
+ #define  KcurrentDataURL                @"http://208.109.209.216/clinics.test/fetchdbdate.php"
+ 
+ #define  KSubcriptionUpdateUrl               @"http://208.109.209.216/clinics/subscribe.php?deviceId="
+ #define  KIsItHaveSubcriptionUrl             @"http://208.109.209.216/clinics/verify_subscription.php?deviceId="
+ 
+ // login info
+ #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
+ #define IssueImageUrl    @"http://208.109.209.216/clinics/files/cover/"
+*/
 
 #define SYMMETRICKEY   @"TVQYOXzYtbttR7SxGQ/YiQ=="
 #define CONSUMERID     @"Q1R2x66b3IZle6iT5XnvpWGZcMfKYW8G2FB8baY8BGw="

@@ -229,10 +229,12 @@
     m_arrArticles = [[database loadArticleData:[NSString stringWithFormat:@"%d",IssueID]] retain];
 	authentication = [database retriveAuthenticationfromServer:[NSString stringWithFormat:@"SELECT authencation FROM tblClinic WHERE ClinicId = %d", appDelegate.seletedClinicID]];
 	
+    reloadArticleType = reloadClinics;
+    
 	appDelegate.seletedIssuneID=[NSString stringWithFormat:@"%d",IssueID];
     [m_tblClinicDetail reloadData];
-    [self changeSizeNavigationBarTitle];
     
+    [self changeSizeNavigationBarTitle];
     [self setLoginButtonHidden];
 }
 
@@ -260,11 +262,25 @@
 	// *****************use forAuthecation*****************
 	authentication = [database retriveAuthenticationfromServer:[NSString stringWithFormat:@"SELECT authencation FROM tblClinic WHERE ClinicId = %d", appDelegate.seletedClinicID]];
 	
+    reloadArticleType = reloadClinics;
+    
     [m_tblClinicDetail reloadData];
     
     
 }
 
+-(void)loadLatestDownloadedArticles{
+    
+    reloadArticleType = reloadDownloadedArticles;
+    DatabaseConnection *database = [DatabaseConnection sharedController];
+    [m_arrArticles removeAllObjects];
+    
+    m_arrArticles = [[database loadArticleDataWith:@"select * from tblArticle where downloadRank > 0 order by downloadRank desc limit 5"] retain];
+    [m_tblClinicDetail reloadData];
+    
+    
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -307,6 +323,7 @@
 {
     [super viewDidLoad];
 	
+    reloadArticleType = reloadClinics;
     // Do any additional setup after loading the view from its nib
     
     m_addclinicsBtn.hidden=FALSE;
@@ -350,7 +367,7 @@
     downloadPopOverBtn.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 	[downloadPopOverBtn setBackgroundImage:[UIImage imageNamed:@"icon_download.png"] forState:UIControlStateNormal];
 	[downloadPopOverBtn addTarget:self action:@selector(downloadPopOver:) forControlEvents:UIControlEventTouchUpInside];
-	[self .view addSubview:downloadPopOverBtn];
+	[self.view addSubview:downloadPopOverBtn];
     
     // start listening for download completion
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -456,9 +473,9 @@
         CGRect rect = downloadPopOverBtn.frame;
         rect.origin.x = 710;
         downloadPopOverBtn.frame = rect;
-
+        
     }
-
+    
     //update or auto refresh
     [appDelegate downLoadUpdateIssueInBackgound];
 }
@@ -490,6 +507,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(reloadArticleType == reloadClinics){
     switch (indexPath.row)
     {
         case 0:
@@ -500,25 +518,37 @@
             return 110.0;
             break;
     }
+    }else{
+        return 110.0;
+
+    }
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    sectionView = (TableSectionView *)[CGlobal getViewFromXib:@"TableSectionView" classname:[TableSectionView class] owner:self];
-    sectionView.m_lblTitle.text = self.m_clinicDataHolder.sClinicTitle;
-	sectionView.m_lblTitle.hidden=TRUE;
-	sectionView.seletedBtn.hidden=TRUE;
-	[sectionView changeImageOnclickButton:FALSE];
-	[sectionView.issueButton addTarget:self action:@selector(ClickOnIssueButton:) forControlEvents:UIControlEventTouchUpInside];
-	[sectionView.ariticleButton addTarget:self action:@selector(ClickOnAtricleButton:) forControlEvents:UIControlEventTouchUpInside];
-    
-    return sectionView;
+    if(reloadArticleType == reloadClinics){
+        sectionView = (TableSectionView *)[CGlobal getViewFromXib:@"TableSectionView" classname:[TableSectionView class] owner:self];
+        sectionView.m_lblTitle.text = self.m_clinicDataHolder.sClinicTitle;
+        sectionView.m_lblTitle.hidden=TRUE;
+        sectionView.seletedBtn.hidden=TRUE;
+        [sectionView changeImageOnclickButton:FALSE];
+        [sectionView.issueButton addTarget:self action:@selector(ClickOnIssueButton:) forControlEvents:UIControlEventTouchUpInside];
+        [sectionView.ariticleButton addTarget:self action:@selector(ClickOnAtricleButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        return sectionView;
+    }else{
+        return nil;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ([m_arrArticles count] + 1);
+    if(reloadArticleType == reloadClinics){
+        return ([m_arrArticles count] + 1);
+    }else{
+        return [m_arrArticles count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -529,122 +559,156 @@
     
     if (cell == nil)
 	{
-        switch (indexPath.row)
-        {
-            case 0:{
-                
-                ClinicDetailHeaderCellView *cellTemp = [CGlobal getViewFromXib:@"ClinicDetailHeaderCellView" classname:[ClinicDetailHeaderCellView class] owner:self];
-                
-                cellTemp.callerDelegate = self;
-                
-                if(aritcleInPressFlag == FALSE)
-                    cellTemp.m_downloadBtn.hidden = FALSE;
-                
-                
-                //****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
-                
-                if([m_arrArticles count]>0){
-                    ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:0];
-                    if (articleDataHolder.nIsArticleInPress == 1) {
-                        ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = YES;
-                    }else{
-                        ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = NO;
+        if(reloadArticleType == reloadClinics){
+            switch (indexPath.row)
+            {
+                case 0:{
+                    
+                    ClinicDetailHeaderCellView *cellTemp = [CGlobal getViewFromXib:@"ClinicDetailHeaderCellView" classname:[ClinicDetailHeaderCellView class] owner:self];
+                    
+                    cellTemp.callerDelegate = self;
+                    
+                    if(aritcleInPressFlag == FALSE)
+                        cellTemp.m_downloadBtn.hidden = FALSE;
+                    
+                    
+                    //****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
+                    
+                    if([m_arrArticles count]>0){
+                        ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:0];
+                        if (articleDataHolder.nIsArticleInPress == 1) {
+                            ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = YES;
+                        }else{
+                            ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = NO;
+                        }
                     }
+                    cell = cellTemp;
                 }
-                cell = cellTemp;
+                    //****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
+                    break;
+                    
+                default:{
+                    
+                    ArticleCellView *cell1 = (ArticleCellView *)[CGlobal getViewFromXib:@"ArticleCellView" classname:[ArticleCellView class] owner:self];
+                    ArticleDataHolder *articleDataHolder = nil;
+                    if([m_arrArticles count]>0){
+                        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:indexPath.row-1];
+                    }
+                    if ([articleDataHolder.sAbstract length]==0) {
+                        cell1.m_btnFreeArticle.enabled=FALSE;
+                    }
+                    
+                    cell1.m_btnFreeArticle.tag=indexPath.row;
+                    cell1.m_PDFBtn.tag=indexPath.row;
+                    cell1.m_HTMLBtn.tag=indexPath.row;
+                    [cell1.m_btnFreeArticle addTarget:self action:@selector(ClickOnAbstractButton:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell1.m_HTMLBtn addTarget:self action:@selector(clickOnFullTextButton:) forControlEvents:UIControlEventTouchUpInside];
+                    [cell1.m_PDFBtn addTarget:self action:@selector(clickOnPDFButton:) forControlEvents:UIControlEventTouchUpInside];
+                    cell = cell1;
+                    break;
+                }
             }
-                //****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
-                break;
-                
-            default:{
-				
-                ArticleCellView *cell1 = (ArticleCellView *)[CGlobal getViewFromXib:@"ArticleCellView" classname:[ArticleCellView class] owner:self];
-                ArticleDataHolder *articleDataHolder = nil;
-                if([m_arrArticles count]>0){
-                    articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:indexPath.row-1];
-                }
-				if ([articleDataHolder.sAbstract length]==0) {
-					cell1.m_btnFreeArticle.enabled=FALSE;
-				}
-				
-				cell1.m_btnFreeArticle.tag=indexPath.row;
-				cell1.m_PDFBtn.tag=indexPath.row;
-				cell1.m_HTMLBtn.tag=indexPath.row;
-				[cell1.m_btnFreeArticle addTarget:self action:@selector(ClickOnAbstractButton:) forControlEvents:UIControlEventTouchUpInside];
-				[cell1.m_HTMLBtn addTarget:self action:@selector(clickOnFullTextButton:) forControlEvents:UIControlEventTouchUpInside];
-				[cell1.m_PDFBtn addTarget:self action:@selector(clickOnPDFButton:) forControlEvents:UIControlEventTouchUpInside];
-				cell = cell1;
-				break;
-			}
+        }else{
+            
+             /// for downloaded Articles
+            
+            ArticleCellView *cell1 = (ArticleCellView *)[CGlobal getViewFromXib:@"ArticleCellView" classname:[ArticleCellView class] owner:self];
+            ArticleDataHolder *articleDataHolder = nil;
+            if([m_arrArticles count]>0){
+                articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:indexPath.row];
+            }
+            
+            cell1.m_btnFreeArticle.tag=indexPath.row;
+            cell1.m_PDFBtn.tag=indexPath.row;
+            cell1.m_HTMLBtn.tag=indexPath.row;
+            [cell1.m_btnFreeArticle addTarget:self action:@selector(ClickOnDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
+            [cell1.m_HTMLBtn addTarget:self action:@selector(clickOnFullTextButton:) forControlEvents:UIControlEventTouchUpInside];
+            [cell1.m_PDFBtn addTarget:self action:@selector(clickOnPDFButton:) forControlEvents:UIControlEventTouchUpInside];
+            cell = cell1;
+            
         }
 	}
     
-    switch (indexPath.row)
-    {
-        case 0:
+    if(reloadArticleType == reloadClinics){
+        switch (indexPath.row)
         {
-            BOOL success;
-			NSFileManager *fileManager=[NSFileManager defaultManager];
-			NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
-			NSString *documentsDirectory=[paths objectAtIndex:0];
-			NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",self.m_issueDataHolder.cover_Img]];
-			success=[fileManager fileExistsAtPath:writableDBPath];
-			if(success){
-				((ClinicDetailHeaderCellView *)cell).m_imgView.image= [UIImage imageWithContentsOfFile:writableDBPath];
-			}else {
-				if (self.m_issueDataHolder.cover_Img!=nil) {
-					
-					UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-					activity.frame = CGRectMake(10, 30, 37, 37);
-					[activity startAnimating];
-					[((ClinicDetailHeaderCellView *)cell).m_imgView addSubview:activity];
-					NSDictionary* dict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:((ClinicDetailHeaderCellView *)cell).m_imgView,activity,self.m_issueDataHolder.cover_Img,nil] forKeys:[NSArray arrayWithObjects:@"thumb",@"activity",@"imgStr",nil]];
-					[NSThread detachNewThreadSelector:@selector(loadImage:) toTarget:self withObject:dict];
-					[activity release];
-					[dict release];
-				}
-				
-			}
-            
-            ((ClinicDetailHeaderCellView *)cell).m_lblClinicTitle.text = self.m_clinicDataHolder.sClinicTitle;
-			NSString  *strDate= self.m_issueDataHolder.sReleaseDate;
-            
-			NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
-			[dateForm setDateFormat:@"yyyy-MM-dd"];
-			NSDate *newDate = [dateForm dateFromString:strDate];
-			[dateForm setDateFormat:@"MMM YYYY"];
-			NSString *newDateStr = [dateForm stringFromDate:newDate];
-			
-			[dateForm release];
-			
-			
-            ((ClinicDetailHeaderCellView *)cell).m_lblDate.text = newDateStr;
-            ((ClinicDetailHeaderCellView *)cell).m_lblIssueTitle.text = self.m_issueDataHolder.sIssueTitle;
-			((ClinicDetailHeaderCellView *)cell).m_lblConsultingEditor.text = self.m_clinicDataHolder.sConsultingEditor;
-			if (self.m_issueDataHolder.sIssueTitle<=0) {
-				((ClinicDetailHeaderCellView *)cell).m_lblClinicTitle.text=@"This Clinics title does not have any issues on the server.";
-			  	
-			}
-            
-        }
-            break;
-            
-        default:
-        {
-            ArticleDataHolder *articleDataHolder ;
-            if ([m_arrArticles count]>0) {
-                articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row - 1)];
-                [(ArticleCellView *)cell setData:articleDataHolder];
-                ((ArticleCellView *)cell).m_parent = self;
+            case 0:
+            {
+                BOOL success;
+                NSFileManager *fileManager=[NSFileManager defaultManager];
+                NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+                NSString *documentsDirectory=[paths objectAtIndex:0];
+                NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",self.m_issueDataHolder.cover_Img]];
+                success=[fileManager fileExistsAtPath:writableDBPath];
+                if(success){
+                    ((ClinicDetailHeaderCellView *)cell).m_imgView.image= [UIImage imageWithContentsOfFile:writableDBPath];
+                }else {
+                    if (self.m_issueDataHolder.cover_Img!=nil) {
+                        
+                        UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                        activity.frame = CGRectMake(10, 30, 37, 37);
+                        [activity startAnimating];
+                        [((ClinicDetailHeaderCellView *)cell).m_imgView addSubview:activity];
+                        NSDictionary* dict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:((ClinicDetailHeaderCellView *)cell).m_imgView,activity,self.m_issueDataHolder.cover_Img,nil] forKeys:[NSArray arrayWithObjects:@"thumb",@"activity",@"imgStr",nil]];
+                        [NSThread detachNewThreadSelector:@selector(loadImage:) toTarget:self withObject:dict];
+                        [activity release];
+                        [dict release];
+                    }
+                    
+                }
+                
+                ((ClinicDetailHeaderCellView *)cell).m_lblClinicTitle.text = self.m_clinicDataHolder.sClinicTitle;
+                NSString  *strDate= self.m_issueDataHolder.sReleaseDate;
+                
+                NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+                [dateForm setDateFormat:@"yyyy-MM-dd"];
+                NSDate *newDate = [dateForm dateFromString:strDate];
+                [dateForm setDateFormat:@"MMM YYYY"];
+                NSString *newDateStr = [dateForm stringFromDate:newDate];
+                
+                [dateForm release];
+                
+                
+                ((ClinicDetailHeaderCellView *)cell).m_lblDate.text = newDateStr;
+                ((ClinicDetailHeaderCellView *)cell).m_lblIssueTitle.text = self.m_issueDataHolder.sIssueTitle;
+                ((ClinicDetailHeaderCellView *)cell).m_lblConsultingEditor.text = self.m_clinicDataHolder.sConsultingEditor;
+                if (self.m_issueDataHolder.sIssueTitle<=0) {
+                    ((ClinicDetailHeaderCellView *)cell).m_lblClinicTitle.text=@"This Clinics title does not have any issues on the server.";
+                    
+                }
+                
             }
+                break;
+                
+            default:
+            {
+                ArticleDataHolder *articleDataHolder ;
+                if ([m_arrArticles count]>0) {
+                    articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row - 1)];
+                    [(ArticleCellView *)cell setData:articleDataHolder];
+                    ((ArticleCellView *)cell).m_parent = self;
+                }
+            }
+                break;
         }
-            break;
+    }else{
+        
+        
+        /// for downloaded Articles
+        ArticleDataHolder *articleDataHolder ;
+        if ([m_arrArticles count]>0) {
+            
+            articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row)];
+            [(ArticleCellView *)cell setData:articleDataHolder];
+            ((ArticleCellView *)cell).m_parent = self;
+            
+        }
+        
     }
-    
 	// ***************** chage login button if you have Auttencation  of this clinics*****************
     
 	ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-
+    
     
 	if (authentication == 1 ) {
 		
@@ -721,6 +785,9 @@
     
 	DatabaseConnection *database = [DatabaseConnection sharedController];
     m_arrArticles = [[database loadArticleData:self.m_issueDataHolder.sIssueID] retain];
+    
+    reloadArticleType = reloadClinics;
+    
     [m_tblClinicDetail reloadData];
 }
 
@@ -740,6 +807,7 @@
 	DatabaseConnection *database = [DatabaseConnection sharedController];
     //******** Load Article Data *************//
 	m_arrArticles = [[database loadIsuureData:self.m_issueDataHolder.nClinicID] retain];
+    reloadArticleType = reloadClinics;
 	[m_tblClinicDetail reloadData];
 	
 }
@@ -925,7 +993,7 @@
     
     
     ////////////////////////////////////////if this article is in downloading process//////////////////////////////////////
-
+    
     
     if(success) {
         //********* Save Article is Read ***********//
@@ -1023,7 +1091,7 @@
 	[m_btnLogin setImage:[UIImage imageNamed:@"BtnLogout.png"] forState:UIControlStateNormal];
     DatabaseConnection *database = [DatabaseConnection sharedController];
     ClinicsAppDelegate   *appDelegate = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
-
+    
     authentication = [database retriveAuthenticationfromServer:[NSString stringWithFormat:@"SELECT authencation FROM tblClinic WHERE ClinicId = %d", appDelegate.seletedClinicID]];
     
 }
@@ -1086,6 +1154,7 @@
 	
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
+    NSLog(@"%@",dictData);
     NSString *temStr = [dictData objectForKey:@"imgStr"];
     NSString *imageStr = IssueImageUrl;
     
@@ -1189,10 +1258,10 @@
             break;
         }
     }
-
+    
     return checkMatch;
-
-
+    
+    
 }
 
 -(void)addArticlesInDownloadQueue:(NSArray *)a_articleArr{
@@ -1223,7 +1292,7 @@
         
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         
-      
+        
         
         NSString *strUrl = [NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
         BOOL checkMatch = FALSE;
@@ -1270,18 +1339,18 @@
             
             
         }else{
-           
-               // start listening for download completion
-                [[NSNotificationCenter defaultCenter] addObserver:self
-                                                         selector:@selector(clinicPurchased)
-                                                             name:@"ClinicPurchased"
-                                                           object:nil];
-                
-                
-                
-                appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
-                
-                [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
+            
+            // start listening for download completion
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(clinicPurchased)
+                                                         name:@"ClinicPurchased"
+                                                       object:nil];
+            
+            
+            
+            appDelegate.downLoadUrl=[NSString stringWithFormat:@"%@%@",dwonlodaUrl,articleDataHolder.sArticleInfoId];
+            
+            [appDelegate  purchasedClinicWithID:appDelegate.seletedClinicID];
             
         }
         
@@ -1290,7 +1359,7 @@
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
     
-
+    
 }
 
 #pragma mark <clinicDeatilHeaderCellViewDelegate>
@@ -1325,7 +1394,7 @@
     [downloadPopOverController setPopoverContentSize:CGSizeMake(320,768)];
     
     m_numberOfDownload = [m_downloadQueueArr count];
-
+    
 }
 
 -(void)clinicPurchased{

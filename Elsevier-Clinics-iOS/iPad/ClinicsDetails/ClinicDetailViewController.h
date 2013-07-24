@@ -14,6 +14,14 @@
 #import "ClinicDetailHeaderCellView.h"
 #import "CAURLDownload.h"
 #import "DownloadDetailViewController.h"
+typedef enum {
+    
+    reloadClinics = 1,
+    reloadDownloadedArticles
+    
+}ReloadArticleType;
+
+ReloadArticleType    reloadArticleType;
 
 @class ListBackIssueController;
 @interface ClinicDetailViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate,ClinicDetailHeaderCellViewDelegate>
@@ -47,28 +55,29 @@
     DownloadDetailViewController *downloadDetailviewController;
     
 }
-@property(nonatomic,retain) UIPopoverController         *m_popoverController; 
-@property(nonatomic,retain)NSString  *categoryName;
-@property(nonatomic, retain)ClinicsDataHolder   *m_clinicDataHolder;
-@property(nonatomic, retain)IssueDataHolder     *m_issueDataHolder;
+@property (nonatomic,retain) UIPopoverController         *m_popoverController;
+@property (nonatomic,retain) NSString  *categoryName;
+@property (nonatomic, retain) ClinicsDataHolder   *m_clinicDataHolder;
+@property (nonatomic, retain) IssueDataHolder     *m_issueDataHolder;
 @property (nonatomic, assign) id                m_parentRootVC;
-@property (nonatomic, assign)NSInteger      authentication;
+@property (nonatomic, assign) NSInteger      authentication;
+
 - (void) didRotate:(id)sender;
 - (void)setClinicDetailView;
 - (void) dismissPopoover;
 - (void) showPopOver;
--(void)articleInpressClecnicDetails;
--(void)firstCategoryAndFirstCategory:(BOOL)toc;
--(void)completeDwonloadFullTextAndPdf;
--(void)downloadFileFromServer:(NSString *)choiceString;
--(void)reloadBackIssueIndetaialsView:(NSString *)IssueID;
--(void)filpScrennShowBackIssue:(NSInteger )clinicID;
--(void)loadDataFromServerISuuseData:(BOOL)flag;
--(void)loadDataAricleINpressFromServer;
+- (void)articleInpressClecnicDetails;
+- (void)firstCategoryAndFirstCategory:(BOOL)toc;
+- (void)completeDwonloadFullTextAndPdf;
+- (void)downloadFileFromServer:(NSString *)choiceString;
+- (void)reloadBackIssueIndetaialsView:(NSString *)IssueID;
+- (void)filpScrennShowBackIssue:(NSInteger )clinicID;
+- (void)loadDataFromServerISuuseData:(BOOL)flag;
+- (void)loadDataAricleINpressFromServer;
 
--(void)changeSizeNavigationBarTitle;
-
--(void)setLoginButtonHidden;
--(void)changeXPosAddClinicsButton;
--(void)showLoginButton:(BOOL)flag;
+- (void)changeSizeNavigationBarTitle;
+- (void)loadLatestDownloadedArticles;
+- (void)setLoginButtonHidden;
+- (void)changeXPosAddClinicsButton;
+- (void)showLoginButton:(BOOL)flag;
 @end

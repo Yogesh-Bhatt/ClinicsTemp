@@ -109,8 +109,12 @@
 -(NSString *)retriveFromClinicsTableFeatureID:(NSString *)query;
 -(NSInteger )retriveFromClinicsTableinApppurchaseID:(NSString *)query;
 -( NSInteger )retriveCategoryAllAutntication:(NSString *)query;
--(void)setFlagInAceessIssue:(NSString *)query;
--(NSMutableArray *)retriveClinicIdFromIssueTable:(NSString *)query;
+- (void)setFlagInAceessIssue:(NSString *)query;
 
--(BOOL )findIssueIdIssueTable:(NSString * )query;
+- (NSMutableArray *)retriveClinicIdFromIssueTable:(NSString *)query;
+- (NSMutableArray *) loadArticleDataWith:(NSString *)a_query;
+
+- (BOOL )findIssueIdIssueTable:(NSString * )query;
+- (int) GetArticlesCount:(NSString *)a_query;
+
 @end

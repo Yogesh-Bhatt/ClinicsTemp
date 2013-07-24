@@ -172,7 +172,7 @@ static DownloadController* _sharedDownloadController;
         if ([isabstructText isEqualToString:@"abs"]) 
             isAbstract = TRUE;
         else
-          isAbstract = FALSE;   
+            isAbstract = FALSE;   
             
         
 		DownloadData *filesdown=[[[DownloadData alloc]init]autorelease];

@@ -796,7 +796,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
     ClinicsDataHolder *clinicDataHolder = [[[ClinicsDataHolder alloc] init] autorelease];
     
     if ([self openConnection])
-    {        
+    {
         NSString *sql = [NSString stringWithFormat:@"Select CategoryID, ClinicID, ClinicTitle, ClinicThumbImageName, ConsultingEditor, Modified, showClinic,authencation  from tblClinic where ClinicID  = %d",nClinicID];
         
         sqlite3_stmt *statement;
@@ -887,17 +887,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
     if([self openConnection])
 	{	
         NSString *Query =[NSString stringWithFormat:@"UPDATE tblClinic SET Modified = '%@'", [dictionaryData objectForKey:@"Modified_date"]];
-		 //change some logix only update Modifidedate
-		//[NSString stringWithFormat:@"INSERT INTO tblClinic (CategoryID, ClinicID, ClinicShortCode, ClinicTitle, ClinicThumbImageName, ConsultingEditor, Modified, showClinic,Checked) VALUES(%d, %d, '%@', '%@', '%@', '%@', '%@', %d,0)", 
-//                           [[dictionaryData objectForKey:@"Category_Id"] intValue], 
-//                           [[dictionaryData objectForKey:@"Clinic_Id"] intValue], 
-//                           [dictionaryData objectForKey:@"Clinic_Short_Code"], 
-//                           [dictionaryData objectForKey:@"Clinic_Title"], 
-//                           [dictionaryData objectForKey:@"Clinic_Thumb_Img_Name"], 
-//                           [dictionaryData objectForKey:@"Consulting_Editor"], 
-//                           [dictionaryData objectForKey:@"Modified_date"],
-//                           [[dictionaryData objectForKey:@"ShowClinic"] intValue]];
-
+		
                 
 		const char *sql=[Query UTF8String];
 		sqlite3_stmt *statement;
@@ -926,16 +916,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
     if([self openConnection])
 	{	
 		 NSString *Query =[NSString stringWithFormat:@"UPDATE tblClinic SET Modified = '%@'", [dictionaryData objectForKey:@"Modified_date"]];
-        //NSString *Query = [NSString stringWithFormat:@"UPDATE tblClinic SET CategoryID = %d, ClinicShortCode = '%@', ClinicTitle = '%@', ClinicThumbImageName = '%@', ConsultingEditor = '%@', Modified = '%@', showClinic = %d,Checked = 0 WHERE ClinicID = %d )",
-//        [[dictionaryData objectForKey:@"Category_Id"] intValue], 
-//        [dictionaryData objectForKey:@"Clinic_Short_Code"], 
-//        [dictionaryData objectForKey:@"Clinic_Title"], 
-//        [dictionaryData objectForKey:@"Clinic_Thumb_Img_Name"], 
-//        [dictionaryData objectForKey:@"Consulting_Editor"], 
-//        [dictionaryData objectForKey:@"Modified_date"],
-//        [[dictionaryData objectForKey:@"ShowClinic"] intValue],
-//        [[dictionaryData objectForKey:@"Clinic_Id"] intValue]];
-        
+               
 		const char *sql=[Query UTF8String];
 		sqlite3_stmt *statement;
 		
@@ -959,6 +940,107 @@ static DatabaseConnection * _sharedDatabaseConnection;
 
 #pragma mark -
 #pragma mark <load Article Data>
+
+- (NSMutableArray *) loadArticleDataWith:(NSString *)a_query
+{
+    NSMutableArray *arrArticle = [[[NSMutableArray alloc] init] autorelease];
+    
+    if ([self openConnection])
+    {
+        NSString *sql = a_query;
+        
+        sqlite3_stmt *statement;
+        
+        if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                ArticleDataHolder *pdataHolder = [[ArticleDataHolder alloc] init];
+                
+                if(sqlite3_column_text(statement,0))
+				{
+                    pdataHolder.nArticleID = sqlite3_column_int(statement, 0);
+                }
+                if(sqlite3_column_text(statement,1))
+				{
+                    pdataHolder.sIssueID = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,1)];
+                }
+                if(sqlite3_column_text(statement,2))
+				{
+                    pdataHolder.sArticleTitle = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,2)];
+                }
+                if(sqlite3_column_text(statement,3))
+				{
+                    pdataHolder.sAbstract = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,3)];
+                }
+                if(sqlite3_column_text(statement,4))
+				{
+                    pdataHolder.sArticleHtmlFileName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,4)];
+                }
+                if(sqlite3_column_text(statement,5))
+				{
+                    pdataHolder.sLastModified = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,5)];
+                }
+                if(sqlite3_column_text(statement,6))
+				{
+                    pdataHolder.sAuthors = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,6)];
+                }
+                if(sqlite3_column_text(statement,7))
+				{
+                    pdataHolder.sArticleType = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,7)];
+                }
+                if(sqlite3_column_text(statement,8))
+				{
+                    pdataHolder.nIsArticleInPress = sqlite3_column_int(statement, 8);
+                }
+                if(sqlite3_column_text(statement,9))
+				{
+                    pdataHolder.nBookmark = sqlite3_column_int(statement, 9);
+                }
+                if(sqlite3_column_text(statement,10))
+				{
+                    pdataHolder.nRead = sqlite3_column_int(statement, 10);
+                }
+                if(sqlite3_column_text(statement,11))
+				{
+                    pdataHolder.sPDFfileName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,11)];
+                }
+                if(sqlite3_column_text(statement,12))
+				{
+                    pdataHolder.sPageRange = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,12)];
+                }
+                if(sqlite3_column_text(statement,13))
+				{
+                    pdataHolder.sKeyWords = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,13)];
+                }
+                if(sqlite3_column_text(statement,14))
+				{
+                    pdataHolder.sDateOfRelease = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,14)];
+                }
+                if(sqlite3_column_text(statement,15))
+				{
+                    pdataHolder.sArticleInfoId = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,15)];
+                }
+				if(sqlite3_column_text(statement,16))
+				{
+                    pdataHolder.doi_Link = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement,16)];
+                }
+                
+                [arrArticle addObject:pdataHolder];
+                [pdataHolder release];
+            }
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+    }
+    else
+	{
+		sqlite3_close(database);
+		NSAssert1(0,@"Failed to open database with message '%s'.",sqlite3_errmsg(database));
+	}
+    
+	return arrArticle ;
+}
 
 - (NSMutableArray *) loadArticleData:(NSString *)sIssueID
 {
@@ -1087,6 +1169,35 @@ static DatabaseConnection * _sharedDatabaseConnection;
 		sqlite3_close(database);
 		NSAssert1(0,@"Failed to open database with message '%s'.",sqlite3_errmsg(database));
 	}	
+}
+
+- (int) GetArticlesCount:(NSString *)a_query
+{
+    int count = 0;
+    if([self openConnection])
+    {
+        const char* sqlStatement = [a_query UTF8String];
+        sqlite3_stmt *statement;
+        
+        if( sqlite3_prepare_v2(database, sqlStatement, -1, &statement, NULL) == SQLITE_OK )
+        {
+            //Loop through all the returned rows (should be just one)
+            while( sqlite3_step(statement) == SQLITE_ROW )
+            {
+                count = sqlite3_column_int(statement, 0);
+            }
+        }
+        else
+        {
+            NSLog( @"Failed from sqlite3_prepare_v2. Error is:  %s", sqlite3_errmsg(database) );
+        }
+        
+        // Finalize and close database.
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+    }
+    
+    return count;
 }
 
 - (void) updateReadInArticleData:(NSInteger)nArticleID

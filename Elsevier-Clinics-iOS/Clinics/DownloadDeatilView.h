@@ -21,10 +21,12 @@
     NSString *filePath;
     NSString *fileDocPath;
     UILabel *m_resultTitle;
+    UILabel *m_lblTitle;
     
 }
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier  downloadedCustomViewWithFrame:(CGRect)rect  withDownloadUrl:(NSString *)m_url withTitle:(NSString *)a_title withSubTitle:(NSString *)a_subTitle;
+- (void)refreshDataWithTitle:(NSString *)a_title;
 
 @end

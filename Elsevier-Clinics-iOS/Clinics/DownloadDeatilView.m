@@ -29,22 +29,22 @@
         CGFloat xCord = 10;;
         CGFloat yCord = 10;
         
-        UILabel *m_lblTitle=[[UILabel alloc] init];
+        m_lblTitle=[[UILabel alloc] init];
         m_lblTitle.frame=CGRectMake(xCord, yCord, 300, 30);
         m_lblTitle.numberOfLines = 1;
         m_lblTitle.backgroundColor=[UIColor clearColor];
-        m_lblTitle.font = [UIFont boldSystemFontOfSize:20.0];
-        m_lblTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
+        m_lblTitle.font = [UIFont fontWithName:@"Arial-BoldMT" size:15];
+        m_lblTitle.textColor = [UIColor colorWithRed:38/255.0 green:166.0/255.0 blue:221.0/255.0 alpha:1.0];
         m_lblTitle.textAlignment=UITextAlignmentLeft;
         m_lblTitle.text = a_title;
         [self addSubview:m_lblTitle];
         [m_lblTitle release];
         
-        yCord = yCord + 2*m_lblTitle.frame.size.height;
+        yCord = yCord + m_lblTitle.frame.size.height;
         
         
-        progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(20.0f, rect.size.height - 40, self.bounds.size.width-80.0f, 20.0f)] ;
-        [progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
+        progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(20.0f,yCord+5, self.bounds.size.width-80.0f, 20.0f)] ;
+        //[progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progressOuter.png"]]];
         [progressView setInnerColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [self addSubview: progressView] ;
         [progressView release] ;
@@ -54,7 +54,7 @@
         UIImage *img = [UIImage imageNamed:@"btn_cancel_download.png"];
         
         closeButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        closeButton.frame=CGRectMake(280, progressView.frame.origin.y , img.size.width,img.size.height);
+        closeButton.frame=CGRectMake(280, yCord+5 , img.size.width,img.size.height);
         [closeButton setBackgroundImage:[UIImage imageNamed:@"btn_cancel_download.png"] forState:UIControlStateNormal];
         [closeButton addTarget:self action:@selector(closeDownloading:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:closeButton];
@@ -63,12 +63,12 @@
         
         
         m_lblPercetTitle=[[UILabel alloc] init];
-        m_lblPercetTitle.frame=CGRectMake(xCord,yCord+3, 320, 44);
+        m_lblPercetTitle.frame=CGRectMake(20,yCord,self.bounds.size.width-80.0f, 44);
         m_lblPercetTitle.backgroundColor=[UIColor clearColor];
-        m_lblPercetTitle.font = [UIFont boldSystemFontOfSize:20.0];
-        m_lblPercetTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
+        m_lblPercetTitle.font = [UIFont fontWithName:@"Arial-BoldMT" size:13];;
+        m_lblPercetTitle.textColor = [UIColor colorWithRed:49.0/255.0 green:78.0/255.0 blue:132.0/255.0 alpha:1.0];
         m_lblPercetTitle.textAlignment=UITextAlignmentCenter;
-        m_lblPercetTitle.text = [NSString stringWithFormat:@"Downloaded"];
+        m_lblPercetTitle.text = [NSString stringWithFormat:@"%@ Downloaded",@"0%"];
         [self addSubview:m_lblPercetTitle];
         [m_lblPercetTitle release];
         
@@ -76,7 +76,7 @@
         m_resultTitle.frame=CGRectMake(xCord,50, 300, 40);
         m_resultTitle.numberOfLines = 1;
         m_resultTitle.backgroundColor=[UIColor clearColor];
-        m_resultTitle.font = [UIFont boldSystemFontOfSize:15];
+        m_resultTitle.font = [UIFont fontWithName:@"Arial-BoldMT" size:10];
         m_resultTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
         m_resultTitle.textAlignment=UITextAlignmentCenter;
         m_resultTitle.text = @"";
@@ -87,6 +87,13 @@
     }
     return self;
 }
+
+- (void)refreshDataWithTitle:(NSString *)a_title{
+    
+    m_lblTitle.text = a_title;
+    
+}
+
 
 -(void)displayMsg:(NSString *)a_msg{
     
@@ -154,24 +161,42 @@
     
     ZipArchive *za = [[ZipArchive alloc] init];
     
+    BOOL ret = NO;
+    
 	if ([za UnzipOpenFile: filePath]) {
-		BOOL ret = [za UnzipFileTo:fileDocPath overWrite: YES];
+		ret = [za UnzipFileTo:fileDocPath overWrite: YES];
 		if (NO == ret){
             
             NSLog(@"Error while unzip code rohit");
         }
         [za UnzipCloseFile];
+        
 	}else{
         
         NSLog(@"Unable to unzip the file");
     }
 	[za release];
-    
-    
+   
     [CGlobal removeZipAtFilePath:filePath];
     recievedData = nil;
     
-    
+    //Update article tbl for downloaded data
+    if(ret == YES){
+        
+        NSArray *components =[fileDocPath componentsSeparatedByString:@"/"];
+        
+        NSString *zipFileNameTemp = nil;
+        
+        if([components count] > 2)
+            zipFileNameTemp = [components objectAtIndex:([components count]-2)];
+        
+        NSLog(@"999999999%@",zipFileNameTemp);
+        DatabaseConnection *database = [DatabaseConnection sharedController];
+        NSInteger count = [database GetArticlesCount:@"SELECT COUNT(*) FROM tblArticle where downloadRank > 0"];
+        [database   updateBookmarkInArticleData:[NSString stringWithFormat:@"UPDATE tblArticle SET downloadRank = %d where ArticleInfoId = '%@'",(count+1),zipFileNameTemp]];
+        
+    }
+
 }
 
 - (void)downloadFailed:(CAURLDownload *)connection {

@@ -99,7 +99,7 @@ ClinicsAppDelegate *appDel;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 140;
+    return 100;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,6 +107,7 @@ ClinicsAppDelegate *appDel;
     NSString *CellIdentifier = [NSString stringWithFormat:@"SimpleTableIdentifier_%d%d",
                                        indexPath.section, indexPath.row];
     DownloadDeatilView *cell = (DownloadDeatilView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
         
         NSLog(@"indexPath.row %d",indexPath.row);
@@ -138,7 +139,9 @@ ClinicsAppDelegate *appDel;
     [appDel.m_downloadedConnectionArr removeAllObjects];
     [appDelT.m_downloadArticlesArr removeAllObjects];
     [m_tableView reloadData];
+    
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
