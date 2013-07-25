@@ -563,6 +563,7 @@
     if (cell == nil)
 	{
         if(reloadArticleType == reloadClinics){
+            
             switch (indexPath.row)
             {
                 case 0:{
@@ -578,12 +579,19 @@
                     //****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
                     
                     if([m_arrArticles count]>0){
+                        
                         ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:0];
+                        
                         if (articleDataHolder.nIsArticleInPress == 1) {
+                            
                             ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = YES;
+                            
                         }else{
+                            
                             ((ClinicDetailHeaderCellView *)cellTemp).m_imgView.hidden = NO;
+                            
                         }
+                        
                     }
                     cell = cellTemp;
                 }
@@ -617,8 +625,11 @@
             
             DownloadedArticleViewCell *cell1 = (DownloadedArticleViewCell *)[CGlobal getViewFromXib:@"DownloadedArticleViewCell" classname:[DownloadedArticleViewCell class] owner:self];
             ArticleDataHolder *articleDataHolder = nil;
+            
             if([m_arrArticles count]>0){
+                
                 articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:indexPath.row];
+                
             }
             
             cell1.m_btnDeleteArticle.tag=indexPath.row;
@@ -698,7 +709,7 @@
         
         
         /// for downloaded Articles
-        ArticleDataHolder *articleDataHolder ;
+        ArticleDataHolder *articleDataHolder;
         if ([m_arrArticles count]>0) {
             
             articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row)];
@@ -909,6 +920,53 @@
 	}
     
 }
+
+-(void)ClickOnDeleteButton:(id)sender{
+    
+	UIButton  *btn=(UIButton *)sender;
+	buttnTag=btn.tag;
+    
+	ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+	// ***************check file present or not ***************
+	BOOL success;
+	NSFileManager *fileManager=[NSFileManager defaultManager];
+	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+	NSString *documentsDirectory=[paths objectAtIndex:0];
+	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",articleDataHolder.sArticleInfoId]];
+	success=[fileManager fileExistsAtPath:writableDBPath];
+	if(success){
+        
+        NSError *error = nil;
+        [fileManager removeItemAtPath:writableDBPath error:&error];
+        
+        if(error != nil){
+        
+            NSLog(@"Error occured");
+            
+        }
+    }
+
+    NSString *sql = [NSString stringWithFormat:@"UPDATE tblarticle SET downloadRank = 0 where ArticleInfoId = '%@'",articleDataHolder.sArticleInfoId];
+    NSLog(@"SQl %@",sql);
+    
+    DatabaseConnection *database = [DatabaseConnection sharedController];
+   
+    BOOL check =  [database updateArticleDownloaded:[NSString stringWithFormat:@"UPDATE tblArticle SET downloadRank = 0 where ArticleInfoId ='%@'",articleDataHolder.sArticleInfoId]];
+    
+    if(check){
+        
+        NSLog(@"True");
+        [self loadLatestDownloadedArticles];
+        
+    }else{
+        
+         NSLog(@"False");
+    
+    }
+    
+}
+
+
 -(void)clickOnPDFButton:(id)sender{
     
     ClinicsAppDelegate   *appDelegate= (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;

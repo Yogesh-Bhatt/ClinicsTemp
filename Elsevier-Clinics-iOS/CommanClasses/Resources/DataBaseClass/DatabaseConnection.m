@@ -102,7 +102,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
 
 -(void)alterDataBase:(NSString *)query{
     
-
+    
     if([self openConnection])
 	{	
         
@@ -1592,14 +1592,57 @@ static DatabaseConnection * _sharedDatabaseConnection;
 	return arrArticle ; 
 }
 
--(void)UpadateDataAndRember:(NSString *)query{
-	
-	
+- (BOOL) updateArticleDownloaded:(NSString *)a_query
+{
+    BOOL bSuccess = NO;
     
     if([self openConnection])
+	{
+        NSString *Query = a_query;
+        
+		const char *sql=[Query UTF8String];
+		
+        sqlite3_stmt *statement;
+		
+		if(sqlite3_prepare_v2(database,sql,-1,&statement,NULL)==SQLITE_OK)
+        {
+			if(sqlite3_step(statement) == SQLITE_DONE)
+            {
+                bSuccess = YES;
+            }
+            else
+            {
+                bSuccess = NO;
+            }
+		}
+		
+		sqlite3_step (statement);
+		
+		sqlite3_finalize(statement);
+		sqlite3_close(database);
+        NSLog(@"issue downloaded updated successfully");
+	}
+	else
+	{
+		sqlite3_close(database);
+		NSAssert1(0,@"Failed to open database with message '%s'.",sqlite3_errmsg(database));
+	}
+    
+    if (bSuccess)
+    {
+        NSLog(@"issue downloaded updated successfully");
+    }
+    else
+    {
+        NSLog(@"issue downloaded is not updated successfully");
+    }
+    return bSuccess;
+}
+
+-(void)UpadateDataAndRember:(NSString *)query{
+	
+    if([self openConnection])
 	{	
-        
-        
 		const char *sql=[query UTF8String];
 		sqlite3_stmt *statement;
 		
