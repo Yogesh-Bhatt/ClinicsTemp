@@ -44,9 +44,6 @@
         m_btnBookmark.hidden=FALSE;
     }
     
-	
-	
-    
     if (articleDataHolder.nBookmark == isOne)
         [m_btnBookmark setImage:[UIImage imageNamed:@"bookmark_clicked.png"] forState:UIControlStateNormal];
     else
@@ -107,21 +104,11 @@
 	ClinicDetailViewController  *clinicDetailsView=(ClinicDetailViewController *)appDelegate.m_rootViewController.m_clinicDetailVC;
 	NotesDetailsViewController_iPad    *noteDetails=(NotesDetailsViewController_iPad*)appDelegate.m_rootViewController.m_NotesDetailsView;
 	
-	NSString *loginId = [[NSUserDefaults standardUserDefaults] objectForKey:@"Flag"];
 	
 	if(appDelegate.clinicsDetails==kTAB_CLINICS){
 		
         [clinicDetailsView loadLatestDownloadedArticles];
-        /*
-        if ([loginId intValue]==100) {
-			
-			[clinicDetailsView  articleInpressClecnicDetails];
-		}
-		else {
-			
-			[clinicDetailsView setClinicDetailView];
-		}
-		*/
+        
 	}//
 	// call on bookmarks
 	else if(appDelegate.clinicsDetails==kTAB_BOOKMARKS){

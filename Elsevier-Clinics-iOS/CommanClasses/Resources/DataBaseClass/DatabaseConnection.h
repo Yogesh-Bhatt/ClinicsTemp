@@ -116,5 +116,6 @@
 
 - (BOOL )findIssueIdIssueTable:(NSString * )query;
 - (int) GetArticlesCount:(NSString *)a_query;
+- (BOOL) updateArticleDownloaded:(NSString *)a_query;
 
 @end
