@@ -41,6 +41,7 @@
 	NSInteger  updateissueClinicID;
     
     IBOutlet UIImageView *m_imageView;
+    IBOutlet UIButton *m_viewDownloadArt;
     
 	
 }
@@ -58,5 +59,7 @@
 - (IBAction) categoryButtonPressed:(id)sender;
 -(void)openlaststageIssuelevel;
 -(void)filpScrennShowBackIssue:(NSInteger)IndexSection;
+
+- (IBAction)viewDownloadBtn:(id)sender;
 
 @end

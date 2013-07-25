@@ -592,7 +592,12 @@
     
 }
 
+#pragma mark --
+#pragma mark Download Button --
 
+- (IBAction)viewDownloadBtn:(id)sender {
+    
+}
 
 #pragma mark --
 #pragma mark <UIButoon Methods>CAllback
