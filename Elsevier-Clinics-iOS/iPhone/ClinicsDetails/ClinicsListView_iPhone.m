@@ -422,6 +422,8 @@
 		clinicDetailsView.m_issueDataHolder = issueDataHolder;
 		// ****************use for login Deatils****************
 		appDelegate.seletedClinicID=issueDataHolder.nClinicID;
+        
+        reloadArticleType = reloadClinics;
 		[appDelegate.navigationController pushViewController:clinicDetailsView animated:YES];
 		[clinicDetailsView loadDataFromServerISuuseData:TRUE];
 		
@@ -597,6 +599,18 @@
 
 - (IBAction)viewDownloadBtn:(id)sender {
     
+    reloadArticleType = reloadDownloadedArticles;
+    
+    ClinicsAppDelegate *appDelegate = (ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    ClinicsDetailsView_iPhone *viewControler = [[ClinicsDetailsView_iPhone alloc] init];
+    [appDelegate.navigationController pushViewController:viewControler animated:YES];
+    [viewControler release];
+    
+    //[appDelegate.rootView_iPhone.m_clinicDetail_iPhone latestDownloadedArticles];
+    
+    NSLog(@"%@",appDelegate.rootView_iPhone);
+
 }
 
 #pragma mark --

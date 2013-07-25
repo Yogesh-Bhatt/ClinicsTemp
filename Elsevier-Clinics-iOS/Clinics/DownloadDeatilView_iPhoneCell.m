@@ -41,29 +41,11 @@
         
         yCord = yCord + m_lblTitle.frame.size.height;
         
-//        
-//        UILabel *m_lblSubTitle=[[UILabel alloc] init];
-//        m_lblSubTitle.frame=CGRectMake(xCord, 0,180,15);
-//        m_lblSubTitle.backgroundColor=[UIColor clearColor];
-//        m_lblSubTitle.font = [UIFont boldSystemFontOfSize:10];
-//        m_lblSubTitle.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
-//        m_lblSubTitle.textAlignment=UITextAlignmentLeft;
-//        m_lblSubTitle.text = a_subTitle;
-//        [self addSubview:m_lblSubTitle];
-//        [m_lblSubTitle release];
-//        
-//        
-//        yCord = yCord + m_lblSubTitle.frame.size.height;
-        
-        
-        
         
         progressView = [[DDProgressView alloc] initWithFrame: CGRectMake(5.0f, rect.size.height-18, self.bounds.size.width-155.0f, 15.0f)] ;
-       // [progressView setOuterColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [progressView setInnerColor: [UIColor colorWithPatternImage:[UIImage imageNamed:@"progress.png"]]];
         [self addSubview: progressView] ;
         [progressView release] ;
-        
         
         
         
@@ -172,8 +154,10 @@
     
     ZipArchive *za = [[ZipArchive alloc] init];
     
+    BOOL ret = NO;
+    
 	if ([za UnzipOpenFile: filePath]) {
-		BOOL ret = [za UnzipFileTo:fileDocPath overWrite: YES];
+		ret = [za UnzipFileTo:fileDocPath overWrite: YES];
 		if (NO == ret){
             
             NSLog(@"Error while unzip code rohit");
@@ -193,7 +177,23 @@
     
     [self displayMsg:@"Downloading Completed"];
     
+    //Update article tbl for downloaded data
     
+    if(ret == YES){
+        
+        NSArray *components =[fileDocPath componentsSeparatedByString:@"/"];
+        
+        NSString *zipFileNameTemp = nil;
+        
+        if([components count] > 2)
+            zipFileNameTemp = [components objectAtIndex:([components count]-2)];
+        
+        NSLog(@"999999999%@",zipFileNameTemp);
+        DatabaseConnection *database = [DatabaseConnection sharedController];
+        NSInteger count = [database GetArticlesCount:@"SELECT COUNT(*) FROM tblArticle where downloadRank > 0"];
+        [database   updateBookmarkInArticleData:[NSString stringWithFormat:@"UPDATE tblArticle SET downloadRank = %d where ArticleInfoId = '%@'",(count+1),zipFileNameTemp]];
+        
+    }
 }
 
 - (void)downloadFailed:(CAURLDownload *)connection {

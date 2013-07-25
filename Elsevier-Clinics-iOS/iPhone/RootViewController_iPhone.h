@@ -14,6 +14,7 @@
 #import "AboutAppListViewController_iPhone.h"
 #import"BookMarkListViewController_iPhone.h"
 #import "NotesListViewController_iPhone.h"
+#import "ClinicsDetailsView_iPhone.h"
 
 @interface RootViewController_iPhone : UIViewController {
 
@@ -24,10 +25,15 @@
 	BookMarkListViewController_iPhone   *bookmarks_iPhone;
 	NotesListViewController_iPhone   *noteLists_iPhone  ;
     
+    ClinicsDetailsView_iPhone *m_clinicDetail_iPhone;
+    
     UIView          *backLoding;
     
     
 }
+
+@property(nonatomic,retain)ClinicsDetailsView_iPhone    *m_clinicDetail_iPhone;
+
 @property(nonatomic,retain)ClinicsListView_iPhone    *clinicListView;
 @property(nonatomic,retain)SettingListViewController_iPhone  *settingList_iPhone;
 

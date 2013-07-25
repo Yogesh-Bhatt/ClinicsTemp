@@ -280,8 +280,6 @@
     m_arrArticles = [[database loadArticleDataWith:@"select ArticleId, IssueId, ArticleTitle, Abstract, ArticlehtmlFileName, LastModified, Author, ArticleType, IsArticleInPress, Bookmark, Read, PdfFileName, PageRange, keywords, ReleaseDate, ArticleInfoId, Doi_Link from tblArticle where downloadRank > 0 order by downloadRank desc limit 50"] retain];
     [m_tblClinicDetail reloadData];
     
-    
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
