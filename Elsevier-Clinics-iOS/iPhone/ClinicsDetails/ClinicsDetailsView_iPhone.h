@@ -71,7 +71,7 @@
 -(void)setNavigationBaronView;
 -(void)changeImageLoginButton;
 -(void)setLoginButtonHidden;
-
+-(void)latestDownloadedArticles;
 
 @end
 

@@ -289,8 +289,6 @@
     
     [m_tblClinicDetail reloadData];
     
-    
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

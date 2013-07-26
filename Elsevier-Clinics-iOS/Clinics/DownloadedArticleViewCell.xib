@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">11G56</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1926</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -45,7 +45,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{11, 20}, {21, 19}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="784818999"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -84,7 +83,6 @@
 								<int key="NSvFlags">261</int>
 								<string key="NSFrame">{{16, 66}, {16, 16}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="384250666"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -109,7 +107,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{44, -5}, {651, 62}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="940663454"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -146,7 +143,6 @@
 								<int key="NSvFlags">265</int>
 								<string key="NSFrame">{{596, 58}, {80, 37}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -170,7 +166,6 @@
 								<int key="NSvFlags">265</int>
 								<string key="NSFrame">{{463, 58}, {80, 37}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="399286380"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -194,7 +189,6 @@
 								<int key="NSvFlags">265</int>
 								<string key="NSFrame">{{329, 58}, {80, 37}}</string>
 								<reference key="NSSuperview" ref="20732446"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="33528619"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -216,7 +210,6 @@
 						</array>
 						<string key="NSFrameSize">{768, 109}</string>
 						<reference key="NSSuperview" ref="68117652"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="972566597"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -232,7 +225,6 @@
 				</array>
 				<string key="NSFrameSize">{768, 110}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="20732446"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -387,68 +379,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">161</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">DownloadedArticleViewCell</string>
-					<string key="superclassName">UITableViewCell</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">bookmarkButtonPressed:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">bookmarkButtonPressed:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">bookmarkButtonPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="m_HTMLBtn">UIButton</string>
-						<string key="m_PDFBtn">UIButton</string>
-						<string key="m_btnBookmark">UIButton</string>
-						<string key="m_btnDeleteArticle">UIButton</string>
-						<string key="m_btnRead">UIButton</string>
-						<string key="m_lblArticleTitle">UILabel</string>
-						<string key="m_lblAuthors">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="m_HTMLBtn">
-							<string key="name">m_HTMLBtn</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_PDFBtn">
-							<string key="name">m_PDFBtn</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_btnBookmark">
-							<string key="name">m_btnBookmark</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_btnDeleteArticle">
-							<string key="name">m_btnDeleteArticle</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_btnRead">
-							<string key="name">m_btnRead</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_lblArticleTitle">
-							<string key="name">m_lblArticleTitle</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="m_lblAuthors">
-							<string key="name">m_lblAuthors</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DownloadedArticleViewCell.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
@@ -460,6 +391,6 @@
 			<string key="fulltext.png">{80, 30}</string>
 			<string key="pdf_btn.png">{80, 30}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1926</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

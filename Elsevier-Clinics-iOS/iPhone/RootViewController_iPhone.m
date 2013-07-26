@@ -11,6 +11,7 @@
 #import "LoadingHomeView_iPhone.h"
 
 #import "ClinicsAppDelegate.h"
+#import "ClinicsDetailsView_iPhone.h"
 
 @implementation RootViewController_iPhone
 @synthesize settingList_iPhone;
@@ -18,6 +19,7 @@
 @synthesize abouttheAppView_iPhone;
 @synthesize bookmarks_iPhone;
 @synthesize noteLists_iPhone;
+@synthesize m_clinicDetail_iPhone;
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -27,6 +29,9 @@
 	
 	[self.navigationController.navigationBar setHidden:TRUE];
 	//************ Initially Clinic Tab is Selected ****************//
+    
+    
+    m_clinicDetail_iPhone = [[ClinicsDetailsView_iPhone alloc] init];
     
 	ClinicsAppDelegate  *appDelegate = (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
 

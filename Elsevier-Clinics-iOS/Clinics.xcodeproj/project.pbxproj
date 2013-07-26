@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB95B6E817A116C80067BCC3 /* DownloadArticleViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = BB95B6E717A116C80067BCC3 /* DownloadArticleViewCell_iPhone.m */; };
+		BB95B6EA17A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB95B6E917A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib */; };
+		BB95B6EC17A126E50067BCC3 /* btn_delete_articles_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = BB95B6EB17A126E50067BCC3 /* btn_delete_articles_iphone.png */; };
+		BB95B6EE17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB95B6ED17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png */; };
 		BC03E17C15385ABA0077C406 /* iPhone_Save_Notes.png in Resources */ = {isa = PBXBuildFile; fileRef = BC03E17B15385ABA0077C406 /* iPhone_Save_Notes.png */; };
 		BC047E10153817C400525B9C /* 623357_childpsychclin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC047DD1153817C400525B9C /* 623357_childpsychclin.jpg */; };
 		BC047E11153817C400525B9C /* Anesthesiology.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC047DD2153817C400525B9C /* Anesthesiology.jpg */; };
@@ -786,6 +790,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB95B6E617A116C80067BCC3 /* DownloadArticleViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadArticleViewCell_iPhone.h; sourceTree = "<group>"; };
+		BB95B6E717A116C80067BCC3 /* DownloadArticleViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadArticleViewCell_iPhone.m; sourceTree = "<group>"; };
+		BB95B6E917A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadArticleViewCell_iPhone.xib; sourceTree = "<group>"; };
+		BB95B6EB17A126E50067BCC3 /* btn_delete_articles_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_delete_articles_iphone.png; sourceTree = "<group>"; };
+		BB95B6ED17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_delete_articles_iphone@2x.png"; sourceTree = "<group>"; };
 		BC03E17B15385ABA0077C406 /* iPhone_Save_Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone_Save_Notes.png; path = CommanClasses/Resources/Images/iPhoneImages/NotesImages/iPhone_Save_Notes.png; sourceTree = "<group>"; };
 		BC047DD1153817C400525B9C /* 623357_childpsychclin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 623357_childpsychclin.jpg; path = CommanClasses/Resources/covers/623357_childpsychclin.jpg; sourceTree = "<group>"; };
 		BC047DD2153817C400525B9C /* Anesthesiology.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Anesthesiology.jpg; path = CommanClasses/Resources/covers/Anesthesiology.jpg; sourceTree = "<group>"; };
@@ -2180,6 +2189,8 @@
 		BC7AA94F16F713850066670C /* CommanImage */ = {
 			isa = PBXGroup;
 			children = (
+				BB95B6ED17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png */,
+				BB95B6EB17A126E50067BCC3 /* btn_delete_articles_iphone.png */,
 				D681A8FD1782B6F300AB35F0 /* iPhone_Abstract_btn.png */,
 				BC7AA95116F713850066670C /* iPhone_ArticlesPressSelected_btn.png */,
 				BC7AA95216F713850066670C /* iPhone_ArticlesPressUnselected_btn.png */,
@@ -2563,6 +2574,9 @@
 				BCCFBF81153403B3005CE908 /* ClinicDetailHeaderCellView_iPhone.h */,
 				BCCFBF82153403B3005CE908 /* ClinicDetailHeaderCellView_iPhone.m */,
 				BCCFBF83153403B3005CE908 /* ClinicDetailHeaderCellView_iPhone.xib */,
+				BB95B6E617A116C80067BCC3 /* DownloadArticleViewCell_iPhone.h */,
+				BB95B6E717A116C80067BCC3 /* DownloadArticleViewCell_iPhone.m */,
+				BB95B6E917A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -5652,6 +5666,9 @@
 				D659ED6B179E7FA4000FB694 /* new proposal.png in Resources */,
 				D6898054179FC574005C7D69 /* progressOuter.png in Resources */,
 				D689805D179FCBE6005C7D69 /* DownloadedArticleViewCell.xib in Resources */,
+				BB95B6EA17A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib in Resources */,
+				BB95B6EC17A126E50067BCC3 /* btn_delete_articles_iphone.png in Resources */,
+				BB95B6EE17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5822,6 +5839,7 @@
 				D6B77711177F0D9D003BC4CD /* DownloadDeatilView_iPhoneCell.m in Sources */,
 				D6B77716177F102C003BC4CD /* DownloadDetailViewController_iPhone.m in Sources */,
 				D689805B179FCAEE005C7D69 /* DownloadedArticleViewCell.m in Sources */,
+				BB95B6E817A116C80067BCC3 /* DownloadArticleViewCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

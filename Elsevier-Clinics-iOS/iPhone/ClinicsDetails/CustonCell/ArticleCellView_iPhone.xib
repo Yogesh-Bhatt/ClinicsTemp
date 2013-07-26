@@ -61,7 +61,7 @@
 							<object class="IBUIButton" id="110260274">
 								<reference key="NSNextResponder" ref="944312989"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{12, 12}, {21, 19}}</string>
+								<string key="NSFrame">{{13, 12}, {21, 19}}</string>
 								<reference key="NSSuperview" ref="944312989"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -336,9 +336,9 @@
 							<reference ref="436687890"/>
 							<reference ref="978687044"/>
 							<reference ref="981930406"/>
-							<reference ref="110260274"/>
 							<reference ref="264324679"/>
 							<reference ref="972723391"/>
+							<reference ref="110260274"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">ArticleCellView</string>
