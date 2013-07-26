@@ -278,6 +278,15 @@
     m_lblTitle.text = @"Downloaded Articles";
     
     m_arrArticles = [[database loadArticleDataWith:@"select ArticleId, IssueId, ArticleTitle, Abstract, ArticlehtmlFileName, LastModified, Author, ArticleType, IsArticleInPress, Bookmark, Read, PdfFileName, PageRange, keywords, ReleaseDate, ArticleInfoId, Doi_Link from tblArticle where downloadRank > 0 order by downloadRank desc limit 50"] retain];
+    
+    if([m_arrArticles count] < 1){
+        
+        UIAlertView   *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"No Article has been downloaded." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+        RELEASE(alert);
+        
+    }
+    
     [m_tblClinicDetail reloadData];
     
     
@@ -382,7 +391,7 @@
 -(void)downloadPopOver:(id)sender{
     
     
-    [downloadDetailviewController.view removeFromSuperview];
+    //[downloadDetailviewController.view removeFromSuperview];
     
     downloadDetailviewController.view.hidden = FALSE;
     
@@ -572,7 +581,7 @@
                     
                     cellTemp.callerDelegate = self;
                     
-                    if(aritcleInPressFlag == FALSE)
+                    //if(aritcleInPressFlag == FALSE)
                         cellTemp.m_downloadBtn.hidden = FALSE;
                     
                     
@@ -735,6 +744,7 @@
 		[m_btnLogin setImage:[UIImage imageNamed:@"BtnLogin.png"] forState:UIControlStateNormal];
 		appDelegate.login = FALSE;
 	}
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -975,7 +985,13 @@
 	afterDwonLoading=FALSE;
 	UIImage *Image=m_btnLogin.currentImage;
     
-	ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    ArticleDataHolder *articleDataHolder;
+    
+    if(reloadArticleType == reloadClinics)
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    else{
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+    }
 	// ***************check file present or not ***************
 	BOOL success;
 	NSFileManager *fileManager=[NSFileManager defaultManager];
@@ -1450,7 +1466,7 @@
     
     downloadDetailviewController = [[DownloadDetailViewController alloc] init];
     [downloadDetailviewController refreshTblWith:m_downloadQueueArr];
-    [self.view addSubview:downloadDetailviewController.view];
+    //[self.view addSubview:downloadDetailviewController.view];
     downloadDetailviewController.view.hidden = TRUE;
     
     

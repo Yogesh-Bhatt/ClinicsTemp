@@ -341,7 +341,7 @@
         //Create Button If new Issues exists
         if (newIssuesCount>0)
         {
-            UIImage *img=[UIImage imageNamed:@"noti.png"];
+            UIImage *img=[UIImage imageNamed:@"img_notifications_new.png"];
             
             UIButton *issuesCountBtn=[UIButton buttonWithType:UIButtonTypeCustom];
             
