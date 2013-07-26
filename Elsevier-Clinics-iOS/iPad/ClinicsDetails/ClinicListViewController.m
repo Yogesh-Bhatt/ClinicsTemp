@@ -275,6 +275,8 @@
         rcframe.size.height = (self.view.frame.size.height - 72.0);
         m_tblClinics.frame = rcframe;
     }
+    
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

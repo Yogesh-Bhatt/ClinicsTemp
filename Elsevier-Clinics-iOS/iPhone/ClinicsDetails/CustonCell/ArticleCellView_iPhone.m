@@ -8,8 +8,6 @@
 
 #import "ArticleCellView_iPhone.h"
 
-#import "ArticleCellView_iPhone.h"
-
 #import "ClinicsDetailsView_iPhone.h"
 #import "BookMarkListViewController_iPhone.h"
 #import "ClinicsAppDelegate.h"

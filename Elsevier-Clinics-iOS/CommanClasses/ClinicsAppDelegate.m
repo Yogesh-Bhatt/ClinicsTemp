@@ -241,6 +241,7 @@
                 
                 //************* Dwonload Zip File From Server pdf as well as Full Text **********************
                 [self downloadFileFromServer:downLoadUrl];
+                
 			}
 			else{
                 
@@ -317,7 +318,8 @@
             
             //************* Here Check user All ready purchage This Clinics in Iphone ***********************************
             
-            NSLog(@"iPhone login");
+            NSLog(@"featureID:- %@",featureID);
+            
 			BOOL   subcription = [[MKStoreManager sharedManager] isSubscriptionActive:featureID];
             
 			if (subcription ){
@@ -343,7 +345,6 @@
                     [subcriptionAlerView show];
                     [subcriptionAlerView release];
                 }
-                
                 
                 return;
 			}
@@ -431,6 +432,7 @@
             //******************* here Iphone code *******************
 			else {
                 
+                tabOnLoiginButton = LoginButton;
 				loginView_iPhone=[[LoginViewController_iPhone alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
 				loginView_iPhone.viewController=[self.navigationController topViewController];
 				loginView_iPhone.downLoadUrl=downLoadUrl;
@@ -444,21 +446,28 @@
         {
             //Buy code
             if(buttonIndex1==0){
+                
                 if ([CGlobal checkNetworkReachabilityWithAlert])
                 {
+                   
                     DatabaseConnection *dbConnection=[DatabaseConnection sharedController];
+                   
                     NSString   *featureID  = [dbConnection retriveFromClinicsTableFeatureID:[NSString stringWithFormat:@"select FeatureId from tblclinic where ClinicID=%d",seletedClinicID]];
                     
                     [MBProgressHUD showHUDAddedTo:self.window animated:YES];
                     
                     NSLog(@"Rohit ActualBuy SelectedClinicID:%d featureID:%@",seletedClinicID,featureID);
+                    
                     // ******************* here Call to purchage Clinics ********************
                     
-                    
                     [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
+                        
                         [self productPurchased:featureID Reciept:purchasedReceipt];
+                        
                     } onCancelled:^{
+                        
                         [self transactionCanceled];
+                        
                     }];
                     
                 }
@@ -821,7 +830,7 @@
 - (void)transactionCanceled
 {
     //NSLog(@"transaction failed");
-    [self showMessage:@"Transaction failed"];
+    [self showMessage:@"Transaction Canceled"];
     [MBProgressHUD hideAllHUDsForView:self.window animated:YES];
 }
 

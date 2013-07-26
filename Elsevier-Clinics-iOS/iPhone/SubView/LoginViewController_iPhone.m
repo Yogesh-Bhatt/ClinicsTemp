@@ -315,7 +315,7 @@
 					}
 				   }
 					else{
-						   ClinicsAppDelegate   *appDelegate=[UIApplication sharedApplication].delegate;
+						   ClinicsAppDelegate   *appDelegate= (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
 							AritcleListViewController  *ariticleListView = (AritcleListViewController *)appDelegate.ariticleListView;
 							if (appDelegate.ariticleListView) {
 								[ariticleListView completeDwonloadFullTextAndPdfReloadONWebView];

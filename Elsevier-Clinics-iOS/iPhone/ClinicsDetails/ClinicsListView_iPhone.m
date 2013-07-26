@@ -278,6 +278,13 @@
         rect.origin.y = 60;
         m_scrollView.frame = rect;
         
+        
+        rect = m_viewDownloadArt.frame;
+        rect.origin.y = rect.origin.y + 50;
+        m_viewDownloadArt.frame = rect;
+        
+        
+        
     }
     
 }
@@ -347,7 +354,7 @@
         //Create Button If new Issues exists
         if (newIssuesCount>0)
         {
-            UIImage *img=[UIImage imageNamed:@"noti.png"];
+            UIImage *img=[UIImage imageNamed:@"img_notifications_new.png"];
             
             UIButton *issuesCountBtn=[UIButton buttonWithType:UIButtonTypeCustom];
             
@@ -797,7 +804,8 @@
 
 -(void)filpScrennShowBackIssue:(NSInteger)IndexSection{
 
-	
+	reloadArticleType = reloadClinics;
+    
 	ClinicsDataHolder *clinicDataHolder = (ClinicsDataHolder *)[m_arrClinics objectAtIndex:IndexSection];
 	ListBackIssueController_iPhone  *listBackIssue;
 	listBackIssue=[[ListBackIssueController_iPhone alloc] init];

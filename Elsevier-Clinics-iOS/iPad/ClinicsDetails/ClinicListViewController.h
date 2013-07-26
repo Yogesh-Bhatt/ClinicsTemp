@@ -33,6 +33,7 @@
 	NSInteger latButtontag;
 	NSInteger  categoryID;
 	NSInteger  clinicsection;
+    IBOutlet UIButton *m_downloadBtn;
 	
 	
 }
@@ -52,5 +53,7 @@
 
 - (IBAction)categoryButtonPressed:(id)sender;
 - (IBAction)viewDownloadedArticles:(id)sender;
+
+
 
 @end

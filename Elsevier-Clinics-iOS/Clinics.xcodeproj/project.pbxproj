@@ -502,12 +502,10 @@
 		BCE7FF1A15359A6A00F18F3A /* TblCellCardiology@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */; };
 		BCE7FF1B15359A6A00F18F3A /* TblCellCardiologyS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */; };
 		BCE7FF1C15359A6A00F18F3A /* TblCellEmergency1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */; };
-		BCE7FF1D15359A6A00F18F3A /* TblCellEmergency1S@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0B15359A6A00F18F3A /* TblCellEmergency1S@2x.png */; };
 		BCE7FF1E15359A6A00F18F3A /* TblCellInternalMedicine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */; };
 		BCE7FF1F15359A6A00F18F3A /* TblCellInternalMedicineS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0D15359A6A00F18F3A /* TblCellInternalMedicineS@2x.png */; };
 		BCE7FF2015359A6A00F18F3A /* TblCellOrthopedics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0E15359A6A00F18F3A /* TblCellOrthopedics@2x.png */; };
 		BCE7FF2115359A6A00F18F3A /* TblCellOrthopedicsS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0F15359A6A00F18F3A /* TblCellOrthopedicsS@2x.png */; };
-		BCE7FF2215359A6A00F18F3A /* TblCellPathology@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1015359A6A00F18F3A /* TblCellPathology@2x.png */; };
 		BCE7FF2315359A6A00F18F3A /* TblCellPathologyS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1115359A6A00F18F3A /* TblCellPathologyS@2x.png */; };
 		BCE7FF2415359A6A00F18F3A /* TblCellPrimary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1215359A6A00F18F3A /* TblCellPrimary@2x.png */; };
 		BCE7FF2515359A6A00F18F3A /* TblCellPrimaryS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1315359A6A00F18F3A /* TblCellPrimaryS@2x.png */; };
@@ -1389,12 +1387,10 @@
 		BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellCardiology@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellCardiology@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellCardiologyS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellCardiologyS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellEmergency1@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellEmergency1@2x.png"; sourceTree = "<group>"; };
-		BCE7FF0B15359A6A00F18F3A /* TblCellEmergency1S@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellEmergency1S@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellEmergency1S@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellInternalMedicine@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellInternalMedicine@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0D15359A6A00F18F3A /* TblCellInternalMedicineS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellInternalMedicineS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellInternalMedicineS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0E15359A6A00F18F3A /* TblCellOrthopedics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellOrthopedics@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellOrthopedics@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0F15359A6A00F18F3A /* TblCellOrthopedicsS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellOrthopedicsS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellOrthopedicsS@2x.png"; sourceTree = "<group>"; };
-		BCE7FF1015359A6A00F18F3A /* TblCellPathology@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPathology@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPathology@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1115359A6A00F18F3A /* TblCellPathologyS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPathologyS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPathologyS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1215359A6A00F18F3A /* TblCellPrimary@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPrimary@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPrimary@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1315359A6A00F18F3A /* TblCellPrimaryS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPrimaryS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPrimaryS@2x.png"; sourceTree = "<group>"; };
@@ -2806,12 +2802,10 @@
 				BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */,
 				BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */,
 				BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */,
-				BCE7FF0B15359A6A00F18F3A /* TblCellEmergency1S@2x.png */,
 				BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */,
 				BCE7FF0D15359A6A00F18F3A /* TblCellInternalMedicineS@2x.png */,
 				BCE7FF0E15359A6A00F18F3A /* TblCellOrthopedics@2x.png */,
 				BCE7FF0F15359A6A00F18F3A /* TblCellOrthopedicsS@2x.png */,
-				BCE7FF1015359A6A00F18F3A /* TblCellPathology@2x.png */,
 				BCE7FF1115359A6A00F18F3A /* TblCellPathologyS@2x.png */,
 				BCE7FF1215359A6A00F18F3A /* TblCellPrimary@2x.png */,
 				BCE7FF1315359A6A00F18F3A /* TblCellPrimaryS@2x.png */,
@@ -5384,12 +5378,10 @@
 				BCE7FF1A15359A6A00F18F3A /* TblCellCardiology@2x.png in Resources */,
 				BCE7FF1B15359A6A00F18F3A /* TblCellCardiologyS@2x.png in Resources */,
 				BCE7FF1C15359A6A00F18F3A /* TblCellEmergency1@2x.png in Resources */,
-				BCE7FF1D15359A6A00F18F3A /* TblCellEmergency1S@2x.png in Resources */,
 				BCE7FF1E15359A6A00F18F3A /* TblCellInternalMedicine@2x.png in Resources */,
 				BCE7FF1F15359A6A00F18F3A /* TblCellInternalMedicineS@2x.png in Resources */,
 				BCE7FF2015359A6A00F18F3A /* TblCellOrthopedics@2x.png in Resources */,
 				BCE7FF2115359A6A00F18F3A /* TblCellOrthopedicsS@2x.png in Resources */,
-				BCE7FF2215359A6A00F18F3A /* TblCellPathology@2x.png in Resources */,
 				BCE7FF2315359A6A00F18F3A /* TblCellPathologyS@2x.png in Resources */,
 				BCE7FF2415359A6A00F18F3A /* TblCellPrimary@2x.png in Resources */,
 				BCE7FF2515359A6A00F18F3A /* TblCellPrimaryS@2x.png in Resources */,
@@ -5887,7 +5879,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
@@ -5909,7 +5901,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Clinics/Clinics-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Clinics/MailViewController\"",
@@ -5942,7 +5934,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
@@ -5963,7 +5955,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
@@ -5986,7 +5978,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Clinics/Clinics-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Clinics/MailViewController\"",
@@ -6017,7 +6009,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Clinics/Clinics-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Clinics/MailViewController\"",

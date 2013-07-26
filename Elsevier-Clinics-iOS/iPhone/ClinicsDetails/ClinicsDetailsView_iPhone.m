@@ -446,21 +446,10 @@
                 {
                     ClinicDetailHeaderCellView_iPhone *cellTemp = (ClinicDetailHeaderCellView_iPhone *)[CGlobal getViewFromXib:@"ClinicDetailHeaderCellView_iPhone" classname:[ClinicDetailHeaderCellView_iPhone class] owner:self];
                     
-                    /*
-                     ****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
-                     
-                     if([m_arrArticles count] == 0){
-                     
-                     ((ClinicDetailHeaderCellView *)cell).m_imgView.hidden = YES;
-                     
-                     
-                     }
-                     ****** This Condition Add Only Hide Issue Image If user want to see only article in Press************
-                     */
-                    
+                                       
                     cellTemp.callerDelegate = self;
                     
-                    if(aritcleInPressFlag == FALSE)
+                    //if(aritcleInPressFlag == FALSE)
                         cellTemp.m_downloadBtn.hidden = FALSE;
                     
                     
@@ -510,7 +499,7 @@
             
             cell1.m_btnDeleteArticle.tag=indexPath.row;
             cell1.m_PDFBtn.tag=indexPath.row;
-            cell1.m_HTMLBtn.tag=indexPath.row;
+            cell1.m_btnDeleteArticle.tag=indexPath.row;
             [cell1.m_btnDeleteArticle addTarget:self action:@selector(ClickOnDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
             [cell1.m_HTMLBtn addTarget:self action:@selector(clickOnFullTextButton:) forControlEvents:UIControlEventTouchUpInside];
             [cell1.m_PDFBtn addTarget:self action:@selector(clickOnPDFButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -583,6 +572,8 @@
                 break;
         }
     }else{
+        
+        /// for downloaded Articles
         
         ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(indexPath.row)];
         [(DownloadArticleViewCell_iPhone *)cell setData:articleDataHolder];
@@ -754,6 +745,53 @@
     
 }
 
+
+-(void)ClickOnDeleteButton:(id)sender{
+    
+	UIButton  *btn=(UIButton *)sender;
+	buttnTag=btn.tag;
+    
+	ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+	// ***************check file present or not ***************
+	BOOL success;
+	NSFileManager *fileManager=[NSFileManager defaultManager];
+	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+	NSString *documentsDirectory=[paths objectAtIndex:0];
+	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",articleDataHolder.sArticleInfoId]];
+	success=[fileManager fileExistsAtPath:writableDBPath];
+	if(success){
+        
+        NSError *error = nil;
+        [fileManager removeItemAtPath:writableDBPath error:&error];
+        
+        if(error != nil){
+            
+            NSLog(@"Error occured");
+            
+        }
+    }
+    
+    NSString *sql = [NSString stringWithFormat:@"UPDATE tblarticle SET downloadRank = 0 where ArticleInfoId = '%@'",articleDataHolder.sArticleInfoId];
+    NSLog(@"SQl %@",sql);
+    
+    DatabaseConnection *database = [DatabaseConnection sharedController];
+    
+    BOOL check1 =  [database updateArticleDownloaded:[NSString stringWithFormat:@"UPDATE tblArticle SET downloadRank = 0 where ArticleInfoId ='%@'",articleDataHolder.sArticleInfoId]];
+    
+    if(check1){
+        
+        NSLog(@"True");
+        [self latestDownloadedArticles];
+        
+    }else{
+        
+        NSLog(@"False");
+        
+    }
+    
+}
+
+
 //*************************See PDF ********************
 -(void)clickOnPDFButton:(id)sender{
     ClinicsAppDelegate   *appDelegate= (ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
@@ -762,7 +800,14 @@
     buttnTag=btn.tag;
     afterDwonLoading=FALSE;
     UIImage *Image=loginButton.currentImage;
-    ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    
+    ArticleDataHolder *articleDataHolder;
+    
+    if(reloadArticleType == reloadClinics)
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    else{
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+    }
     
     ////*********************** check file present or not //***********************
     BOOL success;
@@ -816,7 +861,13 @@
     afterDwonLoading = TRUE;
     UIButton  *btn=(UIButton *)sender;
     buttnTag=btn.tag;
-    ArticleDataHolder *articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    ArticleDataHolder *articleDataHolder;
+    
+    if(reloadArticleType == reloadClinics)
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
+    else{
+        articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+    }
     UIImage *Image = loginButton.currentImage;
     
     BOOL success;

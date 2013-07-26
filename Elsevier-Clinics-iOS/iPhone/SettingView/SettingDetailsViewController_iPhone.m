@@ -274,7 +274,8 @@
 #pragma mark - <UIbutton Pressed Methods>
 
 -(void)pressONSaveButton:(id)sender
-{   
+{
+    if ([CGlobal checkNetworkReachabilityWithAlert]) {
 		DatabaseConnection *database = [DatabaseConnection sharedController];
 		NSInteger checked=[database selectCheckOrNot:[NSString stringWithFormat:@"Select checked  from tblClinic"]];
 		ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
@@ -313,6 +314,7 @@
 			
 			
 		}
+    }
 }
 
 -(void)saveYourSettingFollowedClinics{

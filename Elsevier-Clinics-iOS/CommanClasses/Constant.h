@@ -49,7 +49,8 @@
 
 // login info 
 #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
-#define IssueImageUrl    @"http://208.109.209.216/clinics/files/cover/"
+#define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
+
 
 
 /*
