@@ -391,6 +391,8 @@
     if (cell == nil)
 	{
         cell = (ClnicsTableCellView *)[CGlobal getViewFromXib:@"ClnicsTableCellView" classname:[ClnicsTableCellView class] owner:self];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
 	}	
     
     SectionInfo *sectionInfoObj = (SectionInfo *)[self.sectionInfoArray objectAtIndex:indexPath.section];
@@ -472,9 +474,11 @@
     if(![[GANTracker sharedTracker] trackPageview:clinicsName
                                         withError:&error]) {
     }
+    
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
-     */ 
+   */
+    
     NSInteger countOfRowsToInsert = [sectionInfo.issueArray count];
     if (countOfRowsToInsert > 0)
     { [[NSUserDefaults  standardUserDefaults] setObject:@"1" forKey:@"SectionSeleted"];
@@ -577,8 +581,8 @@
 
 -(void)sectionHeaderView:(ClnicsTableSectionView*)sectionHeaderView sectionClosed:(NSInteger)sectionClosed 
 {
-	//  Create an array of the index paths of the rows in the section that was closed, then delete those rows from the table view.
-	
+    //  Create an array of the index paths of the rows in the section that was closed, then delete those rows from the table view.
+    
 	SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionClosed];
 	sectionHeaderView.m_imgView.image=[UIImage imageNamed:@"GastroenterologyBar-1.png"];
     

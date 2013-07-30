@@ -33,7 +33,17 @@
 - (void) didRotate:(id)sender
 {
     
-    [downloadPopOverController dismissPopoverAnimated:YES];
+    //[downloadPopOverController dismissPopoverAnimated:YES];
+    
+    if ([CGlobal isOrientationLandscape]) {
+        
+        [downloadPopOverController presentPopoverFromRect:CGRectMake(510, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        
+        
+    }else{
+        
+        [downloadPopOverController presentPopoverFromRect:CGRectMake(570, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    }
     
     //NSLog(@"ClinicDeatildidRotate");
     ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -399,13 +409,13 @@
         
         if ([CGlobal isOrientationLandscape]) {
             
-            [downloadPopOverController presentPopoverFromRect:CGRectMake(500, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            [downloadPopOverController presentPopoverFromRect:CGRectMake(510, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
             
             
             
         }else{
             
-            [downloadPopOverController presentPopoverFromRect:CGRectMake(550, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            [downloadPopOverController presentPopoverFromRect:CGRectMake(570, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
         }
     }else{
         

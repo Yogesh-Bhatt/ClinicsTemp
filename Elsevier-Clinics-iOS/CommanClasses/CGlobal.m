@@ -363,6 +363,8 @@
 		
 		
 	}
+    NSLog(@"count %d",[arrArticle count]);
+    
 }
 
 //*************** Save ISSUE Data *****************************//

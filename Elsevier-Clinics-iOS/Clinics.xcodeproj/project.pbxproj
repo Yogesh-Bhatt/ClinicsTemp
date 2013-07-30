@@ -761,6 +761,9 @@
 		D68AC63213C8799900498978 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68AC63013C8799900498978 /* MainWindow.xib */; };
 		D68AC64113C879A800498978 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68AC63F13C879A800498978 /* MainWindow-iPad.xib */; };
 		D68AC67313C87E4E00498978 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D68AC67213C87E4E00498978 /* libsqlite3.dylib */; };
+		D690ECDA17A7CDA200F725E3 /* oral_atlas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D690ECD717A7CD9D00F725E3 /* oral_atlas.jpg */; };
+		D690ECDB17A7CDA200F725E3 /* oral_dental_clinics.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D690ECD817A7CD9F00F725E3 /* oral_dental_clinics.jpg */; };
+		D690ECDC17A7CDA200F725E3 /* oral_Maxillofacial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D690ECD917A7CDA000F725E3 /* oral_Maxillofacial.jpg */; };
 		D697EEEB1797F51900E23718 /* bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEE81797F51900E23718 /* bar_bg.png */; };
 		D697EEEC1797F51900E23718 /* download_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEE91797F51900E23718 /* download_notification.png */; };
 		D697EEED1797F51900E23718 /* loading_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEEA1797F51900E23718 /* loading_bar_bg.png */; };
@@ -2035,6 +2038,9 @@
 		D68AC63113C8799900498978 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		D68AC64013C879A800498978 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		D68AC67213C87E4E00498978 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D690ECD717A7CD9D00F725E3 /* oral_atlas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oral_atlas.jpg; path = CommanClasses/Resources/covers/oral_atlas.jpg; sourceTree = "<group>"; };
+		D690ECD817A7CD9F00F725E3 /* oral_dental_clinics.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oral_dental_clinics.jpg; path = CommanClasses/Resources/covers/oral_dental_clinics.jpg; sourceTree = "<group>"; };
+		D690ECD917A7CDA000F725E3 /* oral_Maxillofacial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oral_Maxillofacial.jpg; path = CommanClasses/Resources/covers/oral_Maxillofacial.jpg; sourceTree = "<group>"; };
 		D697EEE81797F51900E23718 /* bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_bg.png; sourceTree = "<group>"; };
 		D697EEE91797F51900E23718 /* download_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download_notification.png; sourceTree = "<group>"; };
 		D697EEEA1797F51900E23718 /* loading_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_bar_bg.png; sourceTree = "<group>"; };
@@ -2095,6 +2101,9 @@
 		BC047DD01538179C00525B9C /* CoverImages */ = {
 			isa = PBXGroup;
 			children = (
+				D690ECD717A7CD9D00F725E3 /* oral_atlas.jpg */,
+				D690ECD817A7CD9F00F725E3 /* oral_dental_clinics.jpg */,
+				D690ECD917A7CDA000F725E3 /* oral_Maxillofacial.jpg */,
 				BC047DD1153817C400525B9C /* 623357_childpsychclin.jpg */,
 				BC047DD2153817C400525B9C /* Anesthesiology.jpg */,
 				BC047DD3153817C400525B9C /* AtlasOralMaxSurgery.jpg */,
@@ -5661,6 +5670,9 @@
 				BB95B6EA17A117450067BCC3 /* DownloadArticleViewCell_iPhone.xib in Resources */,
 				BB95B6EC17A126E50067BCC3 /* btn_delete_articles_iphone.png in Resources */,
 				BB95B6EE17A126FA0067BCC3 /* btn_delete_articles_iphone@2x.png in Resources */,
+				D690ECDA17A7CDA200F725E3 /* oral_atlas.jpg in Resources */,
+				D690ECDB17A7CDA200F725E3 /* oral_dental_clinics.jpg in Resources */,
+				D690ECDC17A7CDA200F725E3 /* oral_Maxillofacial.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5913,8 +5925,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -5990,8 +6002,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -6022,8 +6034,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;

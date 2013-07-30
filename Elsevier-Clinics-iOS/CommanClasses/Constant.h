@@ -34,6 +34,7 @@
 #define kDATABASE_NAME       @"Clinics_DB.sqlite"
 
 
+
 //live urls
 #define dwonlodaUrl                     @"http://208.109.209.216/clinics.test/files/"
 #define selectedClinics                 @"http://208.109.209.216/clinics/fetchclinic.php?clinicid="
@@ -69,7 +70,7 @@
  
  // login info
  #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
- #define IssueImageUrl    @"http://208.109.209.216/clinics/files/cover/"
+ #define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
 */
 
 #define SYMMETRICKEY   @"TVQYOXzYtbttR7SxGQ/YiQ=="

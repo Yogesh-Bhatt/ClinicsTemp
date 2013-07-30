@@ -80,8 +80,23 @@ static DatabaseConnection * _sharedDatabaseConnection;
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
 	success = [fileManager fileExistsAtPath:writableDBPath];
-	if(success)return;
 	
+    if(success){
+    
+        BOOL check =  [self updateArticleDownloaded:@"ALTER TABLE TblArticle ADD COLUMN downloadRank NUMERIC;"];
+        
+        if(check){
+            
+            NSLog(@"Updated");
+            
+        }else{
+            
+            NSLog(@"Not Updated");
+            
+        }
+        
+        return;
+    }
 	NSString *defaultDBPath=[[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:kDATABASE_NAME];
 	success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
 	if(!success){

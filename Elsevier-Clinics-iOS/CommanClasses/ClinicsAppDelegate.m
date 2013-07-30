@@ -69,7 +69,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-	// First Time Save Setting FALSE
+     [MKStoreManager sharedManager];
     
     m_downloadArticlesArr = [[NSMutableArray alloc] init];
     m_downloadedConnectionArr = [[NSMutableArray alloc] init];
@@ -81,7 +81,7 @@
         [[PersistenceDataStore sharedManager] setData:KFirstLunchKey withKey:KFirstLunchSettingKey];
     }
     
-    [MKStoreManager sharedManager];
+   
 	
 	diveceType = 1;
     
