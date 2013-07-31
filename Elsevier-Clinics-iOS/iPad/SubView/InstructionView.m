@@ -63,10 +63,11 @@
         
         UIWebView   *webView=[[UIWebView alloc] init];
         if ([CGlobal isOrientationPortrait]) 
-            webView.frame = CGRectMake(220, 320,320 ,  320);
+            webView.frame = CGRectMake(220, 320,320 ,  370);
         else
-            webView.frame = CGRectMake(400, 220,320 ,  320);
+            webView.frame = CGRectMake(400, 220,320 ,  370);
         
+        webView.delegate = self;
         webView.tag = KwebViewTag;
                   for (UIView *view1 in [webView subviews]) {
             			if ([view1 isKindOfClass:[UIScrollView class]]) {
@@ -87,6 +88,19 @@
     return self;
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)requestTest navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked){
+        
+        if ([[[requestTest URL] absoluteString] rangeOfString:@"http"].location != NSNotFound) {
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://theclinics.com/"]]];
+            return NO;
+        }
+    }
+    return YES;
+}
 //************************* Here Change Orientation Intstruction View *******************
 
 -(void)changeOrientaionView{

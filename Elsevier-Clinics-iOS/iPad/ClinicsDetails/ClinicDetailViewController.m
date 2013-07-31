@@ -33,17 +33,17 @@
 - (void) didRotate:(id)sender
 {
     
-    //[downloadPopOverController dismissPopoverAnimated:YES];
+    [downloadPopOverController dismissPopoverAnimated:YES];
     
-    if ([CGlobal isOrientationLandscape]) {
-        
-        [downloadPopOverController presentPopoverFromRect:CGRectMake(510, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-        
-        
-    }else{
-        
-        [downloadPopOverController presentPopoverFromRect:CGRectMake(570, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-    }
+//    if ([CGlobal isOrientationLandscape]) {
+//        
+//        [downloadPopOverController presentPopoverFromRect:CGRectMake(510, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+//        
+//        
+//    }else{
+//        
+//        [downloadPopOverController presentPopoverFromRect:CGRectMake(570, -740.0 , 320.0, 768.0) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+//    }
     
     //NSLog(@"ClinicDeatildidRotate");
     ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -291,7 +291,7 @@
     
     if([m_arrArticles count] < 1){
         
-        UIAlertView   *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"No Article has been downloaded." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView   *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"You do not have any downloaded articles." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
         RELEASE(alert);
         
@@ -1424,7 +1424,7 @@
             
             [self multipleArticleDownload];
             
-            [CGlobal showMessage:@"" msg:@"Downloading start."];
+            [CGlobal showMessage:@"" msg:@"Download started."];
             
             
         }else{
@@ -1470,6 +1470,11 @@
     
 }
 
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
+    
+    //downloadDetailviewController.view.hidden = TRUE;
+    
+}
 -(void)multipleArticleDownload{
     
     downloadDetailviewController = [[DownloadDetailViewController alloc] init];
@@ -1494,7 +1499,7 @@
     
     [self multipleArticleDownload];
     
-    [CGlobal showMessage:@"" msg:@"Downloading start."];
+    [CGlobal showMessage:@"" msg:@"Download started."];
     
 }
 

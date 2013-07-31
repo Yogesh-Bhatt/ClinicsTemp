@@ -608,6 +608,14 @@
     
     NSLog(@"%d",[m_arrArticles count]);
     
+    if([m_arrArticles count] < 1){
+        
+        UIAlertView   *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"You do not have any downloaded articles." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+        RELEASE(alert);
+        
+    }
+    
     [m_tblClinicDetail reloadData];
     
 }
@@ -1160,7 +1168,7 @@
             
             m_numberOfDownload = [m_downloadQueueArr count];
             
-            [CGlobal showMessage:@"" msg:@"Downloading start."];
+            [CGlobal showMessage:@"" msg:@"Download started."];
             
             
         }else{
@@ -1221,7 +1229,7 @@
                                                                                                                                                  bundle:nil];
     [downloadDetailviewController refreshTblWith:m_downloadQueueArr];
     
-    [CGlobal showMessage:@"" msg:@"Downloading start."];
+    [CGlobal showMessage:@"" msg:@"Download started."];
     
     
     m_numberOfDownload = [m_downloadQueueArr count];

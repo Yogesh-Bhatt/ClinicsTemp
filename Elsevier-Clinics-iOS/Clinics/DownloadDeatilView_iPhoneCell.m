@@ -169,15 +169,10 @@
     }
 	[za release];
     
-    
-    
-    //NSString  *file=  [fileDocPath substringToIndex:[filePath length] - 1];
-    
     [CGlobal removeZipAtFilePath:filePath];
     
-    [self displayMsg:@"Downloading Completed"];
+    [self displayMsg:@"Download Complete"];
     
-    //Update article tbl for downloaded data
     
     if(ret == YES){
         

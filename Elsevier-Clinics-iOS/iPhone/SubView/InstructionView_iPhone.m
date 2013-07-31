@@ -39,7 +39,7 @@
         navigationLabel.text = @"Welcome";
         navigationLabel.font = [UIFont fontWithName:@"Helvetica" size:20.0];
         navigationLabel.font = [UIFont boldSystemFontOfSize:20.0];
-        navigationLabel.frame = CGRectMake(10, 76, 300, 44);
+        navigationLabel.frame = CGRectMake(10, 6, 300, 44);
         navigationLabel.textColor = [UIColor colorWithRed:50.0/255.0 green:79.0/255.0 blue:133.0/255.0 alpha:1.0];
         navigationLabel.userInteractionEnabled = TRUE;
         navigationLabel.backgroundColor = [UIColor colorWithRed:217.0f/255.0 green:242.0f/255.0 blue:251.0f/255 alpha:1.0f];
@@ -54,8 +54,9 @@
         RELEASE(navigationLabel);
         
         UIWebView   *webView=[[UIWebView alloc] init];
-        webView.frame = CGRectMake(10,120,300 ,300);
-        
+        webView.frame = CGRectMake(10,50,300 ,390);
+        webView.delegate = self;
+        //webView.scalesPageToFit = NO;
         webView.tag = KwebViewTag;
         
         for (UIView *view1 in [webView subviews]) {
@@ -77,6 +78,19 @@
     return self;
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)requestTest navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked){
+        
+        if ([[[requestTest URL] absoluteString] rangeOfString:@"http"].location != NSNotFound) {
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://theclinics.com/"]]];
+            return NO;
+        }
+    }
+    return YES;
+}
 //************************* Don't  Show  Again Intstruction View   *******************
 
 -(void)tabOnOkButton:(id)sender{

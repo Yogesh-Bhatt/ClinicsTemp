@@ -126,7 +126,7 @@
     
     NSLog(@"%@",connection.url.absoluteString);
     
-    [self displayMsg:@"Downloading Completed"];
+    [self displayMsg:@"Download Complete"];
    
     
     NSString   *zipFileName=[[connection.url.absoluteString componentsSeparatedByString:@"/"] lastObject];

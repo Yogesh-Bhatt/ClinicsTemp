@@ -360,8 +360,6 @@ static MKStoreManager* _sharedStoreManager;
     
   NSTimeInterval expiresDate = [[receiptDict objectForKey:@"expires-date"] doubleValue]/1000.0f;
     
-  //NSLog(@"Rohit %@",[NSDate date]);
-    
   return expiresDate > [[NSDate date] timeIntervalSince1970];
 }
 
