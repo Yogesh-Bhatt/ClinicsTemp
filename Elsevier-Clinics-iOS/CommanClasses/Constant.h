@@ -32,7 +32,7 @@
 #define KisItLoginKey        @"isItLogin" 
 
 #define kDATABASE_NAME       @"Clinics_DB.sqlite"
-
+#define kNewDATABASE_NAME       @"NewClinics_DB.sqlite"
 
 /*
 //live urls
@@ -51,6 +51,7 @@
 // login info 
 #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
 #define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
+
 */
 
 
@@ -109,7 +110,7 @@
 
 
 
-#define NSLog if(1)NSLog
+#define NSLog if(0)NSLog
 
 #define PScreenHeight   1024
 #define PScreenWidth    768 

@@ -71,7 +71,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
 #pragma mark -
 #pragma mark PDF Methods
 
--(void)createDatabaseCopyIfNotExist{
++(void)createDatabaseCopyIfNotExist{
     
 	BOOL success;
 	NSFileManager *fileManager=[NSFileManager defaultManager];
@@ -81,34 +81,165 @@ static DatabaseConnection * _sharedDatabaseConnection;
 	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
 	success = [fileManager fileExistsAtPath:writableDBPath];
 	
-    if(success){
     
-        BOOL check =  [self updateArticleDownloaded:@"ALTER TABLE TblArticle ADD COLUMN downloadRank NUMERIC;"];
+    paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+	documentsDirectory = [paths objectAtIndex:0];
+    writableDBPath=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
+    
+    if(!success){
         
-        if(check){
+        success = [fileManager fileExistsAtPath:writableDBPath];
+        
+    }
+        
+    NSString *writableDBPathNew =[documentsDirectory stringByAppendingPathComponent:kNewDATABASE_NAME];
+	NSString *defaultDBPath=[[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:kNewDATABASE_NAME];
+    
+    BOOL newDBCreateCheck  = [fileManager fileExistsAtPath:writableDBPathNew];
+    
+    if(!newDBCreateCheck){
+    
+        BOOL newSuccess=[fileManager copyItemAtPath:defaultDBPath toPath:writableDBPathNew error:&error];
+        
+        if(success && newSuccess){
             
-            NSLog(@"Updated");
-            
-        }else{
-            
-            NSLog(@"Not Updated");
+            [self dataMigrationAllTbls];
             
         }
         
-        return;
     }
-	NSString *defaultDBPath=[[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:kDATABASE_NAME];
-	success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
-	if(!success){
-		NSAssert1(0,@"Failed to create writable database file with massage '%@'.",[error localizedDescription]);
-	}
+    
+    [self removeOldDataBase];
+    
 	
 }
+
+
++(void)removeOldDataBase{
+    
+    BOOL success;
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+	NSError *error;
+	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *writableDBPath=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
+	success = [fileManager fileExistsAtPath:writableDBPath];
+    
+    if(success){
+        
+        [fileManager removeItemAtPath:writableDBPath error:&error];
+
+        
+    }else{
+        
+        
+        paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+        documentsDirectory = [paths objectAtIndex:0];
+        writableDBPath=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
+        
+        [fileManager removeItemAtPath:writableDBPath error:&error];
+
+    }
+
+}
+
+
++(void)dataMigrationAllTbls{
+    
+    
+    NSString *query1 = @"Insert into main.tblReference SELECT * FROM old_db.tblReference;";
+    
+    [self attachDataBase:query1];
+    
+    NSString *query2 = @"Insert into main.tblNotes SELECT * FROM old_db.tblNotes;";
+    
+    [self attachDataBase:query2];
+    
+    
+    NSString *query3 = @"delete from TblClinic;";
+    
+    [self attachDataBase:query3];
+ 
+    NSString *query4 = @"Insert into main.TblClinic SELECT * FROM old_db.TblClinic;";
+    
+    [self attachDataBase:query4];
+    
+    NSString *query5 = @"Insert into main.TblIssue (download, Cover_Img, PageRange, Preface, Volume, IssueID, ClinicID, IssueTitle, ReleaseDate, Editors, LastModified, PrefaceTitle, IssueNumber) SELECT * FROM old_db.TblIssue;";
+    
+    [self attachDataBase:query5];
+   
+
+    NSString *query6 = @"Insert into main.TblArticle(Doi_Link, downloadDate, Note, ClinicID, CategoryID, ArticleInfoId, PdfFileName, PageRange, Keywords, ReleaseDate, Read, Bookmark, ArticleId, IssueId, ArticleTitle, Abstract, ArticleHtmlFileName, LastModified, Author, ArticleType, IsArticleInPress) SELECT * FROM old_db.TblArticle;";
+    
+    [self attachDataBase:query6];
+
+}
+
++(void)attachDataBase:(NSString *)a_query{
+    
+    
+    BOOL success;
+	NSFileManager *fileManager=[NSFileManager defaultManager];
+	NSArray *pathsTemp=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+	NSString *documentsDirectoryTemp = [pathsTemp objectAtIndex:0];
+	NSString *writableDBPath=[documentsDirectoryTemp stringByAppendingPathComponent:kDATABASE_NAME];
+	success = [fileManager fileExistsAtPath:writableDBPath];
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    
+    
+    NSString *documnetStrPath = nil;
+    
+    if(success){
+        
+        documnetStrPath = documentsDirectoryTemp;
+        
+    }else{
+        
+        documnetStrPath = documentDirectory;
+        
+    }
+    
+    
+    const char *oldDBPath = [[documnetStrPath stringByAppendingPathComponent:kDATABASE_NAME] UTF8String];
+    const char *newDBPath = [[documentDirectory stringByAppendingPathComponent:kNewDATABASE_NAME] UTF8String];
+    sqlite3 *bookLoansDB;
+    if (sqlite3_open(newDBPath, &bookLoansDB) == SQLITE_OK) {
+        NSString *attachSQL = [NSString stringWithFormat: @"ATTACH DATABASE \'%s\' AS old_db", oldDBPath];
+        char *errorMessage;
+        if (sqlite3_exec(bookLoansDB, [attachSQL UTF8String], NULL, NULL, &errorMessage) == SQLITE_OK) {
+            sqlite3_stmt *selectStmt;
+            NSString *selectSQL = a_query;
+            if (sqlite3_prepare_v2(bookLoansDB, [selectSQL UTF8String] , -1, &selectStmt, nil) == SQLITE_OK) {
+                if(sqlite3_step(selectStmt) == SQLITE_ROW) {
+                    NSLog(@"Success");
+                }
+            }
+            else {
+                NSLog(@"Error while creating select statement: '%s'", sqlite3_errmsg(bookLoansDB));
+            }
+        }
+        else {
+            NSLog(@"Error while attaching databases: '%s'", errorMessage);
+        }
+    }
+    else {
+        
+        NSLog(@"Failed to open database at %@ with error %s", kDATABASE_NAME, sqlite3_errmsg(bookLoansDB));
+        sqlite3_close(bookLoansDB);
+        
+    }
+}
+
+
+
 -(BOOL)openConnection
 {
-	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES);
 	NSString *documentsDirectory=[paths objectAtIndex:0];
-	NSString *path=[documentsDirectory stringByAppendingPathComponent:kDATABASE_NAME];
+	NSString *path=[documentsDirectory stringByAppendingPathComponent:kNewDATABASE_NAME];
 	if(sqlite3_open([path UTF8String],&database)==SQLITE_OK)
 		return TRUE;
 	else

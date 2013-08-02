@@ -277,6 +277,12 @@
     }
     
     
+    
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"Login" action:@"clinics.com" label:nil value:-1 withError:&error]) {
+    }
+
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -538,14 +544,7 @@
 	ClinicsDataHolder *clinicDataHolder = (ClinicsDataHolder *)[m_arrClinics objectAtIndex:sectionOpened];
 	clinicID  = (NSInteger )clinicDataHolder.nClinicID;
 	sectionInfo.open = YES;
-    
-    // ****************** track Google event********************************
-    [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID dispatchPeriod:10.0 delegate:nil];
-    
-    NSError *error;
-    if (![[GANTracker sharedTracker] trackEvent:@"Login" action:@"clinics.com" label:nil value:-1 withError:&error]) {
-    } 
-      /*
+         /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
      */ 
     NSInteger countOfRowsToInsert = [sectionInfo.issueArray count];

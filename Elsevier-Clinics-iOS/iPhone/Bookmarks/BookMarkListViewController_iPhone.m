@@ -255,6 +255,7 @@
     
     [CGlobal setFrameWith:self.view];
 
+   
 }
 
 
@@ -393,6 +394,7 @@
     
     NSString *clinicsName = clinicDataHolder.sClinicTitle;
 
+    /*
     [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID
                                            dispatchPeriod:10
                                                  delegate:nil];
@@ -400,6 +402,7 @@
     if(![[GANTracker sharedTracker] trackPageview:clinicsName
                                         withError:&error]) {
     }
+     */
       // Track close  Google Event**************************************
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.

@@ -543,7 +543,6 @@
 		BCFD61EE1532BF3600CA910D /* MenuOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61E71532BF3600CA910D /* MenuOptionView.m */; };
 		BCFD61EF1532BF3600CA910D /* SliderDescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61E91532BF3600CA910D /* SliderDescriptionView.m */; };
 		BCFD61F01532BF3600CA910D /* SliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61EB1532BF3600CA910D /* SliderView.m */; };
-		BCFD61F31532C03300CA910D /* Clinics_DB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BCFD61F21532C03300CA910D /* Clinics_DB.sqlite */; };
 		BCFD620C1532C05700CA910D /* ArticleDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61F71532C05700CA910D /* ArticleDataHolder.m */; };
 		BCFD620E1532C05700CA910D /* CategoryDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61FB1532C05700CA910D /* CategoryDataHolder.m */; };
 		BCFD620F1532C05700CA910D /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFD61FD1532C05700CA910D /* CategoryInfo.m */; };
@@ -767,6 +766,7 @@
 		D697EEEB1797F51900E23718 /* bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEE81797F51900E23718 /* bar_bg.png */; };
 		D697EEEC1797F51900E23718 /* download_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEE91797F51900E23718 /* download_notification.png */; };
 		D697EEED1797F51900E23718 /* loading_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D697EEEA1797F51900E23718 /* loading_bar_bg.png */; };
+		D69CF98217ABA7F30011CB05 /* NewClinics_DB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D69CF98117ABA7F30011CB05 /* NewClinics_DB.sqlite */; };
 		D6A211E41782FFAA00776A0A /* BookmarksSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A211D61782FFAA00776A0A /* BookmarksSelected@2x.png */; };
 		D6A211E51782FFAA00776A0A /* BookmarksUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A211D71782FFAA00776A0A /* BookmarksUnselected@2x.png */; };
 		D6A211E61782FFAA00776A0A /* FeedbackSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A211D81782FFAA00776A0A /* FeedbackSelected@2x.png */; };
@@ -1453,7 +1453,6 @@
 		BCFD61E91532BF3600CA910D /* SliderDescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderDescriptionView.m; path = CommanClasses/CustomSliderController/SliderDescriptionView.m; sourceTree = "<group>"; };
 		BCFD61EA1532BF3600CA910D /* SliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderView.h; path = CommanClasses/CustomSliderController/SliderView.h; sourceTree = "<group>"; };
 		BCFD61EB1532BF3600CA910D /* SliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderView.m; path = CommanClasses/CustomSliderController/SliderView.m; sourceTree = "<group>"; };
-		BCFD61F21532C03300CA910D /* Clinics_DB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Clinics_DB.sqlite; path = CommanClasses/Resources/Clinics_DB.sqlite; sourceTree = "<group>"; };
 		BCFD61F61532C05700CA910D /* ArticleDataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleDataHolder.h; path = CommanClasses/Resources/DataBaseClass/ArticleDataHolder.h; sourceTree = "<group>"; };
 		BCFD61F71532C05700CA910D /* ArticleDataHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleDataHolder.m; path = CommanClasses/Resources/DataBaseClass/ArticleDataHolder.m; sourceTree = "<group>"; };
 		BCFD61FA1532C05700CA910D /* CategoryDataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDataHolder.h; path = CommanClasses/Resources/DataBaseClass/CategoryDataHolder.h; sourceTree = "<group>"; };
@@ -2044,6 +2043,7 @@
 		D697EEE81797F51900E23718 /* bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_bg.png; sourceTree = "<group>"; };
 		D697EEE91797F51900E23718 /* download_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download_notification.png; sourceTree = "<group>"; };
 		D697EEEA1797F51900E23718 /* loading_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_bar_bg.png; sourceTree = "<group>"; };
+		D69CF98117ABA7F30011CB05 /* NewClinics_DB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewClinics_DB.sqlite; path = CommanClasses/Resources/NewClinics_DB.sqlite; sourceTree = SOURCE_ROOT; };
 		D6A211D61782FFAA00776A0A /* BookmarksSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookmarksSelected@2x.png"; sourceTree = "<group>"; };
 		D6A211D71782FFAA00776A0A /* BookmarksUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BookmarksUnselected@2x.png"; sourceTree = "<group>"; };
 		D6A211D81782FFAA00776A0A /* FeedbackSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FeedbackSelected@2x.png"; sourceTree = "<group>"; };
@@ -3234,7 +3234,6 @@
 				BC8BEFEC153557CA002B19F6 /* search.html */,
 				BCCFC1A715343F27005CE908 /* AboutTheApp */,
 				BCCFC18D15343491005CE908 /* stylesheet.css */,
-				BCFD61F21532C03300CA910D /* Clinics_DB.sqlite */,
 				BCFD62311532C50100CA910D /* Images */,
 				BCFD62181532C0E300CA910D /* InstuctionHtmlPngCss */,
 				BCFD61F51532C03E00CA910D /* DatabaseClass */,
@@ -4929,6 +4928,7 @@
 		D68AC62513C8799900498978 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D69CF98117ABA7F30011CB05 /* NewClinics_DB.sqlite */,
 				D68AC62613C8799900498978 /* Clinics-Info.plist */,
 				D68AC62713C8799900498978 /* InfoPlist.strings */,
 				D68AC62A13C8799900498978 /* Clinics-Prefix.pch */,
@@ -5081,7 +5081,6 @@
 				BCF781F01532AC5B007A92A1 /* style4.css in Resources */,
 				BCF781F11532AC5B007A92A1 /* style5.css in Resources */,
 				BCABC8771532BAC700AAB8FC /* FBDialog.bundle in Resources */,
-				BCFD61F31532C03300CA910D /* Clinics_DB.sqlite in Resources */,
 				BCFD621B1532C13100CA910D /* instriction.html in Resources */,
 				BCFD621C1532C13100CA910D /* iStyle.css in Resources */,
 				BCFD62251532C15800CA910D /* 1_iPhone.jpg in Resources */,
@@ -5673,6 +5672,7 @@
 				D690ECDA17A7CDA200F725E3 /* oral_atlas.jpg in Resources */,
 				D690ECDB17A7CDA200F725E3 /* oral_dental_clinics.jpg in Resources */,
 				D690ECDC17A7CDA200F725E3 /* oral_Maxillofacial.jpg in Resources */,
+				D69CF98217ABA7F30011CB05 /* NewClinics_DB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

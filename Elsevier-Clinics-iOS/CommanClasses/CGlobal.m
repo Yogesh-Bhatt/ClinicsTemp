@@ -363,7 +363,6 @@
 		
 		
 	}
-    NSLog(@"count %d",[arrArticle count]);
     
 }
 

@@ -247,6 +247,13 @@
         rcframe.size.height = (self.view.frame.size.height - 72.0);
         m_tblClinics.frame = rcframe;
     }
+    
+    // *************** track Google event********************************
+    
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"BookMark" action:@"clinics.com" label:nil value:-1 withError:&error]) {
+        
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -405,13 +412,7 @@
 	clinicID  = (NSInteger )clinicDataHolder.nClinicID;
 	sectionInfo.open = YES;
     
-    // *************** track Google event********************************
-    [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID dispatchPeriod:10.0 delegate:nil];
-    
-    NSError *error;
-    if (![[GANTracker sharedTracker] trackEvent:@"Login" action:@"clinics.com" label:nil value:-1 withError:&error]) {
-       
-    } 
+   
     // *************** track Google event********************************
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.

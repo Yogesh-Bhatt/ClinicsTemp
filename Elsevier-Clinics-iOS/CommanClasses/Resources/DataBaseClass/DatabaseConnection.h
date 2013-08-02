@@ -25,7 +25,7 @@
 
 + (DatabaseConnection *)sharedController;
 -(BOOL)openConnection;
--(void)createDatabaseCopyIfNotExist;
++(void)createDatabaseCopyIfNotExist;
 -(void)alterDataBase:(NSString *)query;
 
 
@@ -78,8 +78,8 @@
 - (void) saveRefeenceData:(NSMutableDictionary *)dictionaryData;
 - (void)updateRefeenceData:(NSMutableDictionary *)dictionaryData;
 - (NSMutableArray *) loadRefeenceInfoHTMl:(NSString *)sIssueID;
--(NSString *)findImageLatestIssueAEveryClinic:(NSString *)Query;
--(NSMutableArray *)retriveSelectedCinnicID;
+- (NSString *)findImageLatestIssueAEveryClinic:(NSString *)Query;
+- (NSMutableArray *)retriveSelectedCinnicID;
 -(NSMutableArray *)retriveCategorySelectedCatgoryID:(NSString*)query;
 -( NSInteger )retriveCategoryAllclinicSelected:(NSString *)query; 
 
@@ -110,6 +110,8 @@
 -(NSInteger )retriveFromClinicsTableinApppurchaseID:(NSString *)query;
 -( NSInteger )retriveCategoryAllAutntication:(NSString *)query;
 - (void)setFlagInAceessIssue:(NSString *)query;
+-(void)dataMigrationAllTbls;
+-(void)attachDataBase:(NSString *)a_query;
 
 - (NSMutableArray *)retriveClinicIdFromIssueTable:(NSString *)query;
 - (NSMutableArray *) loadArticleDataWith:(NSString *)a_query;
@@ -118,4 +120,7 @@
 - (int) GetArticlesCount:(NSString *)a_query;
 - (BOOL) updateArticleDownloaded:(NSString *)a_query;
 
++ (void)dataMigrationAllTbls;
++ (void)attachDataBase:(NSString *)a_query;
++ (void)removeOldDataBase;
 @end

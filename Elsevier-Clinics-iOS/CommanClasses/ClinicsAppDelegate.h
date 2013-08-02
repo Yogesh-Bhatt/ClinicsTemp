@@ -15,7 +15,9 @@
 #import "HomeEditorView.h"
 #import <StoreKit/StoreKit.h>
 #import "DownloaderData.h"
-@interface ClinicsAppDelegate : NSObject <UIApplicationDelegate,DownloaderDataDelegate>
+#import "InstructionView_iPhone.h"
+
+@interface ClinicsAppDelegate : NSObject <UIApplicationDelegate,DownloaderDataDelegate,InstructionView_iPhoneDelegate>
 {
 	
     RootViewController *m_rootViewController;
@@ -68,6 +70,7 @@
     NSMutableArray *m_downloadArticlesArr;
     NSMutableArray *m_downloadedConnectionArr;
     
+    InstructionView_iPhone *m_instructionView;
 }
 @property(nonatomic,retain) NSMutableArray *m_downloadedConnectionArr;
 @property(nonatomic,retain) NSMutableArray *m_downloadArticlesArr;

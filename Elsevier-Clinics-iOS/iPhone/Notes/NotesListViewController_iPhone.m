@@ -417,9 +417,7 @@
     // ****************Track Google Event**************************************
     NSString *clinicsName = clinicDataHolder.sClinicTitle;
     
-    [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID
-                                           dispatchPeriod:10
-                                                 delegate:nil];
+
     NSError *error;
     if(![[GANTracker sharedTracker] trackPageview:clinicsName
                                         withError:&error]) {

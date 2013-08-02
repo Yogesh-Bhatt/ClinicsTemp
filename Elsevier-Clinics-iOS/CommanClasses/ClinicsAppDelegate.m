@@ -71,6 +71,13 @@
     
      [MKStoreManager sharedManager];
     
+    DatabaseConnection *dbConnection =[DatabaseConnection sharedController];
+	[DatabaseConnection createDatabaseCopyIfNotExist];
+    
+    [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID
+                                           dispatchPeriod:10
+                                                 delegate:nil];
+    
     m_downloadArticlesArr = [[NSMutableArray alloc] init];
     m_downloadedConnectionArr = [[NSMutableArray alloc] init];
      
@@ -116,8 +123,7 @@
 	
     login = FALSE;
     
-    DatabaseConnection *dbConnection =[DatabaseConnection sharedController];
-	[dbConnection createDatabaseCopyIfNotExist];
+  
 	
     //*********************** Here Implement  update Database Logic ***********************
     
@@ -162,10 +168,36 @@
 		[self.window makeKeyAndVisible];
 		RELEASE(rootView_iPhone);
 		
+            
+        m_instructionView = [[InstructionView_iPhone alloc]initWithFrame:CGRectMake(0,20,320,480 )];
+        m_instructionView.delegate = self;
+        
+        [self.window  addSubview:m_instructionView];
+        [self.window  bringSubviewToFront:m_instructionView];
+       
+        if(IS_WIDESCREEN){
+            
+            CGRect rect = m_instructionView.frame;
+            rect.size.height = rect.size.height + 150;
+            m_instructionView.frame = rect;
+            
+        }
+        
+        
 	}
     
     
     return YES;
+}
+
+-(void)tabOnOkButton:(id)sender{
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.4];
+    m_instructionView.alpha = 0.0;
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(viewRemoveFromSuperView)];
+    [UIView commitAnimations];
 }
 
 

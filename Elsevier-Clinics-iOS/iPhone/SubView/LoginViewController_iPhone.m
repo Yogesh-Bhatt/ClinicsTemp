@@ -260,7 +260,6 @@
                  [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:KisItLoginKey];
                 
                 // track Google event********************************
-                [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID dispatchPeriod:10.0 delegate:nil];
                 
                 NSError *error;
                 if (![[GANTracker sharedTracker] trackEvent:@"Login" action:@"clinics.com" label:nil value:-1 withError:&error]) {

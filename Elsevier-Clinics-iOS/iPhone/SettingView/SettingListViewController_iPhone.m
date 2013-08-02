@@ -60,6 +60,9 @@
 	[self .view addSubview:saveButton];
 	
 	[self loadDataclinicsDataFromDataBase];
+    
+	
+    
 	
 }
 
@@ -73,37 +76,10 @@
 	DatabaseConnection *database = [DatabaseConnection sharedController];
     m_arrCategory = [[database loadCategoryData:FALSE] retain];
 	
-	
-	NSString  *instruction=[[NSUserDefaults standardUserDefaults] objectForKey:@"Instruction"];
-	if (instruction == nil) {
-		
-        m_instructionView = [[InstructionView_iPhone alloc]initWithFrame:CGRectMake(0,0,320,480 )];
-        m_instructionView.delegate = self;
-        
-        [self.view addSubview:m_instructionView];
-        
-        if(IS_WIDESCREEN){
-            
-            CGRect rect = m_instructionView.frame;
-            rect.size.height = rect.size.height + 150;
-            m_instructionView.frame = rect;
-            
-        }
-        
-    }
-    
+	    
 }
 
 
--(void)tabOnOkButton:(id)sender{
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.4];
-    m_instructionView.alpha = 0.0;
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(viewRemoveFromSuperView)];
-    [UIView commitAnimations];
-}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	
