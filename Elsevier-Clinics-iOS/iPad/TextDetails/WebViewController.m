@@ -39,6 +39,8 @@
         m_webView.delegate = nil;
     }
     [m_webView release];
+    RELEASE(addNotesView);
+    RELEASE(menuOBJ);
     RELEASE(sectionValueStr);
     [super dealloc];
 }
@@ -273,9 +275,9 @@
 	NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
 	NSString *documentsDirectory=[paths objectAtIndex:0];
 
-	NSString *cssPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/style.css",aritcleInfoID,aritcleInfoID]];
-     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"style%d",[lastCss intValue]]  ofType: @"css"] encoding:NSUTF8StringEncoding error:nil];
-	[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+//	NSString *cssPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/style.css",aritcleInfoID,aritcleInfoID]];
+//     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"style%d",[lastCss intValue]]  ofType: @"css"] encoding:NSUTF8StringEncoding error:nil];
+	//[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 	NSString *htmlFilePath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@/main.html",aritcleInfoID,aritcleInfoID]];
 	NSURL *url = [NSURL fileURLWithPath:htmlFilePath];
 	[m_webView loadRequest:[NSURLRequest requestWithURL:url]];

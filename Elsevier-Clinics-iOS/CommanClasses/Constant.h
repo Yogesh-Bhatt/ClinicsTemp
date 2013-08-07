@@ -52,6 +52,7 @@
 #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
 #define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
 
+
 */
 
 
@@ -110,7 +111,7 @@
 
 
 
-#define NSLog if(0)NSLog
+#define NSLog if(1)NSLog
 
 #define PScreenHeight   1024
 #define PScreenWidth    768 

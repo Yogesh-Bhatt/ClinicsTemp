@@ -278,10 +278,13 @@
     
     
     
-    NSError *error;
+    NSError *error = nil;
     if (![[GANTracker sharedTracker] trackEvent:@"Login" action:@"clinics.com" label:nil value:-1 withError:&error]) {
+        NSLog(@"error");
     }
-
+    if(error){
+        NSLog(@"%@",[error description]);
+    }
     
 }
 
