@@ -67,6 +67,7 @@
 -(IBAction)toggleOpen:(id)sender 
 {    
 	
+      clinicSectionBtnPressed = self.section;
 	  [self toggleOpenWithUserAction:YES];
 
 	 
@@ -78,6 +79,7 @@
 {
     // Toggle the disclosure button state.
     disclosureButton.selected = !disclosureButton.selected;
+    
 	ClinicsAppDelegate  *appDelegate=(ClinicsAppDelegate *)[UIApplication sharedApplication].delegate;
     if (userAction)
     {

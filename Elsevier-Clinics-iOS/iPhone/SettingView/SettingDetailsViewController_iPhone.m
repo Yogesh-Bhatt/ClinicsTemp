@@ -323,9 +323,10 @@
     NSError *error = nil;
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
     NSString *documentsDirectory=[paths objectAtIndex:0];
+   /*
     for (NSString *file in [fm contentsOfDirectoryAtPath:documentsDirectory error:&error]) {
      
-        if(![file isEqualToString:@"Clinics_DB.sqlite"]){
+        if(!([file isEqualToString:@"Clinics_DB.sqlite"]) || !([file isEqualToString:@"NewClinics_DB.sqlite"])){
             BOOL success = [fm removeItemAtPath:[NSString stringWithFormat:@"%@/%@", documentsDirectory, file] error:&error];
             //NSLog(@"rohit removeItemAtPath456");
             if (!success || error) {
@@ -334,7 +335,7 @@
         }
         
     }		
-    
+    */
     backLodingview=[[UIView alloc] init];
     backLodingview.backgroundColor=[UIColor blackColor];
     backLodingview.alpha=0.60;

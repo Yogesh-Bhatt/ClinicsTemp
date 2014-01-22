@@ -34,7 +34,7 @@
 #define kDATABASE_NAME       @"Clinics_DB.sqlite"
 #define kNewDATABASE_NAME       @"NewClinics_DB.sqlite"
 
-/*
+
 //live urls
 #define dwonlodaUrl                     @"http://208.109.209.216/clinics.test/files/"
 #define selectedClinics                 @"http://208.109.209.216/clinics/fetchclinic.php?clinicid="
@@ -48,15 +48,11 @@
 #define  KSubcriptionUpdateUrl               @"http://208.109.209.216/clinics.test/subscribe.php?deviceId="
 #define  KIsItHaveSubcriptionUrl             @"http://208.109.209.216/clinics.test/verify_subscription.php?deviceId="
 
-// login info 
-#define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
-#define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
-
-
-*/
 
 
 
+
+/*
  //development urls
  #define dwonlodaUrl                     @"http://208.109.209.216/clinics.test/files/"
  #define selectedClinics                 @"http://208.109.209.216/clinics.test/fetchclinic.php?clinicid="
@@ -67,9 +63,12 @@
  #define  kdwonloadAllUpdateIssue        @"http://208.109.209.216/clinics.test/fetchissuelistv2.php?"
  #define  KcurrentDataURL                @"http://208.109.209.216/clinics.test/fetchdbdate.php"
  
+ 
  #define  KSubcriptionUpdateUrl               @"http://208.109.209.216/clinics/subscribe.php?deviceId="
  #define  KIsItHaveSubcriptionUrl             @"http://208.109.209.216/clinics/verify_subscription.php?deviceId="
- 
+ */
+
+
  // login info
  #define SERVERBASEURL    @"https://services.healthadvance.com/JournalServices"
  #define IssueImageUrl    @"http://208.109.209.216/clinics.test/files/cover/"
@@ -111,7 +110,7 @@
 
 
 
-#define NSLog if(1)NSLog
+#define NSLog if(0)NSLog
 
 #define PScreenHeight   1024
 #define PScreenWidth    768 
@@ -221,6 +220,12 @@ NSInteger m_numberOfDownload;
 
 #define    KClinicsID                @"clinics_id"
 #define    KIssueID                  @"issue_id"
+
+//To hold the last clicked clinic reference
+
+NSInteger clinicBtnPressedTag;
+
+NSInteger clinicSectionBtnPressed;
 
 
 

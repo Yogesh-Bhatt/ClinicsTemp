@@ -34,6 +34,8 @@
 
 -(void)toggleOpenWithUserAction:(BOOL)userAction;
 
+-(IBAction)toggleOpen:(id)sender;
+
 @end
 
 /*

@@ -84,7 +84,7 @@
 		btnCategory.titleLabel.frame=CGRectMake(0, 0, 230,44);
         btnCategory.titleLabel.textAlignment = UITextAlignmentLeft;
         [btnCategory.titleLabel setFont:[UIFont systemFontOfSize:18]];
-		NSString  *imageName=[  NSString stringWithFormat:@"%@.png",[m_arrCategoryImage objectAtIndex:i]];
+		NSString  *imageName = [NSString stringWithFormat:@"%@.png",[m_arrCategoryImage objectAtIndex:i]];
         [btnCategory setTitle:[NSString stringWithFormat:@"     %@", categoryDataHolder.sCategoryName] forState:UIControlStateNormal];
         [btnCategory setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 		[btnCategory setTitleColor:[UIColor colorWithRed:72/255 green:72/255 blue:72/255 alpha:1.0] forState:UIControlStateNormal];

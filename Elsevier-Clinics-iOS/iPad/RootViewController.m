@@ -35,7 +35,7 @@
 {	
     //******************* Add List View **********************//
 
-    //NSLog(@"RootViewdidRotate");
+    NSLog(@"RootViewdidRotate");
     if ([CGlobal isOrientationLandscape])
 	{
 		
@@ -149,11 +149,13 @@
 	appDelegate.secetionOpenOrClose=0;
     if (appDelegate.h_TabBarPrevTag == kTAB_CLINICS)
     {
+        
         [self.m_clinicListVC.view removeFromSuperview];
         [self.m_clinicDetailVC.view removeFromSuperview];
 		[self.m_clinicListVC release];
 		self.m_clinicListVC=nil;
-		
+        
+        
     }
     else if (appDelegate.h_TabBarPrevTag == kTAB_EXTRAS)
     {
@@ -183,6 +185,7 @@
     
     if (appDelegate.m_nCurrentTabTag == kTAB_CLINICS)
     {
+
         //******************* Add clinicList View **********************//
         if (self.m_clinicListVC == nil)
             self.m_clinicListVC = [[ClinicListViewController alloc] initWithNibName:@"ClinicListViewController" bundle:nil];
@@ -195,6 +198,7 @@
         else{
             self.m_clinicListVC.view.frame = CGRectMake(0 , 0, 0.0, 0.0);
 		}
+       
         
          [self.view addSubview:self.m_clinicListVC.view];
 		
@@ -217,6 +221,10 @@
 		else 
 			[self.m_clinicDetailVC  firstCategoryAndFirstCategory:TRUE];
 		
+        
+        //Calling previous clicked clicked state
+        
+        //[self.m_clinicListVC resetClinicState];
 
     }
     else if (appDelegate.m_nCurrentTabTag == kTAB_AboutApp)

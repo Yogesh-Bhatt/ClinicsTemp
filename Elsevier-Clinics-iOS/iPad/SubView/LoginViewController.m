@@ -339,18 +339,28 @@
 {
 	loginBtn.userInteractionEnabled = YES;
     loginBtn.enabled = TRUE;
+   
+    NSLog(@"Description %@",[request.error localizedDescription]);
+    
+    NSString *strResponse = [request responseString] ;
+    NSLog(@"Response :%@",strResponse);
+    
     int statusCode = [request responseStatusCode];
-    if (statusCode == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Internet connection appears to be offline. Try again." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK",nil];
-        [alert show];
-        [alert release];
-    }
-    else {
+   
+   if (statusCode == 401){
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Log In Credentials" message:@"Wrong username or password." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK",nil];
 		alert.tag = 101;
         [alert show];
         [alert release];
-    }
+        
+   } else {
+       
+       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[request.error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK",nil];
+       [alert show];
+       [alert release];
+
+   }
     [LoadingViewlogin removeLoadingIndicator];
 }
 

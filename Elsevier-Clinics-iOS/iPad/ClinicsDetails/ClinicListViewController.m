@@ -165,7 +165,13 @@
 		
 	}
     [infoArray release];
-    [m_tblClinics reloadData]; 
+    [m_tblClinics reloadData];
+    //[m_view toggleOpen:nil];
+   // ClnicsTableSectionView *view = (ClnicsTableSectionView *)[m_tblClinics viewWithTag:0];
+    
+   // [view toggleOpen:nil];
+    
+    
 }
 
 - (void)initClinicListView
@@ -182,11 +188,29 @@
 	if ([m_arrButtonCategory count ]>0) {
         
         // ************************ Open And  Hide Category ***********************
-		[self categoryButtonPressed:[m_arrButtonCategory objectAtIndex:0]];
+         [self resetClinicState];
+        
+		[self categoryButtonPressed:[m_arrButtonCategory objectAtIndex:clinicBtnPressedTag]];
+        
+        /*
+        if(([self.sectionInfoArray count]-1) >= clinicBtnPressedTag && clinicBtnPressedTag >= 0){
+            
+            SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:clinicBtnPressedTag];
+            
+            if (!sectionInfo.headerView)
+            {
+                
+                ClnicsTableSectionView *view = sectionInfo.headerView;
+                [view toggleOpen:nil];
+                
+                
+            }
+            
+        }
+         */
 	}
 
 }
-
 
 -(void)openlaststageIssuelevel{
     
@@ -286,6 +310,8 @@
         NSLog(@"%@",[error description]);
     }
     
+    //clinicBtnPressedTag = 0;
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -329,6 +355,8 @@
     {
         ClnicsTableSectionView *sectionView = (ClnicsTableSectionView *)[CGlobal getViewFromXib:@"ClnicsTableSectionView" classname:[ClnicsTableSectionView class] owner:self];
 		
+        //sectionView.tag = section;
+        
         sectionView.delegate = self;
         sectionView.section = section;
         //***** call function ******* 
@@ -356,9 +384,6 @@
             
             UIButton *issuesCountBtn=[UIButton buttonWithType:UIButtonTypeCustom];
             
-           // [issuesCountBtn setTitle:[NSString stringWithFormat:@"%d",newIssuesCount]
-            //                forState:UIControlStateNormal];
-            
             [issuesCountBtn setBackgroundImage:img
                                       forState:UIControlStateNormal];
             
@@ -373,11 +398,25 @@
             
         }
 
+        
         sectionInfo.headerView = sectionView;
+        
+       if(section == clinicSectionBtnPressed){
+           
+           // [sectionInfo.headerView toggleOpen:nil];
+           m_view = sectionView;
+          [self performSelector:@selector(refresh:) withObject:sectionView afterDelay:1.1];
+    }
+    
     }
     return sectionInfo.headerView;          
 }
 
+-(void)refresh:(ClnicsTableSectionView *)a_view{
+    
+    [a_view toggleOpen:nil];
+    
+}
 
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath 
 {    
@@ -399,11 +438,11 @@
 		  issueDataHolder= (IssueDataHolder *)[sectionInfoObj.issueArray objectAtIndex:indexPath.row];
 		  cell.m_lblTitle.text = issueDataHolder.sIssueTitle;
           //NSLog(@"%@", issueDataHolder.sIssueTitle);
-        cell.backImage.image=[UIImage imageNamed:@"thirdlevelunselected.png"] ;
+          cell.backImage.image=[UIImage imageNamed:@"thirdlevelunselected.png"] ;
 	   }
    
 	
-	 NSInteger  selectedRow=((RemberTableData *)[remberArr objectAtIndex:0]).rowIndex;
+    NSInteger  selectedRow=((RemberTableData *)[remberArr objectAtIndex:0]).rowIndex;
 	
 	if (loadtableViewFirstAfterSetting==TRUE) {
 		if (indexPath.row==selectedRow-1) {
@@ -651,7 +690,6 @@
 -(void)sectionHeaderView:(ClnicsTableSectionView*)sectionHeaderView sectionClosed:(NSInteger)sectionClosed 
 {
 
-
    //  Create an array of the index paths of the rows in the section that was closed, then delete those rows from the table view.
 	
 	SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionClosed];
@@ -729,6 +767,32 @@
 
 }
 
+
+-(void)resetClinicState{
+    
+    if(([m_arrCategory count]-1) < clinicBtnPressedTag || clinicBtnPressedTag < 0){
+        
+        clinicBtnPressedTag = 0;
+        clinicSectionBtnPressed = 0;
+        
+        
+    }
+    
+    
+//    NSLog(@"clinicBtnPressedTag === %d",clinicBtnPressedTag);
+//    for(UIView *view in m_scrollView.subviews){
+//        
+//        if([view isKindOfClass:[CategoryCustomBtn class]] && view.tag == clinicBtnPressedTag ){
+//            
+//            NSLog(@"clinicBtnPressedTag === %d",clinicBtnPressedTag);
+//            CategoryCustomBtn *btn = (CategoryCustomBtn *)view;
+//            [self categoryButtonPressed:btn.tag];
+//            break;
+//        }
+//    }
+    
+}
+
 // ************************ Open And  Hide Category ***********************
 
 - (IBAction) categoryButtonPressed:(id)sender
@@ -738,6 +802,18 @@
     catgeryName=btn.titleLabel.text;
 	latButtontag=btn.tag;
 	categoryID=btn.tag;
+    
+    if(clinicBtnPressedTag == btn.tag){
+        
+    }else{
+        
+        clinicSectionBtnPressed = 0;
+        
+    }
+    clinicBtnPressedTag =  btn.tag;
+    
+    
+    
     CategoryDataHolder *categoryDataHolder = [m_arrCategory objectAtIndex:btn.tag];
     
     if ([categoryDataHolder.arrClinics count] >0)
@@ -752,6 +828,7 @@
        else
        {  
 		  [self resetButtonImageFromCategory:btn.tag :TRUE];
+           
            if([m_tblClinics superview])
            {
                for (int index=0;index<[m_arrButtonCategory count] ; index++)
@@ -778,9 +855,10 @@
            
            CGRect tblFrame = m_tblClinics.frame;
            tblFrame.origin.y = btn.frame.origin.y + btn.frame.size.height;
-           tblFrame.size.height=m_tblClinics.contentSize.height;
+           tblFrame.size.height = m_tblClinics.contentSize.height;
             m_tblClinics.frame = tblFrame;
            [m_scrollView addSubview:m_tblClinics];
+           
            float scrollercontentheight= [self shiftButtonDown:sender];
 
            //***************Setting scrollView Frame***************
@@ -793,6 +871,7 @@
     } 
 	
 	[self openlaststageIssuelevel];
+    
 }
 
 
@@ -803,29 +882,37 @@
 	CategoryCustomBtn *tempBtn ;
     for (index=0;index<[m_arrButtonCategory count] ; index++)
     {
-       tempBtn = [m_arrButtonCategory objectAtIndex:index];                
+       tempBtn = [m_arrButtonCategory objectAtIndex:index];
+        
         if (tempBtn.isBtnOpen==TRUE)
         {
             break;
             
-        }    
+        }
+        
     }    
     for (index++; index<[m_arrButtonCategory count]; index++) {
         CategoryCustomBtn *tempBtn = [m_arrButtonCategory objectAtIndex:index];                
         tempBtn.frame=CGRectMake(tempBtn.frame.origin.x, tempBtn.frame.origin.y+(float)increasedHeight, tempBtn.frame.size.width, tempBtn.frame.size.height);
         yOffset=tempBtn.frame.origin.y+tempBtn.frame.size.height;
     }
+    
     m_tblClinics.frame=CGRectMake(m_tblClinics.frame.origin.x, m_tblClinics.frame.origin.y, m_tblClinics.frame.size.width, m_tblClinics.frame.size.height+increasedHeight);
-    m_scrollView.contentSize = CGSizeMake(320.0, yOffset); 
+    
+    m_scrollView.contentSize = CGSizeMake(320.0, yOffset);
 	
 	// ***************commit m_scrollView Hieght***************
-	 if(flag==TRUE) {
-	 if (latButtontag>=7) {
-	CGPoint pt = m_scrollView.frame.origin ;
-	   pt.x = 0 ;
-		pt.y+= 250;
-	[m_scrollView setContentOffset:pt animated:YES];
-	}
+    if(flag==TRUE) {
+        
+        if (latButtontag>=7) {
+            
+            CGPoint pt = m_scrollView.frame.origin ;
+            pt.x = 0 ;
+            pt.y+= 250;
+            [m_scrollView setContentOffset:pt animated:YES];
+            
+        }
+        
 	}
 	
 }

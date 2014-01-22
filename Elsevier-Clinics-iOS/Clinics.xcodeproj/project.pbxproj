@@ -499,7 +499,6 @@
 		BCCFC23B15344A5B005CE908 /* iPhone_Name&EmailBox.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCFC23615344A5B005CE908 /* iPhone_Name&EmailBox.png */; };
 		BCCFC23C15344A5B005CE908 /* iPhone_Reset_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCFC23715344A5B005CE908 /* iPhone_Reset_btn.png */; };
 		BCCFC23D15344A5B005CE908 /* iPhone_Submit_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCFC23815344A5B005CE908 /* iPhone_Submit_btn.png */; };
-		BCE7FF1A15359A6A00F18F3A /* TblCellCardiology@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */; };
 		BCE7FF1B15359A6A00F18F3A /* TblCellCardiologyS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */; };
 		BCE7FF1C15359A6A00F18F3A /* TblCellEmergency1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */; };
 		BCE7FF1E15359A6A00F18F3A /* TblCellInternalMedicine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */; };
@@ -512,7 +511,6 @@
 		BCE7FF2615359A6A00F18F3A /* TblCellPsychiatry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1415359A6A00F18F3A /* TblCellPsychiatry@2x.png */; };
 		BCE7FF2715359A6A00F18F3A /* TblCellPsychiatryS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1515359A6A00F18F3A /* TblCellPsychiatryS@2x.png */; };
 		BCE7FF2815359A6A00F18F3A /* TblCellRadiologic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1615359A6A00F18F3A /* TblCellRadiologic@2x.png */; };
-		BCE7FF2915359A6A00F18F3A /* TblCellRadiologicS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1715359A6A00F18F3A /* TblCellRadiologicS@2x.png */; };
 		BCE7FF2A15359A6A00F18F3A /* TblCellSurgery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1815359A6A00F18F3A /* TblCellSurgery@2x.png */; };
 		BCE7FF2B15359A6A00F18F3A /* TblCellSurgeryS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FF1915359A6A00F18F3A /* TblCellSurgeryS@2x.png */; };
 		BCE7FF2E1535AF7200F18F3A /* InstructionView_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE7FF2D1535AF7200F18F3A /* InstructionView_iPhone.m */; };
@@ -614,7 +612,6 @@
 		D6096C87178196E3003C5241 /* TblCellClinics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C14178196E3003C5241 /* TblCellClinics@2x.png */; };
 		D6096C88178196E3003C5241 /* TblCellEmergency1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C15178196E3003C5241 /* TblCellEmergency1@2x.png */; };
 		D6096C89178196E3003C5241 /* TblCellEmergency1S@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C16178196E3003C5241 /* TblCellEmergency1S@2x.png */; };
-		D6096C8A178196E3003C5241 /* TblCellInternalMedicine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C17178196E3003C5241 /* TblCellInternalMedicine@2x.png */; };
 		D6096C8B178196E3003C5241 /* TblCellInternalMedicineS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C18178196E3003C5241 /* TblCellInternalMedicineS@2x.png */; };
 		D6096C8C178196E3003C5241 /* TblCellIssues@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C19178196E3003C5241 /* TblCellIssues@2x.png */; };
 		D6096C8D178196E3003C5241 /* TblCellOrthopedics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C1A178196E3003C5241 /* TblCellOrthopedics@2x.png */; };
@@ -624,7 +621,6 @@
 		D6096C91178196E3003C5241 /* TblCellPrimary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C1E178196E3003C5241 /* TblCellPrimary@2x.png */; };
 		D6096C92178196E3003C5241 /* TblCellPrimaryS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C1F178196E3003C5241 /* TblCellPrimaryS@2x.png */; };
 		D6096C93178196E3003C5241 /* TblCellPsychiatry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C20178196E3003C5241 /* TblCellPsychiatry@2x.png */; };
-		D6096C94178196E3003C5241 /* TblCellPsychiatryS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C21178196E3003C5241 /* TblCellPsychiatryS@2x.png */; };
 		D6096C95178196E3003C5241 /* TblCellRadiologic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C22178196E3003C5241 /* TblCellRadiologic@2x.png */; };
 		D6096C96178196E3003C5241 /* TblCellRadiologicS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C23178196E3003C5241 /* TblCellRadiologicS@2x.png */; };
 		D6096C97178196E3003C5241 /* TblCellSurgery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C24178196E3003C5241 /* TblCellSurgery@2x.png */; };
@@ -708,7 +704,6 @@
 		D6096CE7178196E3003C5241 /* blank_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C7E178196E3003C5241 /* blank_image@2x.png */; };
 		D6096CE8178196E3003C5241 /* pop-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6096C7F178196E3003C5241 /* pop-box@2x.png */; };
 		D64FC1831779C601007DDF5D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64FC1821779C601007DDF5D /* Accounts.framework */; };
-		D64FC1851779C608007DDF5D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64FC1841779C608007DDF5D /* Twitter.framework */; };
 		D65277981761DDB500BA41FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D65277971761DDB500BA41FE /* MBProgressHUD.m */; };
 		D659ED65179E7FA4000FB694 /* btn_delete_articles.png in Resources */ = {isa = PBXBuildFile; fileRef = D659ED5E179E7FA4000FB694 /* btn_delete_articles.png */; };
 		D659ED66179E7FA4000FB694 /* btn_delete_articles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D659ED5F179E7FA4000FB694 /* btn_delete_articles@2x.png */; };
@@ -785,6 +780,7 @@
 		D6B77711177F0D9D003BC4CD /* DownloadDeatilView_iPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B7770B177F0C37003BC4CD /* DownloadDeatilView_iPhoneCell.m */; };
 		D6B77716177F102C003BC4CD /* DownloadDetailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B77713177F102A003BC4CD /* DownloadDetailViewController_iPhone.m */; };
 		D6B77717177F102C003BC4CD /* DownloadDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B77715177F102C003BC4CD /* DownloadDetailViewController_iPhone.xib */; };
+		D6C42D3E17D4B6E00059B593 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C42D3D17D4B6E00059B593 /* Twitter.framework */; };
 		D6FA4A60177038A9005338BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6FA4A5F177038A9005338BB /* Default-568h@2x.png */; };
 		EFD8D5941782BC1400306E60 /* noti.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD8D5931782BC1400306E60 /* noti.png */; };
 		EFD8D5961782BC1D00306E60 /* noti@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD8D5951782BC1D00306E60 /* noti@2x.png */; };
@@ -1387,7 +1383,6 @@
 		BCCFC23615344A5B005CE908 /* iPhone_Name&EmailBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone_Name&EmailBox.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Feedback/iPhone_Name&EmailBox.png"; sourceTree = "<group>"; };
 		BCCFC23715344A5B005CE908 /* iPhone_Reset_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone_Reset_btn.png; path = CommanClasses/Resources/Images/iPhoneImages/Feedback/iPhone_Reset_btn.png; sourceTree = "<group>"; };
 		BCCFC23815344A5B005CE908 /* iPhone_Submit_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone_Submit_btn.png; path = CommanClasses/Resources/Images/iPhoneImages/Feedback/iPhone_Submit_btn.png; sourceTree = "<group>"; };
-		BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellCardiology@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellCardiology@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellCardiologyS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellCardiologyS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellEmergency1@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellEmergency1@2x.png"; sourceTree = "<group>"; };
 		BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellInternalMedicine@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellInternalMedicine@2x.png"; sourceTree = "<group>"; };
@@ -1400,7 +1395,6 @@
 		BCE7FF1415359A6A00F18F3A /* TblCellPsychiatry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPsychiatry@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPsychiatry@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1515359A6A00F18F3A /* TblCellPsychiatryS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellPsychiatryS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellPsychiatryS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1615359A6A00F18F3A /* TblCellRadiologic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellRadiologic@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellRadiologic@2x.png"; sourceTree = "<group>"; };
-		BCE7FF1715359A6A00F18F3A /* TblCellRadiologicS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellRadiologicS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellRadiologicS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1815359A6A00F18F3A /* TblCellSurgery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellSurgery@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellSurgery@2x.png"; sourceTree = "<group>"; };
 		BCE7FF1915359A6A00F18F3A /* TblCellSurgeryS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TblCellSurgeryS@2x.png"; path = "CommanClasses/Resources/Images/iPhoneImages/Retina/CellImages/TblCellSurgeryS@2x.png"; sourceTree = "<group>"; };
 		BCE7FF2C1535AF7200F18F3A /* InstructionView_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionView_iPhone.h; path = iPhone/SubView/InstructionView_iPhone.h; sourceTree = SOURCE_ROOT; };
@@ -1550,7 +1544,6 @@
 		D6096C14178196E3003C5241 /* TblCellClinics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellClinics@2x.png"; sourceTree = "<group>"; };
 		D6096C15178196E3003C5241 /* TblCellEmergency1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellEmergency1@2x.png"; sourceTree = "<group>"; };
 		D6096C16178196E3003C5241 /* TblCellEmergency1S@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellEmergency1S@2x.png"; sourceTree = "<group>"; };
-		D6096C17178196E3003C5241 /* TblCellInternalMedicine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellInternalMedicine@2x.png"; sourceTree = "<group>"; };
 		D6096C18178196E3003C5241 /* TblCellInternalMedicineS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellInternalMedicineS@2x.png"; sourceTree = "<group>"; };
 		D6096C19178196E3003C5241 /* TblCellIssues@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellIssues@2x.png"; sourceTree = "<group>"; };
 		D6096C1A178196E3003C5241 /* TblCellOrthopedics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellOrthopedics@2x.png"; sourceTree = "<group>"; };
@@ -1560,7 +1553,6 @@
 		D6096C1E178196E3003C5241 /* TblCellPrimary@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellPrimary@2x.png"; sourceTree = "<group>"; };
 		D6096C1F178196E3003C5241 /* TblCellPrimaryS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellPrimaryS@2x.png"; sourceTree = "<group>"; };
 		D6096C20178196E3003C5241 /* TblCellPsychiatry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellPsychiatry@2x.png"; sourceTree = "<group>"; };
-		D6096C21178196E3003C5241 /* TblCellPsychiatryS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellPsychiatryS@2x.png"; sourceTree = "<group>"; };
 		D6096C22178196E3003C5241 /* TblCellRadiologic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellRadiologic@2x.png"; sourceTree = "<group>"; };
 		D6096C23178196E3003C5241 /* TblCellRadiologicS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellRadiologicS@2x.png"; sourceTree = "<group>"; };
 		D6096C24178196E3003C5241 /* TblCellSurgery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TblCellSurgery@2x.png"; sourceTree = "<group>"; };
@@ -1644,7 +1636,6 @@
 		D6096C7E178196E3003C5241 /* blank_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_image@2x.png"; sourceTree = "<group>"; };
 		D6096C7F178196E3003C5241 /* pop-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pop-box@2x.png"; sourceTree = "<group>"; };
 		D64FC1821779C601007DDF5D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		D64FC1841779C608007DDF5D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D65277961761DDB500BA41FE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = CommanClasses/DwonLoad/MBProgressHUD.h; sourceTree = "<group>"; };
 		D65277971761DDB500BA41FE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = CommanClasses/DwonLoad/MBProgressHUD.m; sourceTree = "<group>"; };
 		D659ED5E179E7FA4000FB694 /* btn_delete_articles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_delete_articles.png; sourceTree = "<group>"; };
@@ -2064,6 +2055,7 @@
 		D6B77713177F102A003BC4CD /* DownloadDetailViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadDetailViewController_iPhone.m; sourceTree = "<group>"; };
 		D6B77714177F102B003BC4CD /* DownloadDetailViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadDetailViewController_iPhone.h; sourceTree = "<group>"; };
 		D6B77715177F102C003BC4CD /* DownloadDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D6C42D3D17D4B6E00059B593 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D6FA4A5F177038A9005338BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "CommanClasses/Resources/Images/SplashICon/Default-568h@2x.png"; sourceTree = "<group>"; };
 		EFD8D5931782BC1400306E60 /* noti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noti.png; sourceTree = "<group>"; };
 		EFD8D5951782BC1D00306E60 /* noti@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noti@2x.png"; sourceTree = "<group>"; };
@@ -2074,7 +2066,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D64FC1851779C608007DDF5D /* Twitter.framework in Frameworks */,
+				D6C42D3E17D4B6E00059B593 /* Twitter.framework in Frameworks */,
 				D64FC1831779C601007DDF5D /* Accounts.framework in Frameworks */,
 				D67F1BE916199E8300A49837 /* libxml2.dylib in Frameworks */,
 				BC847C7A14D7E185009BB94F /* libz.1.1.3.dylib in Frameworks */,
@@ -2808,7 +2800,6 @@
 		BCCFC03C15342B2F005CE908 /* CellImages */ = {
 			isa = PBXGroup;
 			children = (
-				BCE7FF0815359A6A00F18F3A /* TblCellCardiology@2x.png */,
 				BCE7FF0915359A6A00F18F3A /* TblCellCardiologyS@2x.png */,
 				BCE7FF0A15359A6A00F18F3A /* TblCellEmergency1@2x.png */,
 				BCE7FF0C15359A6A00F18F3A /* TblCellInternalMedicine@2x.png */,
@@ -2821,7 +2812,6 @@
 				BCE7FF1415359A6A00F18F3A /* TblCellPsychiatry@2x.png */,
 				BCE7FF1515359A6A00F18F3A /* TblCellPsychiatryS@2x.png */,
 				BCE7FF1615359A6A00F18F3A /* TblCellRadiologic@2x.png */,
-				BCE7FF1715359A6A00F18F3A /* TblCellRadiologicS@2x.png */,
 				BCE7FF1815359A6A00F18F3A /* TblCellSurgery@2x.png */,
 				BCE7FF1915359A6A00F18F3A /* TblCellSurgeryS@2x.png */,
 				BC8BEFD4153545C3002B19F6 /* 1@2x.png */,
@@ -3495,7 +3485,6 @@
 				D6096C14178196E3003C5241 /* TblCellClinics@2x.png */,
 				D6096C15178196E3003C5241 /* TblCellEmergency1@2x.png */,
 				D6096C16178196E3003C5241 /* TblCellEmergency1S@2x.png */,
-				D6096C17178196E3003C5241 /* TblCellInternalMedicine@2x.png */,
 				D6096C18178196E3003C5241 /* TblCellInternalMedicineS@2x.png */,
 				D6096C19178196E3003C5241 /* TblCellIssues@2x.png */,
 				D6096C1A178196E3003C5241 /* TblCellOrthopedics@2x.png */,
@@ -3505,7 +3494,6 @@
 				D6096C1E178196E3003C5241 /* TblCellPrimary@2x.png */,
 				D6096C1F178196E3003C5241 /* TblCellPrimaryS@2x.png */,
 				D6096C20178196E3003C5241 /* TblCellPsychiatry@2x.png */,
-				D6096C21178196E3003C5241 /* TblCellPsychiatryS@2x.png */,
 				D6096C22178196E3003C5241 /* TblCellRadiologic@2x.png */,
 				D6096C23178196E3003C5241 /* TblCellRadiologicS@2x.png */,
 				D6096C24178196E3003C5241 /* TblCellSurgery@2x.png */,
@@ -4876,6 +4864,7 @@
 		D68AC60F13C8799800498978 = {
 			isa = PBXGroup;
 			children = (
+				D6C42D3D17D4B6E00059B593 /* Twitter.framework */,
 				D67F1BE816199E8300A49837 /* libxml2.dylib */,
 				BCF781C01532A8E0007A92A1 /* CommanClass */,
 				BC847C7914D7E185009BB94F /* libz.1.1.3.dylib */,
@@ -4898,7 +4887,6 @@
 		D68AC61D13C8799900498978 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D64FC1841779C608007DDF5D /* Twitter.framework */,
 				D64FC1821779C601007DDF5D /* Accounts.framework */,
 				BC73F5BE144EDB8300DA8221 /* StoreKit.framework */,
 				BC7A725C1402335800F96152 /* SystemConfiguration.framework */,
@@ -5383,7 +5371,6 @@
 				BC8BEFE5153545C3002B19F6 /* 9@2x.png in Resources */,
 				BC8BEFEB15355411002B19F6 /* notes.png in Resources */,
 				BC8BEFED153557CC002B19F6 /* search.html in Resources */,
-				BCE7FF1A15359A6A00F18F3A /* TblCellCardiology@2x.png in Resources */,
 				BCE7FF1B15359A6A00F18F3A /* TblCellCardiologyS@2x.png in Resources */,
 				BCE7FF1C15359A6A00F18F3A /* TblCellEmergency1@2x.png in Resources */,
 				BCE7FF1E15359A6A00F18F3A /* TblCellInternalMedicine@2x.png in Resources */,
@@ -5396,7 +5383,6 @@
 				BCE7FF2615359A6A00F18F3A /* TblCellPsychiatry@2x.png in Resources */,
 				BCE7FF2715359A6A00F18F3A /* TblCellPsychiatryS@2x.png in Resources */,
 				BCE7FF2815359A6A00F18F3A /* TblCellRadiologic@2x.png in Resources */,
-				BCE7FF2915359A6A00F18F3A /* TblCellRadiologicS@2x.png in Resources */,
 				BCE7FF2A15359A6A00F18F3A /* TblCellSurgery@2x.png in Resources */,
 				BCE7FF2B15359A6A00F18F3A /* TblCellSurgeryS@2x.png in Resources */,
 				BCE7FF301535C11E00F18F3A /* iPhone_ok.png in Resources */,
@@ -5544,7 +5530,6 @@
 				D6096C87178196E3003C5241 /* TblCellClinics@2x.png in Resources */,
 				D6096C88178196E3003C5241 /* TblCellEmergency1@2x.png in Resources */,
 				D6096C89178196E3003C5241 /* TblCellEmergency1S@2x.png in Resources */,
-				D6096C8A178196E3003C5241 /* TblCellInternalMedicine@2x.png in Resources */,
 				D6096C8B178196E3003C5241 /* TblCellInternalMedicineS@2x.png in Resources */,
 				D6096C8C178196E3003C5241 /* TblCellIssues@2x.png in Resources */,
 				D6096C8D178196E3003C5241 /* TblCellOrthopedics@2x.png in Resources */,
@@ -5554,7 +5539,6 @@
 				D6096C91178196E3003C5241 /* TblCellPrimary@2x.png in Resources */,
 				D6096C92178196E3003C5241 /* TblCellPrimaryS@2x.png in Resources */,
 				D6096C93178196E3003C5241 /* TblCellPsychiatry@2x.png in Resources */,
-				D6096C94178196E3003C5241 /* TblCellPsychiatryS@2x.png in Resources */,
 				D6096C95178196E3003C5241 /* TblCellRadiologic@2x.png in Resources */,
 				D6096C96178196E3003C5241 /* TblCellRadiologicS@2x.png in Resources */,
 				D6096C97178196E3003C5241 /* TblCellSurgery@2x.png in Resources */,
@@ -5893,10 +5877,11 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Distribution;
 		};
@@ -5925,9 +5910,10 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;
@@ -5948,11 +5934,12 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -5970,10 +5957,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "165B42E6-1A59-452B-B595-70C4DF3562D2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "165B42E6-1A59-452B-B595-70C4DF3562D2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -6002,9 +5990,10 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6034,10 +6023,11 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4120C3B4-E258-471D-B334-C8A44D5115E2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4120C3B4-E258-471D-B334-C8A44D5115E2";
+				PROVISIONING_PROFILE = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7329C66B-F95F-4A5D-974C-0D36B77BA14C";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

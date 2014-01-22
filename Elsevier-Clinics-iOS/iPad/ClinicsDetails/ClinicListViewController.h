@@ -34,6 +34,9 @@
 	NSInteger  categoryID;
 	NSInteger  clinicsection;
     IBOutlet UIButton *m_downloadBtn;
+    
+    ClnicsTableSectionView  *m_view;
+    
 	
 	
 }
@@ -50,6 +53,7 @@
 -(void)resheftCategoryBtnWithOffset:(int)increasedHeight:(BOOL)flag;
 -(void)setFrameM_ScrollView;
 -(void)openlaststageIssuelevel;
+-(void)resetClinicState;
 
 - (IBAction)categoryButtonPressed:(id)sender;
 - (IBAction)viewDownloadedArticles:(id)sender;

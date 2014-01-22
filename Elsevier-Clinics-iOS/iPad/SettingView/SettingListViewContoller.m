@@ -21,14 +21,16 @@
 	
     DatabaseConnection *database = [DatabaseConnection sharedController];
     m_arrCategory = [[database loadCategoryData:FALSE] retain];
+    
 		for (int i=0; i<[m_arrCategory count]; i++) {
+            
 			CategoryDataHolder *categoryDataHolder = (CategoryDataHolder *)[m_arrCategory objectAtIndex:i];
 
 			[temp_Arr addObject:categoryDataHolder.sCategoryName];
+            
 	}
+    
 	[temp_Arr insertObject:@"All" atIndex:0];
-    
-    
     [m_tblCategory reloadData];
 }
 

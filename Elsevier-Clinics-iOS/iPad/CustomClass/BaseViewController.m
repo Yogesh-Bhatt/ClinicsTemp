@@ -175,7 +175,7 @@
 		
 		// *******************  button add clinics*******************
 		
-		m_addclinicsBtn = [[UIButton alloc]initWithFrame:CGRectMake(640.0, 7.0, 75.0,30.0)];
+		m_addclinicsBtn = [[UIButton alloc] initWithFrame:CGRectMake(640.0, 7.0, 75.0,30.0)];
 		m_addclinicsBtn.hidden = TRUE;
 	    [m_addclinicsBtn setImage:[UIImage imageNamed:@"addclinics.png"] forState:UIControlStateNormal];
         [m_addclinicsBtn addTarget:self action:@selector(clickONAddClinicsButton:) forControlEvents:UIControlEventTouchUpInside];

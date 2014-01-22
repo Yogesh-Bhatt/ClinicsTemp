@@ -69,23 +69,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-     [MKStoreManager sharedManager];
+    
+    [MKStoreManager sharedManager];
+
     
     DatabaseConnection *dbConnection =[DatabaseConnection sharedController];
-	[DatabaseConnection createDatabaseCopyIfNotExist];
+	
+    [DatabaseConnection createDatabaseCopyIfNotExist];
     
     [[GANTracker sharedTracker] startTrackerWithAccountID:GoogleAnalyticsID
                                            dispatchPeriod:10
                                                  delegate:nil];
     
     m_downloadArticlesArr = [[NSMutableArray alloc] init];
+   
     m_downloadedConnectionArr = [[NSMutableArray alloc] init];
      
     [[NSUserDefaults standardUserDefaults]setObject:@"101" forKey:@"Flag"];
+    
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
     if (![[PersistenceDataStore sharedManager] getDatawithKey:KFirstLunchSettingKey]) {
+        
         [[PersistenceDataStore sharedManager] setData:KFirstLunchKey withKey:KFirstLunchSettingKey];
+        
     }
     
    
@@ -97,7 +104,9 @@
 	nextTag = 1;
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        
 		diveceType = 0;
+        
 	}
     
     
@@ -106,10 +115,13 @@
 	// click on  clickONFullTextOrPdf is false
 	
 	clickONFullTextOrPdf=FALSE;
+    
 	//this   flag  check dwonload list of aricle on webview
+    
 	aritcleListView = TRUE;
 	
 	// This Condition use For Add Note in Html Alert Pop Come
+    
 	openHTMLADDNoteOpenView=FALSE;
 	
 	//*****************
@@ -123,8 +135,6 @@
 	
     login = FALSE;
     
-  
-	
     //*********************** Here Implement  update Database Logic ***********************
     
     BOOL  updateDataBase  = [[[NSUserDefaults standardUserDefaults]  valueForKey:@"UpdateDataBase"] boolValue];
@@ -132,6 +142,7 @@
     if (!updateDataBase) {
         
         NSString  *query = @"ALTER TABLE tblIssue ADD Access Numeric";
+        
         [dbConnection alterDataBase:query];
         
         NSDictionary    *dataDict =  [CGlobal getCurrentDateFromServer];
@@ -311,6 +322,7 @@
                 
             }
             else{
+                
                 tabOnLoiginButton = LoginButton;
                 loginView=[[LoginViewController alloc] init];
                 loginView.downLoadUrl=downLoadUrl;
@@ -321,17 +333,26 @@
                 }
                 else
                 {
+                    
                     loginView.view.frame=CGRectMake(0, 0, 768, 1024);
-                }
-                RootViewController *root=(RootViewController *)rootViewController;
-                WebViewController  *web=(WebViewController*)webViewController;
-                if(webViewController){
-                    [web.view addSubview:loginView.view];
-                }
-                if (rootViewController) {
-                    [root.view addSubview:loginView.view];
                     
                 }
+                
+                RootViewController *root=(RootViewController *)rootViewController;
+                WebViewController  *web=(WebViewController*)webViewController;
+                
+                if(webViewController){
+                    
+                    [web.view addSubview:loginView.view];
+                    
+                }
+                if (rootViewController) {
+                    
+                    [root.view addSubview:loginView.view];
+                    
+                    
+                }
+                
             }
             
             
@@ -491,6 +512,10 @@
                     NSLog(@"Rohit ActualBuy SelectedClinicID:%d featureID:%@",seletedClinicID,featureID);
                     
                     // ******************* here Call to purchage Clinics ********************
+                    
+                    [self productPurchased:featureID Reciept:nil];
+                    
+                    return
                     
                     [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
                         

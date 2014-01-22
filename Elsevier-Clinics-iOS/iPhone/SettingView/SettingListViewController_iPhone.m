@@ -97,10 +97,13 @@
 {
     DatabaseConnection *database = [DatabaseConnection sharedController];
     m_arrCategory = [[database loadCategoryData:FALSE] retain];
+    
 	for (int i=0; i<[m_arrCategory count]; i++) {
+        
 		CategoryDataHolder *categoryDataHolder = (CategoryDataHolder *)[m_arrCategory objectAtIndex:i];
 		
 		[m_clinicsNameArr addObject:categoryDataHolder.sCategoryName];
+        
 	}
 	[m_clinicsNameArr insertObject:@"All" atIndex:0];
     

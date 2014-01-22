@@ -995,11 +995,16 @@
     
     ArticleDataHolder *articleDataHolder;
     
-    if(reloadArticleType == reloadClinics)
+    if(reloadArticleType == reloadClinics){
+        
         articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag-1)];
-    else{
+    
+    }else{
+        
         articleDataHolder = (ArticleDataHolder *)[m_arrArticles objectAtIndex:(btn.tag)];
+        
     }
+    
 	// ***************check file present or not ***************
 	BOOL success;
 	NSFileManager *fileManager=[NSFileManager defaultManager];
@@ -1306,9 +1311,9 @@
     if ([isItLogin isEqualToString:@"YES"] && m_btnLogin.hidden == YES) {
         
         if ([CGlobal isOrientationLandscape]) {
-            m_addclinicsBtn.frame = CGRectMake(610 , 7.0, 75.0,30.0);
+            m_addclinicsBtn.frame = CGRectMake(550 , 7.0, 75.0,30.0);
         }else{
-            m_addclinicsBtn.frame =  CGRectMake(670, 7.0, 75.0,30.0);
+            m_addclinicsBtn.frame =  CGRectMake(600, 7.0, 75.0,30.0);
         }
     }
     

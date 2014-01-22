@@ -109,7 +109,7 @@ static DatabaseConnection * _sharedDatabaseConnection;
         
     }
     
-    [self removeOldDataBase];
+    //[self removeOldDataBase];
     
 	
 }
@@ -156,13 +156,13 @@ static DatabaseConnection * _sharedDatabaseConnection;
     [self attachDataBase:query2];
     
     
-    NSString *query3 = @"delete from TblClinic;";
+    NSString *query3 = @"update main.TblClinic n set n.Modified=(SELECT old.Modified FROM old_db.TblClinic old WHERE old.Modified !='' and n.ClinicId=old.ClinicId)";
     
     [self attachDataBase:query3];
  
-    NSString *query4 = @"Insert into main.TblClinic SELECT * FROM old_db.TblClinic;";
+    //NSString *query4 = @"Insert into main.TblClinic SELECT * FROM old_db.TblClinic;";
     
-    [self attachDataBase:query4];
+   // [self attachDataBase:query4];
     
     NSString *query5 = @"Insert into main.TblIssue (download, Cover_Img, PageRange, Preface, Volume, IssueID, ClinicID, IssueTitle, ReleaseDate, Editors, LastModified, PrefaceTitle, IssueNumber) SELECT * FROM old_db.TblIssue;";
     
@@ -2452,18 +2452,27 @@ return remberArr ;
 	
 }
 -(NSMutableArray *)retriveBookmarsIssueData:(BOOL)flag :(NSInteger )clinicID{
-	NSMutableArray *arrIssues = [[[NSMutableArray alloc] init] autorelease] ;
-	NSMutableArray  *arr;
+	
+    NSMutableArray *arrIssues = [[[NSMutableArray alloc] init] autorelease] ;
+	
+    NSMutableArray  *arr;
+    
     if (flag==TRUE) {
-		arr=[self retriveCategorySelectedCatgoryID:[NSString stringWithFormat:@"Select   DISTINCT issueID  from tblarticle where bookmark=1 and clinicID=%d",clinicID]];
+		
+        arr=[self retriveCategorySelectedCatgoryID:[NSString stringWithFormat:@"Select   DISTINCT issueID  from tblarticle where bookmark=1 and clinicID=%d",clinicID]];
+        
 	}
 	else {
+        
 		arr=[self retriveCategorySelectedCatgoryID:[NSString stringWithFormat:@"Select   DISTINCT issueID  from tblarticle where note = 1 and clinicID=%d",clinicID]];
+        
 	}
 
     if ([self openConnection])
     {
         NSString *sql = [NSString stringWithFormat:@"Select IssueID, ClinicID, IssueTitle, IssueNumber, Volume, ReleaseDate, Editors, LastModified, PrefaceTitle, Preface, PageRange,Cover_Img from tblIssue where IssueID IN %@  order by ReleaseDate desc", arr];
+        
+        //source of error rohit 568 issue id is not in issue table
         
         sqlite3_stmt *statement;
         
@@ -2545,10 +2554,17 @@ return remberArr ;
 	NSMutableArray *arrArticle = [[[NSMutableArray alloc] init] autorelease];
 	NSString *sql;
 	if (flag == TRUE) {
+        
+        
 	sql = [NSString stringWithFormat:@"Select ArticleId, IssueId, ArticleTitle, Abstract, ArticlehtmlFileName, LastModified, Author, ArticleType, IsArticleInPress, Bookmark, Read, PdfFileName, PageRange, keywords, ReleaseDate, ArticleInfoId, Doi_Link from tblArticle where IssueId = '%@' and Bookmark = 1 ",issueID];
+        
+        NSLog(@"test1@ %@",sql);
+        
 	}
 	else {
 	sql = [NSString stringWithFormat:@"Select ArticleId, IssueId, ArticleTitle, Abstract, ArticlehtmlFileName, LastModified, Author, ArticleType, IsArticleInPress, Bookmark, Read, PdfFileName, PageRange, keywords, ReleaseDate, ArticleInfoId, Doi_Link from tblArticle where IssueId = '%@' and Bookmark=1 and IsArticleInPress = 1", issueID];
+        
+        NSLog(@"test11@ %@",sql);
 	}
     if ([self openConnection])
     {

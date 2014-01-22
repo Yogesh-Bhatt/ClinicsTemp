@@ -108,9 +108,11 @@
 	searchBar.tag=100;
 	m_webView =[[HighLightWebView alloc] init];
 	m_webView.delegate=self;
-	m_webView.scalesPageToFit=YES;
+	m_webView.scalesPageToFit=NO;
 	m_webView.backgroundColor=[UIColor clearColor];
 	[self.view addSubview:m_webView];
+   // m_webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
 	[self.view bringSubviewToFront:m_activity];
 	
 	m_btnSearch.tag  = kSearchButtonUnSelectedKey;
@@ -395,7 +397,7 @@
 	NSString *htmlFilePath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_abs/%@_abs/main_abs.html",aritcleInfoID,aritcleInfoID]];
 	NSString *cssPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_abs/%@_abs/style.css",aritcleInfoID,aritcleInfoID]];
 	NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"style%d",[lastCss intValue]]  ofType: @"css"] encoding:NSUTF8StringEncoding error:nil];
-	[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+	//[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 	NSURL *url = [NSURL fileURLWithPath:htmlFilePath];
 	[m_webView loadRequest:[NSURLRequest requestWithURL:url]];
     firstHeadingId = nil;
@@ -421,9 +423,6 @@
 }
 
 -(void)handleIosVersionOrieantion{
-    
-    
-    
     
     [self dismissPopooverTeXtIncrease];
     
@@ -539,7 +538,7 @@
 		pdfhomeview.frame=CGRectMake(20, 50, 728, 930);
     }//*************** end landscape portratie***************
     
-	[m_webView reload];
+	//[m_webView reload];
     
 	[pdfhomeview changePdfOrientation:self.interfaceOrientation];
 	
@@ -859,7 +858,7 @@ return YES;
 	imageWebView=[[UIWebView alloc] init];
 	imageWebView.frame=CGRectMake(0, 49, 768, 975);
 	[imageWebView loadHTMLString:htmlStr baseURL:url];
-	imageWebView.scalesPageToFit = YES;
+	imageWebView.scalesPageToFit = NO;
 	[self.view addSubview:imageWebView];
 	
 	croosBtn =[UIButton buttonWithType:UIButtonTypeCustom];
@@ -984,7 +983,7 @@ for (UIView *subview in m_webView.subviews)
                 {
                     
                     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style1" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-                    [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+                   // [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
                     
                 }
                     break;
@@ -992,7 +991,7 @@ for (UIView *subview in m_webView.subviews)
                 {
                     
                     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style2" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-                    [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+                   // [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
                     
                 }
                     break;
@@ -1000,7 +999,7 @@ for (UIView *subview in m_webView.subviews)
                 {
                     
                     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style3" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-                    [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+                   // [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
                     
                 }
                     break;
@@ -1008,7 +1007,7 @@ for (UIView *subview in m_webView.subviews)
                 {
                     
                     NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style4" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-                    [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+                   // [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
                     
                 }
                     break;
@@ -1027,7 +1026,7 @@ for (UIView *subview in m_webView.subviews)
         }
         else {
             NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style1" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-            [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+           // [newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
         }
         
 	}
@@ -1065,21 +1064,21 @@ for (UIView *subview in m_webView.subviews)
 				case 3:
 				{
 					NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style1" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-					[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+					//[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
 					
 				}
 					break;
 				case 4:
 				{ 
 					NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style2" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-					[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+					//[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
 					
 				}
 					break;
 				case 5:
 				{
 					NSString    *newCss = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"style3" ofType: @"css"] encoding:NSUTF8StringEncoding error:&err];
-					[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
+					//[newCss writeToFile:cssPath atomically:YES encoding:NSUTF8StringEncoding error:&err];
 					
 				}
 					break;
